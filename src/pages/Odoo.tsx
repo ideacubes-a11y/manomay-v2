@@ -1,0 +1,449 @@
+import { motion } from "motion/react";
+import { 
+  ArrowRight, 
+  CheckCircle2, 
+  Settings, 
+  Code, 
+  RefreshCw, 
+  Link as LinkIcon, 
+  Lightbulb, 
+  LifeBuoy,
+  TrendingUp,
+  Clock,
+  DollarSign,
+  Search,
+  Zap,
+  ChevronDown,
+  Layers
+} from "lucide-react";
+import { useState } from "react";
+
+export default function Odoo() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const services = [
+    {
+      icon: <Settings className="w-8 h-8 text-brand" />,
+      title: "Odoo Implementation",
+      description: "Full-cycle implementation tailored to your business model. From requirement analysis to go-live—we handle everything."
+    },
+    {
+      icon: <Code className="w-8 h-8 text-brand" />,
+      title: "Customization & Development",
+      description: "Your business is unique—your ERP should be too. We build custom modules, workflows, and integrations."
+    },
+    {
+      icon: <RefreshCw className="w-8 h-8 text-brand" />,
+      title: "Migration & Upgrade",
+      description: "Move from legacy systems or older Odoo versions seamlessly without data loss."
+    },
+    {
+      icon: <LinkIcon className="w-8 h-8 text-brand" />,
+      title: "Third-Party Integrations",
+      description: "Connect Odoo with payment gateways, CRMs, eCommerce platforms, and more."
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8 text-brand" />,
+      title: "Business Process Consulting",
+      description: "We don’t just implement—we optimize how your business runs."
+    },
+    {
+      icon: <LifeBuoy className="w-8 h-8 text-brand" />,
+      title: "Support & Maintenance",
+      description: "Ongoing support to ensure your system runs smoothly and evolves with you."
+    }
+  ];
+
+  const industries = [
+    "Manufacturing",
+    "Retail & eCommerce",
+    "Healthcare",
+    "Logistics & Supply Chain",
+    "Real Estate",
+    "Professional Services"
+  ];
+
+  const processSteps = [
+    { title: "Discovery & Requirement Analysis", num: "01", desc: "Understanding your current workflows and pain points." },
+    { title: "Solution Design & Planning", num: "02", desc: "Architecting the perfect Odoo instances for your needs." },
+    { title: "Development & Customization", num: "03", desc: "Building custom modules and workflows." },
+    { title: "Testing & Quality Assurance", num: "04", desc: "Rigorous testing to ensure flawless execution." },
+    { title: "Deployment & Go-Live", num: "05", desc: "Smooth transition and launch." },
+    { title: "Training & Support", num: "06", desc: "Empowering your team." }
+  ];
+
+  const results = [
+    { icon: <TrendingUp className="w-6 h-6 text-brand" />, text: "Increased Operational Efficiency" },
+    { icon: <Clock className="w-6 h-6 text-brand" />, text: "Reduced Manual Work" },
+    { icon: <DollarSign className="w-6 h-6 text-brand" />, text: "Better Financial Visibility" },
+    { icon: <Search className="w-6 h-6 text-brand" />, text: "Real-Time Business Insights" },
+    { icon: <Zap className="w-6 h-6 text-brand" />, text: "Faster Decision Making" }
+  ];
+
+  const faqs = [
+    {
+      q: "How long does Odoo implementation take?",
+      a: "Typically 4–12 weeks depending on complexity. We follow an agile process to deliver value as quickly as possible without compromising quality."
+    },
+    {
+      q: "Is Odoo suitable for small businesses?",
+      a: "Absolutely. It scales from startups to large enterprises. Because of its modular nature, you only pay for and implement what you need right now."
+    },
+    {
+      q: "Do you provide post-implementation support?",
+      a: "Yes, ongoing support is a key part of our service. We offer various support tiers to ensure your system runs smoothly and evolves with you."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white selection:bg-brand/20">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-slate-50 border-b border-slate-100">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80')] opacity-[0.03] bg-cover bg-center mix-blend-multiply"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand/10 blur-[150px] -translate-y-1/2 translate-x-1/3 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/10 blur-[150px] translate-y-1/2 -translate-x-1/3 rounded-full pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-brand text-xs font-bold uppercase tracking-widest mb-8 shadow-sm">
+                 <Layers className="w-4 h-4 text-brand" /> Official Odoo Partner
+              </div>
+              <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 mb-6 tracking-tight leading-[1.1]">
+                Transform Business <br className="hidden md:block"/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-indigo-600">With Expert Odoo </span>
+                <br className="hidden md:block"/> Implementation.
+              </h1>
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg">
+                From chaos to clarity—streamline operations, automate workflows, and scale faster with certified Odoo experts.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <button className="bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-600 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group">
+                  Get Free Consultation
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="bg-white text-slate-900 border border-slate-200 py-4 px-8 rounded-full text-lg font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
+                  See How It Works
+                </button>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 border-t border-slate-200 pt-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+                  <span className="font-semibold text-slate-700">Certified Experts</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+                  <span className="font-semibold text-slate-700">100+ Successful Go-Lives</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-2xl shadow-slate-200/50 border-8 border-white bg-white">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" 
+                  alt="Business analytics dashboard" 
+                  className="object-cover w-full h-full"
+                />
+                
+                {/* Floating elements to add life */}
+                <motion.div 
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                  className="absolute -left-8 top-12 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white flex items-center gap-4"
+                >
+                  <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-emerald-600" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-500 uppercase">Efficiency</div>
+                    <div className="text-lg font-bold text-slate-900">+60% Growth</div>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                  className="absolute -right-8 bottom-12 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white flex items-center gap-4"
+                >
+                  <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
+                    <Layers className="w-6 h-6 text-brand" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-500 uppercase">System</div>
+                    <div className="text-lg font-bold text-slate-900">Fully Unified</div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
+                <div className="w-8 h-px bg-brand"></div> What We Do
+              </h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">Stop Managing Tools. <br/>Start Managing Growth.</h3>
+              <p className="text-xl text-slate-600 mb-6 leading-relaxed">
+                We help businesses implement, customize, and scale with Odoo, the all-in-one business management platform.
+              </p>
+              <p className="text-lg text-slate-500 leading-relaxed max-w-2xl font-light">
+                Whether you're struggling with disconnected systems, manual processes, or lack of visibility—we bring everything into one powerful ecosystem.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Our Services</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">Comprehensive Odoo Solutions</h3>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(76,29,149,0.08)] hover:-translate-y-1 transition-all duration-300 group"
+            >
+              <div className="w-14 h-14 bg-brand/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand/10 transition-all duration-300">
+                {service.icon}
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h4>
+              <p className="text-slate-600 leading-relaxed font-medium">{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Industries & Why Choose Us Split */}
+      <section className="py-24 bg-slate-900 text-white overflow-hidden relative rounded-[3rem] mx-4 sm:mx-8 shadow-2xl">
+        <div className="absolute inset-0 bg-brand/5"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div>
+              <h2 className="text-sm font-bold tracking-widest text-brand-300 uppercase mb-4">Industries We Serve</h2>
+              <h3 className="text-4xl font-bold mb-8 tracking-tight text-white">Domain-specific expertise</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {industries.map((ind, idx) => (
+                  <div key={idx} className="flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-colors p-4 rounded-xl border border-white/5 backdrop-blur-sm">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                    <span className="font-medium text-slate-200">{ind}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <h2 className="text-sm font-bold tracking-widest text-brand-300 uppercase mb-4">Why Choose Us?</h2>
+              <h3 className="text-4xl font-bold mb-6 tracking-tight leading-tight text-white">Implementation is Not Just Technical—It's Strategic.</h3>
+              <ul className="space-y-5">
+                {[
+                  "Deep Business Understanding (not just coding)",
+                  "Agile Implementation Approach",
+                  "Dedicated Project Manager",
+                  "Transparent Pricing & Timelines",
+                  "Post-Implementation Training & Support"
+                ].map((reason, idx) => (
+                  <li key={idx} className="flex items-center gap-4 bg-white/5 p-3 rounded-lg">
+                    <div className="bg-brand/20 p-2 rounded-full shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-brand-300" />
+                    </div>
+                    <span className="text-slate-200 font-medium">{reason}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-32 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-20 max-w-3xl mx-auto">
+          <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Our Process</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">A Proven Approach <br/>That Delivers Results</h3>
+        </div>
+        
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {processSteps.map((step, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="relative p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-brand/5 hover:border-brand/20 transition-all duration-300 group"
+            >
+              <div className="text-6xl font-black text-slate-100 group-hover:text-brand/10 transition-colors mb-4">{step.num}</div>
+              <h4 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h4>
+              <p className="text-slate-500 font-medium">{step.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Results & Testimonials */}
+      <section className="py-24 bg-white border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
+                 <div className="w-8 h-px bg-brand"></div> Results You Can Expect
+              </h2>
+              <h3 className="text-4xl font-bold text-slate-900 tracking-tight mb-8">Measurable business impact</h3>
+              <div className="space-y-4">
+                {results.map((result, idx) => (
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    key={idx} 
+                    className="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:bg-slate-100 transition-colors"
+                  >
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center shrink-0">
+                      {result.icon}
+                    </div>
+                    <span className="text-lg font-bold text-slate-700">{result.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
+                 <div className="w-8 h-px bg-brand"></div> Client Success Snapshot
+              </h2>
+              <div className="space-y-6">
+                <motion.blockquote 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 relative group"
+                >
+                  <div className="text-6xl text-slate-200 font-serif absolute -top-4 -left-2 group-hover:text-brand/20 transition-colors">"</div>
+                  <p className="text-xl text-slate-700 font-medium relative z-10 italic mb-6 leading-relaxed">
+                    We reduced our manual workload by 60% within 3 months of Odoo implementation.
+                  </p>
+                  <footer className="font-bold text-slate-900 flex items-center gap-3">
+                    <div className="w-8 h-1 bg-brand rounded-full"></div>
+                    Manufacturing Client
+                  </footer>
+                </motion.blockquote>
+                
+                <motion.blockquote 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-brand text-white p-8 rounded-[2rem] shadow-xl relative shadow-brand/20"
+                >
+                  <div className="text-6xl text-white/20 font-serif absolute -top-4 -left-2">"</div>
+                  <p className="text-xl font-medium relative z-10 italic mb-6 leading-relaxed">
+                    Complete visibility across sales, inventory, and accounts—game changer.
+                  </p>
+                  <footer className="font-bold text-brand-100 flex items-center gap-3">
+                    <div className="w-8 h-1 bg-white/30 rounded-full"></div>
+                    Retail Business Owner
+                  </footer>
+                </motion.blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-32 bg-slate-50">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Support & Guidance</h2>
+            <h3 className="text-4xl font-bold text-slate-900 tracking-tight">Frequently Asked Questions</h3>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.1 }}
+                className="border border-slate-200 rounded-2xl bg-white overflow-hidden hover:border-slate-300 transition-colors"
+              >
+                <button 
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  className="w-full text-left px-8 py-6 flex items-center justify-between font-bold text-lg text-slate-900"
+                >
+                  {faq.q}
+                  <div className={`w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 bg-brand/10 text-brand' : 'text-slate-400'}`}>
+                    <ChevronDown className="w-5 h-5" />
+                  </div>
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-96 opacity-100 px-8 pb-6' : 'max-h-0 opacity-0 px-8'}`}
+                >
+                  <p className="text-slate-600 font-medium leading-relaxed">{faq.a}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="bg-slate-900 rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 bg-brand/10 opacity-50 blur-3xl rounded-[100%] scale-150 translate-y-1/2"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+          
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+              Ready to Simplify and <br/>Scale Your Business?
+            </h2>
+            <p className="text-xl text-slate-300 mb-12 font-light leading-relaxed">
+              Let's build a system that works for you, not against you. Your business deserves more than spreadsheets. Let's build a smarter system with Odoo.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-600 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-brand/20">
+                Book Your Free Consultation
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button className="bg-white/10 text-white backdrop-blur-md border border-white/20 px-8 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition-all flex items-center justify-center">
+                Get a Custom Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+

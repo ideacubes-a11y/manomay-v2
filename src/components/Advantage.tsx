@@ -1,0 +1,72 @@
+import { motion } from "motion/react";
+import { CheckCircle2 } from "lucide-react";
+
+export default function Advantage() {
+  const points = [
+    "Customized Technology Solutions for Enterprise Scale",
+    "Client-Focused Approach with Tangible Business Results",
+    "Expertise in Innovation & Digital Transformation",
+    "Continuous Support and Performance Optimization",
+    "Global Business Growth & Scalability",
+    "Seamless Integration of Complex Workflows"
+  ];
+
+  return (
+    <section id="advantage" className="py-24 bg-brand text-white overflow-hidden relative">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 to-transparent" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-5xl font-bold mb-8 tracking-tight">
+              The Manomay <span className="italic font-serif font-normal">Advantage.</span>
+            </h2>
+            <p className="text-white/70 text-lg mb-12">
+              Why 85% of our clients come from legacy ERPs. We don't just implement software; we architect business outcomes.
+            </p>
+            
+            <div className="space-y-6">
+              {points.map((point, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="mt-1">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-lg font-medium text-white">{point}</span>
+                </motion.div>
+              ))}
+            </div>
+            
+            <button className="mt-12 bg-white text-brand px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/90 transition-all shadow-xl shadow-black/10">
+              Explore Our Methodology
+            </button>
+          </div>
+          
+          <div className="relative">
+            <div className="aspect-square bg-gradient-to-br from-white/20 to-transparent rounded-full absolute -top-20 -right-20 w-[120%] blur-3xl opacity-50" />
+            <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
+              <div className="text-sm font-mono text-white/80 mb-4 tracking-widest uppercase">Case Study: Global Logistics Corp</div>
+              <div className="text-3xl font-bold mb-6">"Reduced month-end closing from 12 days to 4 hours."</div>
+              <div className="h-px bg-white/20 mb-6" />
+              <div className="grid grid-cols-2 gap-8">
+                <div>
+                  <div className="text-4xl font-bold text-white mb-1">98%</div>
+                  <div className="text-xs text-white/60 uppercase tracking-widest">Data Accuracy</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-white mb-1">-$2.4M</div>
+                  <div className="text-xs text-white/60 uppercase tracking-widest">Annual OpEx Saved</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
