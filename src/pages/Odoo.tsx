@@ -150,18 +150,20 @@ export default function Odoo() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative hidden lg:block"
             >
-              <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/3] shadow-2xl shadow-slate-200/50 border-8 border-white bg-white">
-                <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" 
-                  alt="Business analytics dashboard" 
-                  className="object-cover w-full h-full"
-                />
+              <div className="relative aspect-[4/3]">
+                <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 border-8 border-white bg-white">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" 
+                    alt="Business analytics dashboard" 
+                    className="object-cover w-full h-full"
+                  />
+                </div>
                 
                 {/* Floating elements to add life */}
                 <motion.div 
                   animate={{ y: [0, -10, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="absolute -left-8 top-12 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white flex items-center gap-4"
+                  className="absolute -left-8 top-12 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white flex items-center gap-4 z-10"
                 >
                   <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-emerald-600" />
@@ -175,7 +177,7 @@ export default function Odoo() {
                 <motion.div 
                   animate={{ y: [0, 10, 0] }}
                   transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                  className="absolute -right-8 bottom-12 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white flex items-center gap-4"
+                  className="absolute -right-8 bottom-12 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white flex items-center gap-4 z-10"
                 >
                   <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
                     <Layers className="w-6 h-6 text-brand" />
