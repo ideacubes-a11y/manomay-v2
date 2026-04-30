@@ -30,7 +30,7 @@ const slides: Slide[] = [
     description: "Eliminate the cost of fragmented data. We architect high-performance Odoo & Oracle NetSuite ecosystems for global enterprises that demand real-time financial clarity and automated cross-border compliance.",
     cta1: "Request Architecture Audit",
     cta2: "View Solutions",
-    image: "/Implement-ERP.webp",
+    image: "https://i.postimg.cc/L6qs0qcZ/Implement-ERP.webp",
     imageAlt: "Confident CFO in a modern office",
     overlayTitle: "Strategic Architecture",
     overlayDesc: "Empowering finance teams with clear, unified data.",
