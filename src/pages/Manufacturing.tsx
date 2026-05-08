@@ -108,10 +108,10 @@ export default function Manufacturing() {
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-7"
+              className="lg:col-span-12 text-center flex flex-col items-center"
             >
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
@@ -135,36 +135,15 @@ export default function Manufacturing() {
                 </motion.span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl">
+              <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
                 Advanced MRP, PLM, and quality control systems that <span className="text-white font-medium">eliminate shop floor chaos</span> and maximize production efficiency.
               </p>
               
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-6 justify-center">
                 <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 hover:scale-105 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group">
                   Get Started
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-              className="lg:col-span-5 relative"
-            >
-              <div className="relative">
-                <div className="relative aspect-square">
-                  <div className="absolute inset-0 bg-indigo-600 rounded-full blur-[80px] opacity-20 animate-pulse"></div>
-                  <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-2xl bg-white border-[12px] border-white z-10">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" 
-                      alt="Manufacturing Floor" 
-                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
