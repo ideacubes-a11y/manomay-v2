@@ -58,9 +58,9 @@ export default function OdooModules() {
               <div className="h-px w-12 bg-brand" />
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Comprehensive Ecosystem</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black tracking-tight mb-6 font-jakarta">
+            <h2 className="text-4xl lg:text-6xl font-black tracking-tight mb-6 font-jakarta">
               The Full Power of <br />
-              <span className="text-brand italic font-display font-normal text-5xl lg:text-6xl">Odoo & NetSuite.</span>
+              <span className="text-brand italic font-display font-normal text-4xl lg:text-6xl">Odoo & NetSuite.</span>
             </h2>
             <p className="text-slate-400 text-xl leading-relaxed">
               We implement the entire Odoo & NetSuite ecosystem, ensuring every module is perfectly synchronized with your business logic.

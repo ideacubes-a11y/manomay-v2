@@ -15,8 +15,8 @@ export default function SavingsCalculator() {
     <section id="calculator" className="py-24 bg-slate-50">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 font-jakarta tracking-tight">
-            Efficiency <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl ml-2">Audit.</span>
+          <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-6 font-jakarta tracking-tight">
+            Efficiency <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl ml-2">Audit.</span>
           </h2>
           <p className="text-slate-600">
             Estimate the potential impact of a unified Odoo & NetSuite architecture on your operations.

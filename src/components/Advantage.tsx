@@ -18,8 +18,8 @@ export default function Advantage() {
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-5xl lg:text-6xl font-black mb-8 tracking-tight font-jakarta">
-              The Manomay <span className="font-display italic font-normal text-5xl lg:text-6xl">Advantage.</span>
+            <h2 className="text-4xl lg:text-6xl font-black mb-8 tracking-tight font-jakarta">
+              The Manomay <span className="font-display italic font-normal text-4xl lg:text-6xl">Advantage.</span>
             </h2>
             <p className="text-white/70 text-lg mb-12">
               Why 85% of our clients come from legacy ERPs. We don't just implement software; we architect business outcomes.

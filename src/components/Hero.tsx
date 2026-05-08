@@ -131,7 +131,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand/5 border border-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
                 {slide.tag}
               </div>
-              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-[1] tracking-tight mb-8 font-jakarta">
+              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-tight lg:leading-[1] tracking-tight mb-8 font-jakarta">
                 <span className="block mb-2">{slide.title}</span>
                 <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl xl:text-7xl">
                   {slide.highlightPrefix && <span className="mr-3">{slide.highlightPrefix}</span>}

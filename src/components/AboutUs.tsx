@@ -16,9 +16,9 @@ export default function AboutUs() {
               <div className="h-px w-12 bg-brand" />
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Our Company</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-8 font-jakarta">
+            <h2 className="text-4xl lg:text-6xl font-black text-slate-900 tracking-tight mb-8 font-jakarta">
               Empowering Growth Through <br />
-              <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Digital Excellence.</span>
+              <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl">Digital Excellence.</span>
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-8">
               Are you a new business owner or a small to mid-sized company looking to establish or enhance your business operations? 
@@ -58,7 +58,7 @@ export default function AboutUs() {
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-brand/10 rounded-full blur-[100px] -z-10 animate-pulse" />
             <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-brand/5 rounded-full blur-[100px] -z-10" />
             
-            <div className="relative grid grid-cols-2 gap-6">
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-6">
               <motion.div 
                 whileHover={{ y: -10 }}
                 className="bg-white p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col justify-between h-64"

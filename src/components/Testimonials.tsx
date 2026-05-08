@@ -49,7 +49,7 @@ export default function Testimonials() {
               <h2 className="text-sm font-black tracking-[0.4em] text-brand uppercase mb-6 flex items-center justify-center gap-4">
                 <span className="w-12 h-px bg-brand"></span> Client Success
               </h2>
-              <h3 className="text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight font-jakarta">
+              <h3 className="text-4xl lg:text-6xl font-black text-white tracking-tight leading-tight font-jakarta">
                 Success stories from <span className="font-display italic font-normal text-brand">industry pioneers.</span>
               </h3>
             </motion.div>

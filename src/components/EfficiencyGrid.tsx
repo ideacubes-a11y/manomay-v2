@@ -49,9 +49,9 @@ export default function EfficiencyGrid() {
             <div className="h-px w-12 bg-brand" />
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Strategic Pillars</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6 font-jakarta">
+          <h2 className="text-4xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6 font-jakarta">
             Enterprise Solutions for <br />
-            <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Global Operations.</span>
+            <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl">Global Operations.</span>
           </h2>
           <p className="text-slate-500 text-xl leading-relaxed">
             We architect high-performance Odoo & Oracle NetSuite ecosystems that replace fragmented software with unified enterprise intelligence.
