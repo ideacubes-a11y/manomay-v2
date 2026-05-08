@@ -39,7 +39,7 @@ export default function Testimonials() {
 
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-end justify-center mb-20 text-center">
-          <div className="max-w-2xl">
+          <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,8 +50,7 @@ export default function Testimonials() {
                 <span className="w-12 h-px bg-brand"></span> Client Success
               </h2>
               <h3 className="text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight font-jakarta">
-                Trusted by Ambitious <br />
-                <span className="font-display italic font-normal text-brand">Enterprises.</span>
+                Scale your <span className="font-display italic font-normal text-brand">enterprise.</span>
               </h3>
             </motion.div>
           </div>
