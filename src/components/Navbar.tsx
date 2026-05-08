@@ -22,6 +22,17 @@ export default function Navbar() {
     setIsOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/#about", isAnchor: true },
@@ -100,56 +111,76 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 lg:hidden bg-white overflow-y-auto pt-24 pb-12 px-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[60] lg:hidden bg-white overflow-y-auto"
           >
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <div key={link.name} className="flex flex-col gap-4 border-b border-slate-100 pb-4">
-                  {link.isAnchor ? (
-                    <a 
-                      href={link.path} 
-                      className="text-2xl font-bold text-slate-900 flex items-center justify-between"
-                      onClick={() => !link.subLinks && setIsOpen(false)}
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link 
-                      to={link.path} 
-                      className="text-2xl font-bold text-slate-900"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  )}
-                  
-                  {link.subLinks && (
-                    <div className="grid gap-3 pl-4">
-                      {link.subLinks.map((sub) => (
-                        <Link 
-                          key={sub.name}
-                          to={sub.path} 
-                          className="text-lg font-medium text-slate-500 hover:text-brand flex items-center gap-2"
-                        >
-                          <ChevronRight size={16} />
-                          {sub.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+            <div className="flex flex-col h-full min-h-screen">
+              <div className="flex items-center justify-between px-6 py-6 border-b border-slate-100">
+                <Logo />
+                <button 
+                  className="p-2 text-slate-600 hover:text-brand transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <X size={28} />
+                </button>
+              </div>
+
+              <div className="flex-1 px-6 py-8 flex flex-col gap-6">
+                {navLinks.map((link) => (
+                  <div key={link.name} className="flex flex-col gap-4 border-b border-slate-100 pb-4 last:border-0">
+                    {link.isAnchor ? (
+                      <a 
+                        href={link.path} 
+                        className="text-2xl font-bold text-slate-900 flex items-center justify-between"
+                        onClick={() => !link.subLinks && setIsOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link 
+                        to={link.path} 
+                        className="text-2xl font-bold text-slate-900"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                    
+                    {link.subLinks && (
+                      <div className="grid gap-4 pl-4 mt-2">
+                        {link.subLinks.map((sub) => (
+                          <Link 
+                            key={sub.name}
+                            to={sub.path} 
+                            className="text-xl font-medium text-slate-500 hover:text-brand flex items-center gap-3"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <ChevronRight size={18} className="text-brand" />
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+                
+                <div className="mt-8">
+                  <Link 
+                    to="/contact" 
+                    className="block bg-brand text-white text-center px-6 py-5 rounded-2xl text-xl font-bold shadow-2xl shadow-brand/20 transition-transform active:scale-95"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Request Architecture Audit
+                  </Link>
                 </div>
-              ))}
-              <Link 
-                to="/contact" 
-                className="bg-brand text-white text-center px-6 py-4 rounded-xl text-xl font-bold mt-4 shadow-xl shadow-brand/20"
-                onClick={() => setIsOpen(false)}
-              >
-                Request Architecture Audit
-              </Link>
+
+                <div className="mt-auto py-8 text-center border-t border-slate-100">
+                  <p className="text-slate-400 text-sm">© 2024 Manomay Global Solutions</p>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
