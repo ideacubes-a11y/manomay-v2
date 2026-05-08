@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -35,11 +36,14 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Company</h4>
             <ul className="space-y-4">
-              {["About Us", "Industries", "Modules", "Advantage", "Audit"].map((item) => (
+              {["About Us", "Industries", "Modules", "Advantage"].map((item) => (
                 <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(" ", "")}`} className="text-slate-500 hover:text-brand text-sm transition-colors">{item}</a>
+                  <a href={`/#${item.toLowerCase().replace(" ", "")}`} className="text-slate-500 hover:text-brand text-sm transition-colors">{item}</a>
                 </li>
               ))}
+              <li>
+                <Link to="/contact" className="text-slate-500 hover:text-brand text-sm transition-colors">Audit</Link>
+              </li>
             </ul>
           </div>
 

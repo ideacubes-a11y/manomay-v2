@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Slide {
   id: string;
@@ -10,7 +11,9 @@ interface Slide {
   highlight: string;
   description: string;
   cta1: string;
+  cta1Link: string;
   cta2: string;
+  cta2Link: string;
   image: string;
   imageAlt: string;
   overlayTitle: string;
@@ -19,60 +22,69 @@ interface Slide {
   floatingTopValue: string;
   floatingBottomLabel: string;
   floatingBottomValue: string;
+  themeBg: string; // Sophisticated background theme
 }
 
 const slides: Slide[] = [
   {
     id: "main",
-    tag: "Official Odoo & NetSuite Implementation Partner",
-    title: "Unified Enterprise",
-    highlight: "Intelligence.",
-    description: "Eliminate the cost of fragmented data. We architect high-performance Odoo & Oracle NetSuite ecosystems for global enterprises that demand real-time financial clarity and automated cross-border compliance.",
+    tag: "Top-Notch Odoo & NetSuite Implementation Experts",
+    title: "Embrace the future",
+    highlight: "of business transformation",
+    description: "Our expert ERP implementations empower your organization to achieve new heights of efficiency and success. Manomay Global Solutions is the trusted partner for small and mid-sized companies across retail, manufacturing, IT, and e-commerce sectors.",
     cta1: "Request Architecture Audit",
+    cta1Link: "/contact",
     cta2: "View Solutions",
-    image: "https://i.postimg.cc/L6qs0qcZ/Implement-ERP.webp",
-    imageAlt: "Confident CFO in a modern office",
-    overlayTitle: "Strategic Architecture",
-    overlayDesc: "Empowering finance teams with clear, unified data.",
+    cta2Link: "#solutions",
+    image: "/hero-implementation.jpeg",
+    imageAlt: "Odoo and NetSuite Implementation Partner Workspace",
+    overlayTitle: "Official Partner",
+    overlayDesc: "Odoo & Oracle NetSuite Certified Experts",
     floatingTopLabel: "Worry Free Implementations",
     floatingTopValue: "100% Dedicated Implementations",
     floatingBottomLabel: "Certified Experts",
-    floatingBottomValue: "Odoo & NetSuite"
+    floatingBottomValue: "Odoo & NetSuite",
+    themeBg: "bg-gradient-to-br from-slate-50 via-white to-indigo-50/30"
   },
   {
     id: "odoo",
     tag: "Dedicated Odoo Implementation Partner",
-    title: "Scale With",
-    highlight: "Odoo ERP.",
+    title: "Unify your business",
+    highlight: "with powerful Odoo solutions",
     description: "Streamline your entire business with Odoo's fully integrated, highly customizable suite of applications. We deliver scalable architectures designed to adapt effortlessly as your company grows.",
     cta1: "Explore Odoo Services",
+    cta1Link: "/odoo-implementations",
     cta2: "Schedule a Demo",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80",
-    imageAlt: "Team collaborating on software architecture",
+    cta2Link: "/odoo-implementations#demo",
+    image: "/Happ_CFO_With_Odoo.jpeg",
+    imageAlt: "Successful CFO using Odoo ERP solution",
     overlayTitle: "Odoo Excellence",
     overlayDesc: "End-to-end solutions for modern enterprises.",
     floatingTopLabel: "System Integration",
     floatingTopValue: "Seamless Workflows",
     floatingBottomLabel: "Odoo Experts",
-    floatingBottomValue: "Custom Development"
+    floatingBottomValue: "Custom Development",
+    themeBg: "bg-gradient-to-br from-brand/5 via-white to-brand/10"
   },
   {
     id: "netsuite",
-    tag: "Dedicated NetSuite Implementation Partner",
-    title: "Power Your Cloud",
-    highlightPrefix: "With ",
-    highlight: "NetSuite.",
+    tag: "Dedicated NetSuite Implementation",
+    title: "Scale your enterprise",
+    highlight: "with expert NetSuite solutions",
     description: "Unlock visibility and control. Our NetSuite implementations provide world-class financial management, CRM, and ecommerce capabilities for ambitious mid-market to enterprise organizations.",
     cta1: "NetSuite Implementation",
+    cta1Link: "/netsuite-implementations",
     cta2: "Consult with an Expert",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80",
-    imageAlt: "Team collaborating on cloud solutions",
+    cta2Link: "/netsuite-implementations#consult",
+    image: "/Happy_NetSuite_Office.jpeg",
+    imageAlt: "Modern NetSuite implementation office environment",
     overlayTitle: "NetSuite Mastery",
     overlayDesc: "Unrivaled cloud business management.",
     floatingTopLabel: "Financial Clarity",
     floatingTopValue: "Real-time Insights",
     floatingBottomLabel: "NetSuite Alliance",
-    floatingBottomValue: "Proven Results"
+    floatingBottomValue: "Proven Results",
+    themeBg: "bg-gradient-to-br from-sky-50 via-white to-indigo-50"
   }
 ];
 
@@ -92,8 +104,21 @@ export default function Hero() {
   const slide = slides[currentSlide];
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto px-6 w-full">
+    <section className={`relative pt-28 pb-20 overflow-hidden min-h-screen flex items-center transition-colors duration-1000 ${slide.themeBg}`}>
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <AnimatePresence>
+          <motion.div
+            key={slide.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className={`absolute inset-0 ${slide.themeBg}`}
+          />
+        </AnimatePresence>
+      </div>
+
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <AnimatePresence mode="wait">
             <motion.div
@@ -106,22 +131,46 @@ export default function Hero() {
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand/5 border border-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
                 {slide.tag}
               </div>
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight mb-8">
-                {slide.title} <br />
-                {slide.highlightPrefix && <span>{slide.highlightPrefix}</span>}
-                <span className="text-brand">{slide.highlight}</span>
+              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-[1] tracking-tight mb-8 font-jakarta">
+                <span className="block mb-2">{slide.title}</span>
+                <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl xl:text-7xl">
+                  {slide.highlightPrefix && <span className="mr-3">{slide.highlightPrefix}</span>}
+                  {slide.highlight}
+                </span>
               </h1>
               <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl min-h-[120px]">
                 {slide.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <button className="bg-brand text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group">
-                  {slide.cta1}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <a href="#solutions" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 transition-all flex items-center justify-center">
-                  {slide.cta2}
-                </a>
+                {slide.cta1Link.startsWith('http') ? (
+                  <a 
+                    href={slide.cta1Link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-brand text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group"
+                  >
+                    {slide.cta1}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <Link 
+                    to={slide.cta1Link}
+                    className="bg-brand text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group"
+                  >
+                    {slide.cta1}
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                )}
+                
+                {slide.cta2Link?.startsWith('/') ? (
+                  <Link to={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 transition-all flex items-center justify-center">
+                    {slide.cta2}
+                  </Link>
+                ) : (
+                  <a href={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 transition-all flex items-center justify-center">
+                    {slide.cta2}
+                  </a>
+                )}
               </div>
               
               {/* Slider Controls */}

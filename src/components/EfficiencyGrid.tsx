@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Wallet, Truck, Users, Zap, Shield, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const solutions = [
   {
@@ -42,15 +43,15 @@ const solutions = [
 export default function EfficiencyGrid() {
   return (
     <section id="solutions" className="py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="max-w-3xl mb-20">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-px w-12 bg-brand" />
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Strategic Pillars</span>
           </div>
-          <h2 className="text-5xl font-bold text-slate-900 tracking-tight mb-6">
+          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6 font-jakarta">
             Enterprise Solutions for <br />
-            <span className="text-brand italic font-serif font-normal">Global Operations.</span>
+            <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Global Operations.</span>
           </h2>
           <p className="text-slate-500 text-xl leading-relaxed">
             We architect high-performance Odoo & Oracle NetSuite ecosystems that replace fragmented software with unified enterprise intelligence.
@@ -102,19 +103,24 @@ export default function EfficiencyGrid() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="bg-brand p-10 flex flex-col justify-between text-white group cursor-pointer overflow-hidden relative"
+            className="group"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 to-transparent" />
-            <div>
-              <h3 className="text-3xl font-bold mb-4 relative z-10">Ready for an <br />Architecture Audit?</h3>
-              <p className="text-white/80 text-sm leading-relaxed relative z-10">
-                Let our experts analyze your current ERP landscape and design a high-performance roadmap for Odoo & NetSuite.
-              </p>
-            </div>
-            <div className="flex items-center gap-3 font-bold relative z-10 group-hover:gap-5 transition-all">
-              Start Now
-              <ArrowRight className="w-5 h-5" />
-            </div>
+            <Link
+              to="/contact"
+              className="bg-brand p-10 flex flex-col justify-between h-full text-white group cursor-pointer overflow-hidden relative"
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 to-transparent" />
+              <div>
+                <h3 className="text-3xl font-bold mb-4 relative z-10">Ready for an <br />Architecture Audit?</h3>
+                <p className="text-white/80 text-sm leading-relaxed relative z-10">
+                  Let our experts analyze your current ERP landscape and design a high-performance roadmap for Odoo & NetSuite.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 font-bold relative z-10 group-hover:gap-5 transition-all">
+                Start Now
+                <ArrowRight className="w-5 h-5" />
+              </div>
+            </Link>
           </motion.div>
         </div>
       </div>

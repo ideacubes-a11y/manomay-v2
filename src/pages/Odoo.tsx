@@ -17,6 +17,7 @@ import {
   Layers
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Odoo() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -98,12 +99,12 @@ export default function Odoo() {
   return (
     <div className="min-h-screen bg-white selection:bg-brand/20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-slate-50 border-b border-slate-100">
+      <section className="relative pt-28 pb-24 lg:pt-36 lg:pb-32 overflow-hidden bg-slate-50 border-b border-slate-100">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80')] opacity-[0.03] bg-cover bg-center mix-blend-multiply"></div>
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand/10 blur-[150px] -translate-y-1/2 translate-x-1/3 rounded-full pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/10 blur-[150px] translate-y-1/2 -translate-x-1/3 rounded-full pointer-events-none"></div>
         
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -113,23 +114,23 @@ export default function Odoo() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-brand text-xs font-bold uppercase tracking-widest mb-8 shadow-sm">
                  <Layers className="w-4 h-4 text-brand" /> Official Odoo Partner
               </div>
-              <h1 className="text-5xl lg:text-7xl font-bold text-slate-900 mb-6 tracking-tight leading-[1.1]">
+              <h1 className="text-5xl lg:text-7xl font-black text-slate-900 mb-6 tracking-tight leading-[1] font-jakarta">
                 Transform Business <br className="hidden md:block"/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-indigo-600">With Expert Odoo </span>
+                <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">With Expert Odoo</span>
                 <br className="hidden md:block"/> Implementation.
               </h1>
-              <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg">
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg mb-12">
                 From chaos to clarity—streamline operations, automate workflows, and scale faster with certified Odoo experts.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <button className="bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-600 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group">
+                <Link to="/contact" className="bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group">
                   Get Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="bg-white text-slate-900 border border-slate-200 py-4 px-8 rounded-full text-lg font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
+                </Link>
+                <Link to="/contact" className="bg-white text-slate-900 border border-slate-200 py-4 px-8 rounded-full text-lg font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm">
                   See How It Works
-                </button>
+                </Link>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 border-t border-slate-200 pt-8">
@@ -206,7 +207,7 @@ export default function Odoo() {
               <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-brand"></div> What We Do
               </h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">Stop Managing Tools. <br/>Start Managing Growth.</h3>
+              <h3 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">Stop <span className="font-display italic font-normal text-brand">Managing Tools.</span> <br/>Start Managing Growth.</h3>
               <p className="text-xl text-slate-600 mb-6 leading-relaxed">
                 We help businesses implement, customize, and scale with Odoo, the all-in-one business management platform.
               </p>
@@ -219,10 +220,12 @@ export default function Odoo() {
       </section>
 
       {/* Services */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
+      <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Our Services</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">Comprehensive Odoo Solutions</h3>
+          <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight font-jakarta">
+            Comprehensive <span className="font-display italic font-normal text-brand">Odoo Solutions.</span>
+          </h3>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
@@ -248,11 +251,13 @@ export default function Odoo() {
       <section className="py-24 bg-slate-900 text-white overflow-hidden relative rounded-[3rem] mx-4 sm:mx-8 shadow-2xl">
         <div className="absolute inset-0 bg-brand/5"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand/20 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand-300 uppercase mb-4">Industries We Serve</h2>
-              <h3 className="text-4xl font-bold mb-8 tracking-tight text-white">Domain-specific expertise</h3>
+              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Industries We Serve</h2>
+              <h3 className="text-5xl font-black mb-8 tracking-tight text-white font-jakarta">
+                High-Impact <span className="font-display italic font-normal text-brand">Sectors.</span>
+              </h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 {industries.map((ind, idx) => (
                   <div key={idx} className="flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-colors p-4 rounded-xl border border-white/5 backdrop-blur-sm">
@@ -264,8 +269,10 @@ export default function Odoo() {
             </div>
             
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand-300 uppercase mb-4">Why Choose Us?</h2>
-              <h3 className="text-4xl font-bold mb-6 tracking-tight leading-tight text-white">Implementation is Not Just Technical—It's Strategic.</h3>
+              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Why Choose Us?</h2>
+              <h3 className="text-5xl font-black mb-6 tracking-tight leading-tight text-white font-jakarta">
+                Strategic <span className="font-display italic font-normal text-brand">Implementations.</span>
+              </h3>
               <ul className="space-y-5">
                 {[
                   "Deep Business Understanding (not just coding)",
@@ -288,10 +295,12 @@ export default function Odoo() {
       </section>
 
       {/* Process */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
+      <section className="py-32 max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Our Process</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">A Proven Approach <br/>That Delivers Results</h3>
+          <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight font-jakarta">
+            Proven <span className="font-display italic font-normal text-brand">Methodology.</span>
+          </h3>
         </div>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -320,7 +329,9 @@ export default function Odoo() {
               <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
                  <div className="w-8 h-px bg-brand"></div> Results You Can Expect
               </h2>
-              <h3 className="text-4xl font-bold text-slate-900 tracking-tight mb-8">Measurable business impact</h3>
+              <h3 className="text-5xl font-black text-slate-900 tracking-tight mb-8 font-jakarta">
+                Business <span className="font-display italic font-normal text-brand">Impact.</span>
+              </h3>
               <div className="space-y-4">
                 {results.map((result, idx) => (
                   <motion.div 
@@ -388,7 +399,7 @@ export default function Odoo() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Support & Guidance</h2>
-            <h3 className="text-4xl font-bold text-slate-900 tracking-tight">Frequently Asked Questions</h3>
+            <h3 className="text-5xl font-black text-slate-900 tracking-tight font-jakarta">Support <span className="font-display italic font-normal text-brand">Excellence.</span></h3>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
@@ -421,26 +432,26 @@ export default function Odoo() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
+      <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="bg-slate-900 rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-brand/10 opacity-50 blur-3xl rounded-[100%] scale-150 translate-y-1/2"></div>
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px] pointer-events-none"></div>
           
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
-              Ready to Simplify and <br/>Scale Your Business?
+            <h2 className="text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight font-jakarta">
+              Simplify and <span className="font-display italic font-normal text-brand">Scale</span> Tomorrow.
             </h2>
             <p className="text-xl text-slate-300 mb-12 font-light leading-relaxed">
               Let's build a system that works for you, not against you. Your business deserves more than spreadsheets. Let's build a smarter system with Odoo.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-600 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-brand/20">
+              <Link to="/contact" className="bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand/90 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-brand/20">
                 Book Your Free Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="bg-white/10 text-white backdrop-blur-md border border-white/20 px-8 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition-all flex items-center justify-center">
+              </Link>
+              <Link to="/contact" className="bg-white/10 text-white backdrop-blur-md border border-white/20 px-8 py-4 rounded-full text-lg font-bold hover:bg-white/20 transition-all flex items-center justify-center">
                 Get a Custom Demo
-              </button>
+              </Link>
             </div>
           </div>
         </div>

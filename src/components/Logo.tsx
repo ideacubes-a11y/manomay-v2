@@ -14,7 +14,7 @@ export default function Logo({ className = "", iconClassName = "", textClassName
   return (
     <Link to="/" className={`flex items-center gap-2 ${className}`}>
       {logoUrl ? (
-        <img src={logoUrl} alt="Manomay Logo" className={`h-16 md:h-20 w-auto ${iconClassName}`} />
+        <img src={logoUrl} alt="Manomay Logo" className={`h-11 md:h-[62px] w-auto ${iconClassName}`} />
       ) : (
         <>
           <div className={`w-8 h-8 bg-brand rounded-sm flex items-center justify-center text-white font-bold text-xl ${iconClassName}`}>M</div>

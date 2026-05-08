@@ -4,7 +4,7 @@ import { CheckCircle2, Users, Globe, Award, ShieldCheck, HeartHandshake } from "
 export default function AboutUs() {
   return (
     <section id="about" className="py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -16,9 +16,9 @@ export default function AboutUs() {
               <div className="h-px w-12 bg-brand" />
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Our Company</span>
             </div>
-            <h2 className="text-5xl font-bold text-slate-900 tracking-tight mb-8">
+            <h2 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-8 font-jakarta">
               Empowering Growth Through <br />
-              <span className="text-brand italic font-serif font-normal">Digital Excellence.</span>
+              <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Digital Excellence.</span>
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-8">
               Are you a new business owner or a small to mid-sized company looking to establish or enhance your business operations? 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { Calculator, RefreshCw } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function SavingsCalculator() {
   const [revenue, setRevenue] = useState(50); // In Millions
@@ -14,7 +15,9 @@ export default function SavingsCalculator() {
     <section id="calculator" className="py-24 bg-slate-50">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Efficiency Audit</h2>
+          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 font-jakarta tracking-tight">
+            Efficiency <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl ml-2">Audit.</span>
+          </h2>
           <p className="text-slate-600">
             Estimate the potential impact of a unified Odoo & NetSuite architecture on your operations.
           </p>
@@ -67,10 +70,10 @@ export default function SavingsCalculator() {
               </motion.div>
               <div className="text-brand font-semibold text-sm mb-8">Potential ROI in Year 1</div>
               
-              <button className="w-full bg-white text-slate-900 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+              <Link to="/contact" className="w-full bg-white text-slate-900 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 <Calculator className="w-5 h-5" />
                 Get Detailed Audit
-              </button>
+              </Link>
             </div>
           </div>
           

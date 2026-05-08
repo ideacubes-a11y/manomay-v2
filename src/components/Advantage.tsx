@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Advantage() {
   const points = [
@@ -14,11 +15,11 @@ export default function Advantage() {
   return (
     <section id="advantage" className="py-24 bg-brand text-white overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 to-transparent" />
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-5xl font-bold mb-8 tracking-tight">
-              The Manomay <span className="italic font-serif font-normal">Advantage.</span>
+            <h2 className="text-5xl lg:text-6xl font-black mb-8 tracking-tight font-jakarta">
+              The Manomay <span className="font-display italic font-normal text-5xl lg:text-6xl">Advantage.</span>
             </h2>
             <p className="text-white/70 text-lg mb-12">
               Why 85% of our clients come from legacy ERPs. We don't just implement software; we architect business outcomes.
@@ -42,9 +43,9 @@ export default function Advantage() {
               ))}
             </div>
             
-            <button className="mt-12 bg-white text-brand px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/90 transition-all shadow-xl shadow-black/10">
+            <Link to="/contact" className="inline-block mt-12 bg-white text-brand px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/90 transition-all shadow-xl shadow-black/10">
               Explore Our Methodology
-            </button>
+            </Link>
           </div>
           
           <div className="relative">

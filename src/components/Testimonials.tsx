@@ -31,7 +31,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-24 bg-slate-50 relative overflow-hidden" id="testimonials">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,8 +40,8 @@ export default function Testimonials() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Client Success</h2>
-            <h3 className="text-4xl font-bold text-slate-900 tracking-tight leading-tight">
-              Trusted by Ambitious Enterprises
+            <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight font-jakarta">
+              Trusted by Ambitious <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl ml-2">Enterprises.</span>
             </h3>
           </motion.div>
         </div>
