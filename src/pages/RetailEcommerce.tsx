@@ -83,10 +83,10 @@ export default function RetailEcommerce() {
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-12 text-center flex flex-col items-center"
+              className="lg:col-span-7"
             >
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
@@ -111,15 +111,73 @@ export default function RetailEcommerce() {
                 </motion.span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl">
                 We don't just "install" software. We architect <span className="text-white font-medium">high-velocity omnichannel ecosystems</span> that turn inventory into profit.
               </p>
               
-              <div className="flex flex-wrap gap-6 justify-center">
+              <div className="flex flex-wrap gap-6">
                 <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 hover:scale-105 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group">
                   Get Started
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
+                
+                <div className="flex -space-x-3 items-center">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-12 h-12 rounded-full border-4 border-[#240b45] bg-slate-800 overflow-hidden shadow-sm relative group">
+                      <img 
+                        src={`https://i.pravatar.cc/150?u=${i + 10}`} 
+                        alt="Retail Expert" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform" 
+                      />
+                    </div>
+                  ))}
+                  <div className="pl-6">
+                    <div className="text-white font-bold">50+ Retailers</div>
+                    <div className="text-slate-400 text-sm">Transformed this year</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative">
+                {/* Decorative Elements */}
+                <motion.div 
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-10 -left-10 bg-white p-6 rounded-3xl shadow-xl z-20 border border-slate-100 hidden xl:block"
+                >
+                  <Package className="w-8 h-8 text-brand mb-2" />
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Inventory</div>
+                  <div className="text-lg font-black text-slate-900">Syncing...</div>
+                </motion.div>
+
+                <motion.div 
+                  animate={{ y: [0, 20, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute -bottom-10 -right-10 bg-white p-6 rounded-3xl shadow-xl z-20 border border-slate-100 hidden xl:block"
+                >
+                  <BarChart3 className="w-8 h-8 text-violet-500 mb-2" />
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Profit</div>
+                  <div className="text-lg font-black text-slate-900">+24.5%</div>
+                </motion.div>
+
+                <div className="relative aspect-square">
+                  <div className="absolute inset-0 bg-brand rounded-full blur-[80px] opacity-20 animate-pulse"></div>
+                  <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-2xl bg-white border-[12px] border-white z-10">
+                    <img 
+                      src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200" 
+                      alt="Retail Transformation" 
+                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

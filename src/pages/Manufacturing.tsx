@@ -104,14 +104,13 @@ export default function Manufacturing() {
           <div className="absolute bottom-[-20%] left-[-10%] w-[700px] h-[700px] bg-violet-500/30 blur-[180px] rounded-full"></div>
           <div className="absolute inset-0 opacity-[0.2]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(139, 92, 246, 0.5) 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
         </div>
-        
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:col-span-12 text-center flex flex-col items-center"
+              className="lg:col-span-7"
             >
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
@@ -135,15 +134,62 @@ export default function Manufacturing() {
                 </motion.span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl mx-auto">
+              <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl">
                 Advanced MRP, PLM, and quality control systems that <span className="text-white font-medium">eliminate shop floor chaos</span> and maximize production efficiency.
               </p>
               
-              <div className="flex flex-wrap gap-6 justify-center">
+              <div className="flex flex-wrap gap-6">
                 <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 hover:scale-105 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group">
                   Get Started
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
+                
+                <div className="flex -space-x-3 items-center">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-12 h-12 rounded-full border-4 border-[#240b45] bg-slate-800 overflow-hidden shadow-sm relative group">
+                      <img 
+                        src={`https://i.pravatar.cc/150?u=${i + 20}`} 
+                        alt="Manufacturing Expert" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform" 
+                      />
+                    </div>
+                  ))}
+                  <div className="pl-6">
+                    <div className="text-white font-bold">100+ Factories</div>
+                    <div className="text-indigo-300 text-sm">Digitized floor operations</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative">
+                <motion.div 
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-10 -right-10 bg-white p-6 rounded-3xl shadow-xl z-20 border border-slate-100 hidden xl:block"
+                >
+                  <Factory className="w-8 h-8 text-indigo-600 mb-2" />
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Floor Uptime</div>
+                  <div className="text-lg font-black text-slate-900">99.8%</div>
+                </motion.div>
+
+                <div className="relative aspect-square">
+                  <div className="absolute inset-0 bg-indigo-600 rounded-full blur-[80px] opacity-20 animate-pulse"></div>
+                  <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-2xl bg-white border-[12px] border-white z-10">
+                    <img 
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" 
+                      alt="Manufacturing Floor" 
+                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>

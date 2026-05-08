@@ -9,7 +9,7 @@ export default function Testimonials() {
       author: "Sarah Jenkins",
       role: "Operations Director",
       company: "TechFlow Industries",
-      rating: 5,
+      rating: 5
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ export default function Testimonials() {
       author: "David Chen",
       role: "Chief Financial Officer",
       company: "Nordic Retail Group",
-      rating: 5,
+      rating: 5
     },
     {
       id: 3,
@@ -25,56 +25,74 @@ export default function Testimonials() {
       author: "Emily Vasquez",
       role: "CEO",
       company: "Nova Health Solutions",
-      rating: 5,
+      rating: 5
     }
   ];
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden" id="testimonials">
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Client Success</h2>
-            <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight font-jakarta">
-              Trusted by Ambitious <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl ml-2">Enterprises.</span>
-            </h3>
-          </motion.div>
-        </div>
+    <section className="py-32 bg-[#0a051a] relative overflow-hidden" id="testimonials">
+      {/* Background Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand/10 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-indigo-500/10 blur-[100px] rounded-full"></div>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, idx) => (
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-end justify-center mb-20 text-center">
+          <div className="max-w-2xl">
             <motion.div
-              key={testimonial.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative group"
+              transition={{ duration: 0.5 }}
             >
-              <Quote className="absolute top-8 right-8 w-10 h-10 text-slate-100 group-hover:text-brand/10 transition-colors" />
+              <h2 className="text-sm font-black tracking-[0.4em] text-brand uppercase mb-6 flex items-center justify-center gap-4">
+                <span className="w-12 h-px bg-brand"></span> Client Success
+              </h2>
+              <h3 className="text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight font-jakarta">
+                Trusted by Ambitious <br />
+                <span className="font-display italic font-normal text-brand">Enterprises.</span>
+              </h3>
+            </motion.div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, idx) => (
+            <motion.div
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="group relative"
+            >
+              {/* Card Accent Glow */}
+              <div className="absolute inset-0 bg-brand/10 rounded-[3rem] opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500"></div>
               
-              <div className="flex gap-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              
-              <p className="text-slate-700 leading-relaxed font-medium mb-8 relative z-10 italic">
-                "{testimonial.quote}"
-              </p>
-              
-              <div className="flex items-center gap-4 border-t border-slate-50 pt-6">
-                <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-500 text-lg">
-                  {testimonial.author.charAt(0)}
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-[3rem] p-10 border border-white/5 group-hover:border-white/20 transition-all duration-500 h-full flex flex-col">
+                <Quote className="absolute top-10 right-10 w-12 h-12 text-white/5 group-hover:text-white/10 transition-colors" />
+                
+                <div className="flex gap-1.5 mb-10">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-brand text-brand" />
+                  ))}
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900">{testimonial.author}</h4>
-                  <p className="text-sm text-slate-500">{testimonial.role}, {testimonial.company}</p>
+                
+                <p className="text-xl md:text-2xl text-slate-300 leading-tight tracking-tight font-jakarta mb-12 flex-grow">
+                  "{testimonial.quote}"
+                </p>
+                
+                <div className="flex items-center gap-5 mt-auto pt-8 border-t border-white/5">
+                  <div className="w-14 h-14 rounded-2xl bg-brand/20 flex items-center justify-center font-black text-brand text-xl border border-brand/30 group-hover:bg-brand group-hover:text-white transition-all duration-500">
+                    {testimonial.author.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-black text-white tracking-tight">{testimonial.author}</h4>
+                    <p className="text-sm font-bold text-slate-500 uppercase tracking-widest leading-none mt-1">
+                      {testimonial.company}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
