@@ -42,6 +42,12 @@ export default function Footer() {
                 </li>
               ))}
               <li>
+                <Link to="/solutions/odoo-pos" className="text-slate-500 hover:text-brand text-sm transition-colors font-medium">Odoo POS Solutions</Link>
+              </li>
+              <li>
+                <a href="https://www.odoo.com/pricing" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand text-sm transition-colors font-medium">Odoo Price Calculator</a>
+              </li>
+              <li>
                 <Link to="/contact" className="text-slate-500 hover:text-brand text-sm transition-colors">Audit</Link>
               </li>
             </ul>
@@ -56,18 +62,18 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-slate-500 text-sm">
                 <Phone className="w-4 h-4 text-brand" />
-                +91 98765 43210
+                +1 (800) 555-0123
               </li>
               <li className="flex items-start gap-3 text-slate-500 text-sm">
                 <MapPin className="w-4 h-4 text-brand mt-1" />
                 Manomay Global Solutions<br />
-                Global Business Hub, India
+                Business District, USA
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-100 flex flex-col md:row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-slate-400 text-xs">
             © 2024 Manomay Global Solutions. All rights reserved.
           </div>

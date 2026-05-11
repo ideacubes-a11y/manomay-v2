@@ -125,7 +125,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Call Us</h3>
-                  <p className="text-xl font-bold text-slate-900">+91 (Expert Hotline)</p>
+                  <p className="text-xl font-bold text-slate-900">+1 (800) 555-0123</p>
                 </div>
               </div>
 
@@ -208,7 +208,7 @@ export default function Contact() {
                     required
                     value={formData.mobile}
                     onChange={handleChange}
-                    placeholder="+91 00000 00000"
+                    placeholder="+1 (000) 000-0000"
                     className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
                   />
                 </div>

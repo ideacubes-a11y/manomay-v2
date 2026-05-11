@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { CheckCircle2, Users, Globe, Award, ShieldCheck, HeartHandshake } from "lucide-react";
+import { CheckCircle2, Users, Globe, Award, ShieldCheck, HeartHandshake, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function AboutUs() {
   return (
@@ -16,9 +17,9 @@ export default function AboutUs() {
               <div className="h-px w-12 bg-brand" />
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Our Company</span>
             </div>
-            <h2 className="text-4xl lg:text-6xl font-black text-slate-900 tracking-tight mb-8 font-jakarta">
-              Empowering Growth Through <br />
-              <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl">Digital Excellence.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mb-8 font-jakarta">
+              Empowering Growth Through <span className="lg:block"></span>
+              <span className="font-display italic font-normal text-brand text-3xl sm:text-4xl lg:text-5xl">Digital Excellence.</span>
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-8">
               Are you a new business owner or a small to mid-sized company looking to establish or enhance your business operations? 
@@ -45,6 +46,22 @@ export default function AboutUs() {
                 </div>
               ))}
             </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="mt-12"
+            >
+              <Link 
+                to="/why-manomay" 
+                className="group inline-flex items-center gap-3 bg-brand text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 active:scale-95 translate-y-0 hover:-translate-y-1"
+              >
+                Know More
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -67,7 +84,7 @@ export default function AboutUs() {
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-slate-900 mb-2 tracking-tight leading-[1.2]">Happy<br />Customers</div>
+                  <div className="text-2xl font-bold text-slate-900 mb-2 tracking-tight leading-[1.2]">Happy<br />Customers</div>
                   <div className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Across Countries</div>
                 </div>
               </motion.div>
@@ -75,13 +92,13 @@ export default function AboutUs() {
               <motion.div 
                 whileHover={{ y: -10 }}
                 transition={{ delay: 0.1 }}
-                className="bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between h-64 mt-12"
+                className="bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between min-h-[256px] h-auto lg:mt-12"
               >
                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-brand mb-4">
                   <Globe className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-white mb-2 tracking-tight leading-[1.2]">Seamless<br />Integration</div>
+                  <div className="text-2xl font-bold text-white mb-2 tracking-tight leading-[1.2]">Seamless<br />Integration</div>
                   <div className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] mt-1">Flawless Execution</div>
                 </div>
               </motion.div>
@@ -89,7 +106,7 @@ export default function AboutUs() {
               <motion.div 
                 whileHover={{ y: -10 }}
                 transition={{ delay: 0.2 }}
-                className="bg-brand p-8 rounded-[2.5rem] shadow-2xl shadow-brand/30 flex flex-col justify-between h-64 -mt-12"
+                className="bg-brand p-8 rounded-[2.5rem] shadow-2xl shadow-brand/30 flex flex-col justify-between min-h-[256px] h-auto lg:-mt-12"
               >
                 <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-white mb-4">
                   <ShieldCheck className="w-6 h-6" />

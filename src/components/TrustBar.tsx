@@ -4,8 +4,8 @@ import { ShieldCheck, Globe, Clock, Trophy } from "lucide-react";
 export default function TrustBar() {
   const stats = [
     { 
-      label: "Official Odoo & NetSuite", 
-      value: "Implementation Partner",
+      label: "Odoo & NetSuite ERP", 
+      value: "Implementation Specialist",
       icon: <ShieldCheck className="w-5 h-5" />
     },
     { 

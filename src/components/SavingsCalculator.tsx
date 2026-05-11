@@ -15,8 +15,8 @@ export default function SavingsCalculator() {
     <section id="calculator" className="py-24 bg-slate-50">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-black text-slate-900 mb-6 font-jakarta tracking-tight">
-            Efficiency <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl ml-2">Audit.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6 font-jakarta tracking-tight text-center">
+            Efficiency <span className="font-display italic font-normal text-brand text-3xl sm:text-4xl lg:text-5xl ml-2">Audit.</span>
           </h2>
           <p className="text-slate-600">
             Estimate the potential impact of a unified Odoo & NetSuite architecture on your operations.
@@ -57,14 +57,14 @@ export default function SavingsCalculator() {
               </div>
             </div>
 
-            <div className="bg-slate-900 rounded-2xl p-8 text-center relative overflow-hidden">
+            <div className="bg-slate-900 rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-brand" />
-              <div className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Estimated Annual Savings</div>
+              <div className="text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-4">Estimated Annual Savings</div>
               <motion.div
                 key={annualSavings}
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className="text-5xl font-bold text-white mb-2"
+                className="text-xl sm:text-3xl md:text-5xl font-bold text-white mb-2 overflow-hidden text-ellipsis whitespace-nowrap px-1"
               >
                 ${annualSavings}
               </motion.div>

@@ -54,8 +54,8 @@ const slides: Slide[] = [
     description: "Streamline your entire business with Odoo's fully integrated, highly customizable suite of applications. We deliver scalable architectures designed to adapt effortlessly as your company grows.",
     cta1: "Explore Odoo Services",
     cta1Link: "/odoo-implementations",
-    cta2: "Schedule a Demo",
-    cta2Link: "/odoo-implementations#demo",
+    cta2: "Odoo Price Calculator",
+    cta2Link: "https://www.odoo.com/pricing",
     image: "/Happ_CFO_With_Odoo.jpeg",
     imageAlt: "Successful CFO using Odoo ERP solution",
     overlayTitle: "Odoo Excellence",
@@ -119,7 +119,7 @@ export default function Hero() {
       </div>
 
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={`text-${slide.id}`}
@@ -127,18 +127,19 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
+              className="text-center lg:text-left flex flex-col items-center lg:items-start"
             >
               <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand/5 border border-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
                 {slide.tag}
               </div>
-              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-tight lg:leading-[1] tracking-tight mb-8 font-jakarta">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-slate-900 leading-tight lg:leading-[1] tracking-tight mb-8 font-jakarta">
                 <span className="block mb-2">{slide.title}</span>
-                <span className="font-display italic font-normal text-brand text-4xl lg:text-6xl xl:text-7xl">
+                <span className="font-display italic font-normal text-brand text-2xl sm:text-4xl lg:text-5xl xl:text-[3.5rem]">
                   {slide.highlightPrefix && <span className="mr-3">{slide.highlightPrefix}</span>}
                   {slide.highlight}
                 </span>
               </h1>
-              <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-xl min-h-[120px]">
+              <p className="text-base sm:text-xl text-slate-600 leading-relaxed mb-10 max-w-xl min-h-[auto] lg:min-h-[120px]">
                 {slide.description}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -206,7 +207,7 @@ export default function Hero() {
             >
               <div className="relative z-10">
                 {/* Main Image */}
-                <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-[0_20px_60px_rgba(76,29,149,0.15)] border-8 border-white">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-square shadow-[0_20px_60px_rgba(76,29,149,0.15)] border-4 sm:border-8 border-white">
                   <img 
                     src={slide.image} 
                     alt={slide.imageAlt}
@@ -216,22 +217,22 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
                   
                   {/* Image Overlay Content */}
-                  <div className="absolute bottom-8 left-8 right-8">
+                  <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8">
                     <div className="text-white">
-                      <h3 className="font-bold text-2xl mb-1">{slide.overlayTitle}</h3>
-                      <p className="text-white/80 text-sm">{slide.overlayDesc}</p>
+                      <h3 className="font-bold text-lg sm:text-2xl mb-1">{slide.overlayTitle}</h3>
+                      <p className="text-white/80 text-[10px] sm:text-sm">{slide.overlayDesc}</p>
                     </div>
                   </div>
                 </div>
                 
                 {/* Floating Stat Badge */}
-                <div className="absolute -left-16 top-16 bg-white shadow-xl shadow-slate-200/50 border border-slate-100 p-5 rounded-2xl flex-col gap-1 hidden md:flex animate-bounce-slow max-w-[200px]">
+                <div className="absolute -left-4 xl:-left-16 top-16 bg-white shadow-xl shadow-slate-200/50 border border-slate-100 p-5 rounded-2xl flex-col gap-1 hidden xl:flex animate-bounce-slow max-w-[200px]">
                   <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-tight">{slide.floatingTopLabel}</div>
                   <div className="text-xl font-bold text-brand leading-tight">{slide.floatingTopValue}</div>
                 </div>
 
                 {/* Floating Certification Badge */}
-                <div className="absolute -right-8 bottom-24 bg-white/95 backdrop-blur shadow-2xl shadow-brand/10 border border-slate-100 p-4 rounded-2xl items-center gap-4 hidden sm:flex">
+                <div className="absolute -right-4 xl:-right-8 bottom-24 bg-white/95 backdrop-blur shadow-2xl shadow-brand/10 border border-slate-100 p-4 rounded-2xl items-center gap-4 hidden lg:flex">
                   <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center">
                     <ShieldCheck className="w-6 h-6 text-brand" />
                   </div>

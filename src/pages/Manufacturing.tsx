@@ -116,26 +116,26 @@ export default function Manufacturing() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-[10px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
+                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
               >
-                 <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></div>
+                 <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
                  Production Floor Excellence
               </motion.div>
               
-              <h1 className="text-6xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] font-jakarta">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-white mb-8 tracking-tighter leading-[0.9] font-jakarta">
                 Manufacturing <br />
                 <motion.span 
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, type: "spring" }}
-                  className="font-display italic font-normal text-violet-400 inline-block"
+                  className="font-display italic font-normal text-white inline-block text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem]"
                 >
                   Optimization.
                 </motion.span>
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl">
-                Advanced MRP, PLM, and quality control systems that <span className="text-white font-medium">eliminate shop floor chaos</span> and maximize production efficiency.
+                Advanced MRP and quality control systems that <span className="text-white font-medium">eliminate shop floor chaos</span> and maximize production efficiency.
               </p>
               
               <div className="flex flex-wrap gap-6">
@@ -143,22 +143,6 @@ export default function Manufacturing() {
                   Get Started
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                
-                <div className="flex -space-x-3 items-center">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full border-4 border-[#240b45] bg-slate-800 overflow-hidden shadow-sm relative group">
-                      <img 
-                        src={`https://i.pravatar.cc/150?u=${i + 20}`} 
-                        alt="Manufacturing Expert" 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform" 
-                      />
-                    </div>
-                  ))}
-                  <div className="pl-6">
-                    <div className="text-white font-bold">100+ Factories</div>
-                    <div className="text-indigo-300 text-sm">Digitized floor operations</div>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -169,16 +153,6 @@ export default function Manufacturing() {
               className="lg:col-span-5 relative"
             >
               <div className="relative">
-                <motion.div 
-                  animate={{ y: [0, -20, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-10 -right-10 bg-white p-6 rounded-3xl shadow-xl z-20 border border-slate-100 hidden xl:block"
-                >
-                  <Factory className="w-8 h-8 text-indigo-600 mb-2" />
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Floor Uptime</div>
-                  <div className="text-lg font-black text-slate-900">99.8%</div>
-                </motion.div>
-
                 <div className="relative aspect-square">
                   <div className="absolute inset-0 bg-indigo-600 rounded-full blur-[80px] opacity-20 animate-pulse"></div>
                   <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-2xl bg-white border-[12px] border-white z-10">
@@ -203,8 +177,8 @@ export default function Manufacturing() {
             <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center justify-center gap-3">
               <div className="w-12 h-1.5 bg-gradient-to-r from-brand to-indigo-500 rounded-full"></div> Operational Reality
             </h2>
-            <h3 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">
-              Unforgiving margins <br className="hidden md:block"/> <span className="font-display italic font-normal text-indigo-600">No room for error.</span>
+            <h3 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">
+              Unforgiving margins <br className="hidden md:block"/> <span className="font-display italic font-normal text-brand">No room for error.</span>
             </h3>
             <p className="text-xl text-slate-600 leading-relaxed font-light">
               Every hour your production line sits idle costs money. Every defect caught too late costs customers. Every missed delivery costs a relationship.
@@ -252,8 +226,8 @@ export default function Manufacturing() {
               <h2 className="text-sm font-bold tracking-widest text-indigo-600 uppercase mb-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-indigo-600"></div> Unified Manufacturing
               </h2>
-              <h3 className="text-5xl font-black mb-8 tracking-tight text-slate-900 font-jakarta">
-                How Odoo <span className="font-display italic font-normal text-indigo-600">Connects Operations.</span>
+              <h3 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight text-slate-900 font-jakarta">
+                How Odoo <span className="font-display italic font-normal text-brand">Connects Operations.</span>
               </h3>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed font-light">
                 Connect planning, production, procurement, quality, and costing in one system. The MRP engine handles the math so your team can focus on production.
@@ -300,7 +274,7 @@ export default function Manufacturing() {
       <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 font-jakarta">Why Manomay?</h2>
-          <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight font-jakarta">
+          <h3 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight font-jakarta">
             Technical <span className="font-display italic font-normal text-brand">Factory Partners.</span>
           </h3>
         </div>
@@ -342,8 +316,8 @@ export default function Manufacturing() {
       {/* CTA Section */}
       <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12 bg-slate-50 rounded-[4rem] mb-24 mx-4">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight font-jakarta">
-            Stop the <span className="font-display italic font-normal text-indigo-600">Production Guesswork.</span>
+          <h2 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 tracking-tight font-jakarta">
+            Stop the <span className="font-display italic font-normal text-brand">Production Guesswork.</span>
           </h2>
           <p className="text-xl text-slate-600 mb-12 font-light leading-relaxed">
             Your factory deserves a system that tracks reality in real time. Let's build your unified manufacturing backbone.

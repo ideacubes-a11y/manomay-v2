@@ -2,8 +2,9 @@ import { motion } from "motion/react";
 import { 
   Users, ShoppingCart, Package, Factory, Calculator, 
   Globe, Layout, Smartphone, BarChart3, Settings,
-  Clock, Briefcase, HeartHandshake, ShieldCheck
+  Clock, Briefcase, HeartHandshake, ShieldCheck, ArrowRight
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const moduleCategories = [
   {
@@ -58,9 +59,9 @@ export default function OdooModules() {
               <div className="h-px w-12 bg-brand" />
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Comprehensive Ecosystem</span>
             </div>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tight mb-6 font-jakarta">
-              The Full Power of <br />
-              <span className="text-brand italic font-display font-normal text-4xl lg:text-6xl">Odoo & NetSuite.</span>
+            <h2 className="text-3xl lg:text-5xl font-black tracking-tight mb-6 font-jakarta text-white">
+              The Full Power of <br className="hidden sm:block" />
+              <span className="text-brand italic font-display font-normal text-3xl lg:text-5xl">Odoo & NetSuite.</span>
             </h2>
             <p className="text-slate-400 text-xl leading-relaxed">
               We implement the entire Odoo & NetSuite ecosystem, ensuring every module is perfectly synchronized with your business logic.
@@ -111,6 +112,20 @@ export default function OdooModules() {
         </div>
 
         <div className="mt-20 pt-20 border-t border-white/10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <Link 
+              to="/odoo-implementations#why-manomay" 
+              className="inline-flex items-center gap-3 bg-brand text-white px-10 py-5 rounded-2xl text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95 translate-y-0 hover:-translate-y-1"
+            >
+              Learn Why Manomay is the Best Partner
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+          </motion.div>
           <p className="text-slate-500 text-sm uppercase tracking-[0.2em] font-bold mb-8">Trusted by industry leaders worldwide</p>
           <div className="flex flex-wrap justify-center gap-12 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
             {/* Placeholder for partner logos */}

@@ -42,7 +42,9 @@ export default function Navbar() {
       isAnchor: true,
       subLinks: [
         { name: "Odoo Implementations", path: "/odoo-implementations" },
-        { name: "NetSuite Implementations", path: "/netsuite-implementations" }
+        { name: "Odoo POS Solutions", path: "/solutions/odoo-pos" },
+        { name: "NetSuite Implementations", path: "/netsuite-implementations" },
+        { name: "Odoo Pricing", path: "https://www.odoo.com/pricing", isExternal: true }
       ]
     },
     { 
@@ -51,7 +53,9 @@ export default function Navbar() {
       isAnchor: true,
       subLinks: [
         { name: "Retail & E-commerce", path: "/industries/retail-ecommerce" },
-        { name: "Manufacturing", path: "/industries/manufacturing" }
+        { name: "Manufacturing", path: "/industries/manufacturing" },
+        { name: "IT & Professional Services", path: "/industries/it-professional-services" },
+        { name: "CRM & HelpDesk", path: "/industries/crm-helpdesk" }
       ]
     },
     { name: "Modules", path: "/#modules", isAnchor: true },
@@ -80,13 +84,25 @@ export default function Navbar() {
                 <div className="absolute top-full -left-4 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
                   <div className="bg-white rounded-xl shadow-xl shadow-slate-200/50 border border-slate-100 p-2 w-64 flex flex-col">
                     {link.subLinks.map((sub) => (
-                      <Link 
-                        key={sub.name}
-                        to={sub.path} 
-                        className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-lg transition-colors"
-                      >
-                        {sub.name}
-                      </Link>
+                      sub.isExternal ? (
+                        <a 
+                          key={sub.name}
+                          href={sub.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-lg transition-colors"
+                        >
+                          {sub.name}
+                        </a>
+                      ) : (
+                        <Link 
+                          key={sub.name}
+                          to={sub.path} 
+                          className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-lg transition-colors"
+                        >
+                          {sub.name}
+                        </Link>
+                      )
                     ))}
                   </div>
                 </div>
@@ -152,15 +168,29 @@ export default function Navbar() {
                     {link.subLinks && (
                       <div className="grid gap-4 pl-4 mt-2">
                         {link.subLinks.map((sub) => (
-                          <Link 
-                            key={sub.name}
-                            to={sub.path} 
-                            className="text-xl font-medium text-slate-500 hover:text-brand flex items-center gap-3"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <ChevronRight size={18} className="text-brand" />
-                            {sub.name}
-                          </Link>
+                          sub.isExternal ? (
+                            <a 
+                              key={sub.name}
+                              href={sub.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xl font-medium text-slate-500 hover:text-brand flex items-center gap-3"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <ChevronRight size={18} className="text-brand" />
+                              {sub.name}
+                            </a>
+                          ) : (
+                            <Link 
+                              key={sub.name}
+                              to={sub.path} 
+                              className="text-xl font-medium text-slate-500 hover:text-brand flex items-center gap-3"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <ChevronRight size={18} className="text-brand" />
+                              {sub.name}
+                            </Link>
+                          )
                         ))}
                       </div>
                     )}

@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ShoppingBag, Factory, Laptop, HeartHandshake } from "lucide-react";
+import { ShoppingBag, Factory, Laptop, Users } from "lucide-react";
 
 const industries = [
   {
@@ -21,15 +21,15 @@ const industries = [
     name: "IT & Professional Services",
     description: "Project management, timesheets, and automated billing to maximize billable hours and resource allocation.",
     icon: Laptop,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-    link: "/contact"
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
+    link: "/industries/it-professional-services"
   },
   {
     name: "CRM & HelpDesk",
     description: "Personalized customer journeys and rapid ticket resolution systems to build long-term brand loyalty.",
-    icon: HeartHandshake,
+    icon: Users,
     image: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80&w=800",
-    link: "/contact"
+    link: "/industries/crm-helpdesk"
   }
 ];
 
@@ -43,8 +43,8 @@ export default function Industries() {
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand">Specialization</span>
             <div className="h-px w-12 bg-brand" />
           </div>
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6 font-jakarta">
-            Industries We <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Transform.</span>
+          <h2 className="text-2xl sm:text-5xl lg:text-5xl font-black text-slate-900 tracking-tight mb-6 font-jakarta">
+            Industries We <span className="font-display italic font-normal text-brand text-2xl sm:text-5xl lg:text-5xl">Transform.</span>
           </h2>
           <p className="text-slate-500 text-xl leading-relaxed">
             Deep domain expertise across sectors where operational complexity meets high-growth potential.
@@ -73,7 +73,7 @@ export default function Industries() {
                   <div className="w-12 h-12 bg-brand/20 backdrop-blur-md rounded-xl flex items-center justify-center text-brand mb-6 border border-brand/30">
                     <industry.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-3 tracking-tight">
+                  <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
                     {industry.name}
                   </h3>
                   <p className="text-white/70 leading-relaxed max-w-md">

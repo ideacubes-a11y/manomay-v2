@@ -92,27 +92,27 @@ export default function RetailEcommerce() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 text-[10px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
+                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
               >
-                 <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></div>
+                 <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
                  Retail Future Ready
               </motion.div>
               
-              <h1 className="text-6xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] font-jakarta">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-white mb-8 tracking-tighter leading-[0.9] font-jakarta">
                 Retail & <br />
                 E-commerce <br />
                 <motion.span 
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, type: "spring" }}
-                  className="font-display italic font-normal text-violet-400 inline-block"
+                  className="font-display italic font-normal text-white inline-block text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem]"
                 >
                   Optimization.
                 </motion.span>
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl">
-                We don't just "install" software. We architect <span className="text-white font-medium">high-velocity omnichannel ecosystems</span> that turn inventory into profit.
+                We design <span className="text-white font-medium">high-velocity omnichannel ecosystems</span> that turn inventory into profit across every touchpoint.
               </p>
               
               <div className="flex flex-wrap gap-6">
@@ -120,22 +120,6 @@ export default function RetailEcommerce() {
                   Get Started
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                
-                <div className="flex -space-x-3 items-center">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full border-4 border-[#240b45] bg-slate-800 overflow-hidden shadow-sm relative group">
-                      <img 
-                        src={`https://i.pravatar.cc/150?u=${i + 10}`} 
-                        alt="Retail Expert" 
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform" 
-                      />
-                    </div>
-                  ))}
-                  <div className="pl-6">
-                    <div className="text-white font-bold">50+ Retailers</div>
-                    <div className="text-slate-400 text-sm">Transformed this year</div>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -146,27 +130,6 @@ export default function RetailEcommerce() {
               className="lg:col-span-5 relative"
             >
               <div className="relative">
-                {/* Decorative Elements */}
-                <motion.div 
-                  animate={{ y: [0, -20, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-10 -left-10 bg-white p-6 rounded-3xl shadow-xl z-20 border border-slate-100 hidden xl:block"
-                >
-                  <Package className="w-8 h-8 text-brand mb-2" />
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Inventory</div>
-                  <div className="text-lg font-black text-slate-900">Syncing...</div>
-                </motion.div>
-
-                <motion.div 
-                  animate={{ y: [0, 20, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-10 -right-10 bg-white p-6 rounded-3xl shadow-xl z-20 border border-slate-100 hidden xl:block"
-                >
-                  <BarChart3 className="w-8 h-8 text-violet-500 mb-2" />
-                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Profit</div>
-                  <div className="text-lg font-black text-slate-900">+24.5%</div>
-                </motion.div>
-
                 <div className="relative aspect-square">
                   <div className="absolute inset-0 bg-brand rounded-full blur-[80px] opacity-20 animate-pulse"></div>
                   <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-2xl bg-white border-[12px] border-white z-10">
@@ -191,8 +154,8 @@ export default function RetailEcommerce() {
             <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center justify-center gap-3">
               <div className="w-12 h-1.5 bg-gradient-to-r from-brand to-violet-500 rounded-full"></div> The Reality Check
             </h2>
-            <h3 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">
-              Spreadsheets are <br className="hidden md:block"/> <span className="font-display italic font-normal text-violet-600">Silent Profit Killers.</span>
+            <h3 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">
+              Spreadsheets are <br className="hidden md:block"/> <span className="font-display italic font-normal text-brand">Silent Profit Killers.</span>
             </h3>
             <p className="text-xl text-slate-600 leading-relaxed font-light">
               If your inventory lives in a spreadsheet, your POS is one system, and your online store is another — you are losing money every single day without knowing it.
@@ -240,8 +203,8 @@ export default function RetailEcommerce() {
               <h2 className="text-sm font-bold tracking-widest text-violet-600 uppercase mb-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-violet-600"></div> Unified Commerce
               </h2>
-              <h3 className="text-5xl font-black mb-8 tracking-tight text-slate-900 font-jakarta">
-                How Odoo <span className="font-display italic font-normal text-violet-600">Solves Complexity.</span>
+              <h3 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight text-slate-900 font-jakarta">
+                How Odoo <span className="font-display italic font-normal text-brand">Solves Complexity.</span>
               </h3>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed font-light">
                 Odoo connects your physical store, online shop, warehouse, and accounts into one real-time platform. No more manual syncs, no more guessing game.
@@ -288,7 +251,7 @@ export default function RetailEcommerce() {
       <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 font-jakarta">Why Manomay?</h2>
-          <h3 className="text-5xl lg:text-6xl font-black text-slate-900 tracking-tight font-jakarta">
+          <h3 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight font-jakarta">
             Strategic <span className="font-display italic font-normal text-brand">Retail Partners.</span>
           </h3>
         </div>
@@ -316,8 +279,8 @@ export default function RetailEcommerce() {
               icon: <LifeBuoy className="w-6 h-6 text-brand" />
             },
             {
-              title: "Local India Expertise",
-              desc: "We understand Indian business practices — GST, local vendors, regional logistics — and implement Odoo to match how your business actually runs.",
+              title: "Global Market Expertise",
+              desc: "We understand global business practices — Sales Tax/VAT compliance, international logistics, and multi-region operations — and implement Odoo to match how your business actually runs.",
               icon: <Globe className="w-6 h-6 text-brand" />
             }
           ].map((adv, idx) => (
@@ -356,8 +319,8 @@ export default function RetailEcommerce() {
       {/* CTA Section */}
       <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12 bg-slate-50 rounded-[4rem] mb-24 mx-4">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight font-jakarta">
-            Ditch the <span className="font-display italic font-normal text-violet-600">Manual Chaos.</span>
+          <h2 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 tracking-tight font-jakarta">
+            Ditch the <span className="font-display italic font-normal text-brand">Manual Chaos.</span>
           </h2>
           <p className="text-xl text-slate-600 mb-12 font-light leading-relaxed">
             Your retail business deserves a system that works for you, not against you. Let's build a smarter omnichannel foundation.
