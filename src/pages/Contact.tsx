@@ -97,7 +97,7 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 text-brand text-xs font-bold uppercase tracking-widest mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-slate-50 border border-slate-200 text-brand text-sm font-bold uppercase tracking-widest mb-10 shadow-sm">
               <Mail className="w-4 h-4" /> Get In Touch
             </div>
             <h1 className="text-5xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1] font-jakarta">

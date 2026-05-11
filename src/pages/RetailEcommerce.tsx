@@ -92,9 +92,9 @@ export default function RetailEcommerce() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
+                className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-violet-500/10 border border-violet-500/20 text-white text-[13px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
               >
-                 <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                 <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></div>
                  Retail Future Ready
               </motion.div>
               
@@ -116,7 +116,7 @@ export default function RetailEcommerce() {
               </p>
               
               <div className="flex flex-wrap gap-6">
-                <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 hover:scale-105 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group">
+                <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group active:scale-95">
                   Get Started
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
@@ -326,9 +326,9 @@ export default function RetailEcommerce() {
             Your retail business deserves a system that works for you, not against you. Let's build a smarter omnichannel foundation.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all flex items-center justify-center gap-2 group shadow-xl shadow-brand/20">
+            <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-brand/40 active:scale-95">
               Book Your Retail Audit
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
         </div>

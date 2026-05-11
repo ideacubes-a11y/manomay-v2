@@ -109,7 +109,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <Link to="/contact" className="bg-brand text-white px-6 py-2.5 rounded-full text-lg font-semibold hover:bg-brand/90 transition-all shadow-lg shadow-brand/20 text-center">
+          <Link to="/contact" className="bg-brand text-white px-8 py-3.5 rounded-full text-lg font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 text-center active:scale-95 group">
             Request Architecture Audit
           </Link>
         </div>
@@ -200,7 +200,7 @@ export default function Navbar() {
                 <div className="mt-8">
                   <Link 
                     to="/contact" 
-                    className="block bg-brand text-white text-center px-6 py-5 rounded-2xl text-xl font-bold shadow-2xl shadow-brand/20 transition-transform active:scale-95"
+                    className="block bg-brand text-white text-center px-10 py-5 rounded-full text-xl font-bold shadow-2xl shadow-brand/20 transition-all active:scale-95"
                     onClick={() => setIsOpen(false)}
                   >
                     Request Architecture Audit

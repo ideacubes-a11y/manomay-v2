@@ -56,10 +56,10 @@ export default function AboutUs() {
             >
               <Link 
                 to="/why-manomay" 
-                className="group inline-flex items-center gap-3 bg-brand text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 active:scale-95 translate-y-0 hover:-translate-y-1"
+                className="group inline-flex items-center gap-3 bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95 translate-y-0 hover:-translate-y-1"
               >
                 Know More
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </Link>
             </motion.div>
           </motion.div>

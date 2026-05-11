@@ -129,7 +129,7 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="text-center lg:text-left flex flex-col items-center lg:items-start"
             >
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand/5 border border-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-brand/5 border border-brand/10 text-brand text-sm font-bold uppercase tracking-widest mb-10">
                 {slide.tag}
               </div>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-slate-900 leading-tight lg:leading-[1] tracking-tight mb-8 font-jakarta">
@@ -148,27 +148,27 @@ export default function Hero() {
                     href={slide.cta1Link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-brand text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group"
+                    className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 flex items-center justify-center gap-3 group active:scale-95"
                   >
                     {slide.cta1}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                   </a>
                 ) : (
                   <Link 
                     to={slide.cta1Link}
-                    className="bg-brand text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group"
+                    className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 flex items-center justify-center gap-3 group active:scale-95"
                   >
                     {slide.cta1}
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                   </Link>
                 )}
                 
                 {slide.cta2Link?.startsWith('/') ? (
-                  <Link to={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 transition-all flex items-center justify-center">
+                  <Link to={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center gap-2 group active:scale-95">
                     {slide.cta2}
                   </Link>
                 ) : (
-                  <a href={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-slate-50 transition-all flex items-center justify-center">
+                  <a href={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center gap-2 group active:scale-95">
                     {slide.cta2}
                   </a>
                 )}

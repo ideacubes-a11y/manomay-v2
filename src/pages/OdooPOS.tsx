@@ -127,7 +127,7 @@ export default function OdooPOS() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-brand text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-6 lg:mb-8 shadow-sm justify-center">
+              <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-white border border-slate-200 text-brand text-sm font-bold uppercase tracking-widest mb-10 shadow-sm justify-center">
                  <Store className="w-3.5 h-3.5 text-brand" /> Odoo Point of Sale
               </div>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-slate-900 mb-6 tracking-tight leading-tight lg:leading-[1] font-jakarta">
@@ -140,9 +140,9 @@ export default function OdooPOS() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
-                <Link to="/contact" className="bg-brand text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 flex items-center justify-center gap-2 group">
+                <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 flex items-center justify-center gap-3 group active:scale-95">
                   Book a Free Demo
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
 
@@ -441,12 +441,12 @@ export default function OdooPOS() {
                     href="https://www.odoo.com/pricing" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-brand text-white px-8 py-4 rounded-full font-bold hover:bg-brand/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-brand/20 group text-lg"
+                    className="bg-brand text-white px-10 py-5 rounded-full font-bold hover:bg-brand/90 transition-all flex items-center justify-center gap-3 shadow-2xl shadow-brand/20 group text-xl active:scale-95"
                   >
                     Use Odoo Price Calculator
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                   </a>
-                  <Link to="/contact" className="bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition-all text-center text-lg">
+                  <Link to="/contact" className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full font-bold hover:bg-slate-50 transition-all text-center text-xl active:scale-95">
                     Get Implementation Quote
                   </Link>
                 </div>
@@ -616,9 +616,9 @@ export default function OdooPOS() {
               Don't let legacy POS systems hold you back. Experience the power of unified retail and restaurant operations with Odoo.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/contact" className="bg-white text-brand px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-xl">
+              <Link to="/contact" className="bg-white text-brand px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-3 shadow-xl active:scale-95 group">
                 Get a Custom Quote
-                <ArrowRight className="w-6 h-6" />
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
           </div>

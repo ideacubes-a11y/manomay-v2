@@ -86,12 +86,12 @@ export default function WhyManomay() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand/10 border border-brand/20 text-brand text-[10px] font-black uppercase tracking-[0.3em] mb-8 shadow-xl shadow-brand/20">
-              <div className="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
+            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-brand/10 border border-brand/20 text-white text-[13px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-brand/20">
+              <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></div>
               The Manomay Difference
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black mb-8 leading-[1.1] font-jakarta tracking-tight">
-              Why Choose <span className="font-display italic font-normal text-brand text-2xl sm:text-4xl lg:text-5xl">Manomay</span> as Your Odoo Partner?
+            <h1 className="text-3xl lg:text-6xl font-black mb-8 leading-[1.1] font-jakarta tracking-tight">
+              Why Choose <span className="font-display italic font-normal text-violet-400 text-3xl lg:text-6xl px-1">Manomay</span> as Your Odoo Partner?
             </h1>
             <p className="text-xl text-slate-400 font-light leading-relaxed mb-10 max-w-2xl">
               Odoo is a powerful platform, but success depends on the partner who implements it. We specialize in perfect implementation and post-implementation services for growing businesses.
@@ -111,17 +111,22 @@ export default function WhyManomay() {
             {targetSegments.map((segment, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500"
+                transition={{ delay: idx * 0.15, duration: 0.6 }}
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 hover:shadow-2xl hover:shadow-brand/10 transition-all duration-500 group"
               >
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6">
+                <motion.div 
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.8 }}
+                  className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand/5 group-hover:text-brand transition-colors"
+                >
                   {segment.icon}
-                </div>
-                <h4 className="text-2xl font-bold text-slate-900 mb-4">{segment.title}</h4>
-                <p className="text-slate-600 leading-relaxed font-medium">{segment.desc}</p>
+                </motion.div>
+                <h4 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors">{segment.title}</h4>
+                <p className="text-slate-600 leading-relaxed font-medium group-hover:text-slate-700 transition-colors">{segment.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -135,21 +140,25 @@ export default function WhyManomay() {
             {features.map((feature, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="grid lg:grid-cols-12 gap-12 py-16 items-center hover:bg-slate-50/50 transition-colors p-8 rounded-[2rem]"
+                viewport={{ once: true, margin: "-100px" }}
+                whileHover={{ x: idx % 2 === 0 ? 10 : -10 }}
+                className="grid lg:grid-cols-12 gap-12 py-16 items-center hover:bg-slate-50/80 transition-all duration-500 p-8 rounded-[2rem] group cursor-default"
               >
                 <div className="lg:col-span-1">
-                  <div className="w-16 h-16 bg-brand text-white rounded-2xl flex items-center justify-center shadow-lg shadow-brand/20">
+                  <motion.div 
+                    whileHover={{ rotate: 12, scale: 1.1 }}
+                    className="w-16 h-16 bg-brand text-white rounded-2xl flex items-center justify-center shadow-lg shadow-brand/20 group-hover:shadow-brand/40 transition-all duration-500"
+                  >
                     {feature.icon}
-                  </div>
+                  </motion.div>
                 </div>
                 <div className="lg:col-span-11">
-                  <h4 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 tracking-tight">
+                  <h4 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-brand transition-colors duration-500">
                     {feature.title}
                   </h4>
-                  <p className="text-xl text-slate-600 font-light leading-relaxed max-w-4xl">
+                  <p className="text-xl text-slate-600 font-light leading-relaxed max-w-4xl group-hover:text-slate-900 transition-colors duration-500">
                     {feature.description}
                   </p>
                 </div>
@@ -181,29 +190,34 @@ export default function WhyManomay() {
                   "Version Upgrade Roadmap"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center">
-                      <CheckCircle2 className="w-4 h-4 text-brand" />
+                    <div className="w-6 h-6 rounded-full bg-brand/20 flex items-center justify-center group/check">
+                      <CheckCircle2 className="w-4 h-4 text-brand transform group-hover:scale-110 transition-transform" />
                     </div>
                     <span className="text-lg font-medium">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-white/5 border border-white/10 p-12 rounded-[3rem] backdrop-blur-sm relative overflow-hidden group">
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-brand/10 rounded-full blur-[80px] -z-10 group-hover:bg-brand/20 transition-all duration-700"></div>
-              <ShieldCheck className="w-16 h-16 text-brand mb-8" />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-white/5 border border-white/10 p-12 rounded-[3rem] backdrop-blur-sm relative overflow-hidden group hover:bg-white/[0.08] transition-all duration-500"
+            >
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-brand/10 rounded-full blur-[80px] -z-10 group-hover:bg-brand/30 group-hover:scale-125 transition-all duration-1000"></div>
+              <ShieldCheck className="w-16 h-16 text-brand mb-8 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500" />
               <h4 className="text-3xl font-bold mb-6">Post-Implementation Peace of Mind</h4>
               <p className="text-slate-400 text-lg leading-relaxed mb-10">
                 Our support isn't a call center; it's a dedicated team of experts who understand your specific configuration and business logic.
               </p>
               <Link 
                 to="/contact" 
-                className="inline-flex items-center gap-3 bg-brand text-white px-8 py-4 rounded-xl font-bold hover:bg-brand/90 transition-all group/btn"
+                className="inline-flex items-center gap-3 bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95 group"
               >
                 Schedule a Consultation
-                <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -215,15 +229,17 @@ export default function WhyManomay() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link 
               to="/contact" 
-              className="w-full sm:w-auto bg-slate-900 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-slate-800 transition-all shadow-xl active:scale-95"
+              className="w-full sm:w-auto bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95 flex items-center justify-center gap-3 group"
             >
               Get Started Now
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
             <Link 
               to="/odoo-implementations" 
-              className="w-full sm:w-auto bg-white border-2 border-slate-900 text-slate-900 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-slate-50 transition-all active:scale-95"
+              className="w-full sm:w-auto bg-white border border-slate-200 text-slate-900 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all active:scale-95 flex items-center justify-center gap-3 group"
             >
               View Methodologies
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
         </div>

@@ -106,9 +106,9 @@ const CRMHelpDesk = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-brand/10 border border-brand/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-brand/20"
+                className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-brand/10 border border-brand/20 text-white text-[13px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-brand/20"
               >
-                 <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                 <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></div>
                  Relationship Management
               </motion.div>
               
@@ -129,7 +129,7 @@ const CRMHelpDesk = () => {
               </p>
               
               <div className="flex flex-wrap gap-6">
-                <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 hover:scale-105 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group">
+                <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group active:scale-95">
                   Design My Customer Journey
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
@@ -286,17 +286,18 @@ const CRMHelpDesk = () => {
             Ready to deliver the seamless, personalized experience your customers expect?
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20">
+            <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95 group flex items-center justify-center gap-3">
               Audit My Customer Experience
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
             <a 
               href="https://www.odoo.com/pricing" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+              className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-3 active:scale-95 group"
             >
               Odoo Pricing
-              <ArrowRight className="w-6 h-6 text-brand" />
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
         </div>
