@@ -164,11 +164,11 @@ export default function Hero() {
                 )}
                 
                 {slide.cta2Link?.startsWith('/') ? (
-                  <Link to={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center gap-2 group active:scale-95">
+                  <Link to={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-white hover:border-slate-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex items-center justify-center gap-2 group active:scale-95">
                     {slide.cta2}
                   </Link>
                 ) : (
-                  <a href={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center gap-2 group active:scale-95">
+                  <a href={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-white hover:border-slate-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex items-center justify-center gap-2 group active:scale-95">
                     {slide.cta2}
                   </a>
                 )}
@@ -176,7 +176,10 @@ export default function Hero() {
               
               {/* Slider Controls */}
               <div className="flex items-center gap-4">
-                <button onClick={prevSlide} className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-brand hover:border-brand transition-colors">
+                <button 
+                  onClick={prevSlide} 
+                  className="w-12 h-12 rounded-full border border-slate-200 bg-white/50 backdrop-blur-sm shadow-sm flex items-center justify-center text-slate-400 hover:text-brand hover:border-brand hover:bg-white hover:-translate-y-0.5 hover:shadow-md transition-all"
+                >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <div className="flex gap-2">
@@ -189,7 +192,10 @@ export default function Hero() {
                     />
                   ))}
                 </div>
-                <button onClick={nextSlide} className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-brand hover:border-brand transition-colors">
+                <button 
+                  onClick={nextSlide} 
+                  className="w-12 h-12 rounded-full border border-slate-200 bg-white/50 backdrop-blur-sm shadow-sm flex items-center justify-center text-slate-400 hover:text-brand hover:border-brand hover:bg-white hover:-translate-y-0.5 hover:shadow-md transition-all"
+                >
                   <ChevronRight className="w-6 h-6" />
                 </button>
               </div>

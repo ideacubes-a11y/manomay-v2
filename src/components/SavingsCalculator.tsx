@@ -70,10 +70,10 @@ export default function SavingsCalculator() {
               </motion.div>
               <div className="text-brand font-semibold text-sm mb-8">Potential ROI in Year 1</div>
               
-              <Link to="/contact" className="w-full bg-white text-slate-900 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
-                <Calculator className="w-5 h-5" />
-                Get Detailed Audit
-              </Link>
+                  <Link to="/contact" className="w-full bg-white text-slate-900 py-4 rounded-xl font-bold hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 active:scale-95">
+                    <Calculator className="w-5 h-5" />
+                    Get Detailed Audit
+                  </Link>
             </div>
           </div>
           

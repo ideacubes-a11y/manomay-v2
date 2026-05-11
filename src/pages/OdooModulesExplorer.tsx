@@ -962,10 +962,10 @@ export default function OdooModulesExplorer() {
               <h4 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 px-4">Categories</h4>
               <nav className="space-y-2">
                 <motion.button 
-                  whileHover={{ x: 5 }}
+                  whileHover={{ x: 5, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleCategoryChange("all")}
-                  className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all ${selectedCategory === "all" ? 'bg-brand text-white shadow-xl shadow-brand/40 scale-[1.02]' : 'bg-white border border-slate-100 text-slate-600 hover:bg-slate-50'}`}
+                  className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all ${selectedCategory === "all" ? 'bg-brand text-white shadow-xl shadow-brand/40 scale-[1.02]' : 'bg-white border border-slate-100 text-slate-600 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50'}`}
                 >
                   <span className="flex items-center gap-3">
                     <Sparkles className="w-5 h-5" /> All Modules
@@ -975,10 +975,10 @@ export default function OdooModulesExplorer() {
                 {categories.map((cat) => (
                   <motion.button 
                     key={cat.id}
-                    whileHover={{ x: 5 }}
+                    whileHover={{ x: 5, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleCategoryChange(cat.id)}
-                    className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all border-l-4 ${selectedCategory === cat.id ? `bg-white border-brand text-brand shadow-xl shadow-slate-200/50 scale-[1.02]` : 'bg-white border-transparent text-slate-600 hover:bg-slate-50'}`}
+                    className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all border-l-4 ${selectedCategory === cat.id ? `bg-white border-brand text-brand shadow-xl shadow-slate-200/50 scale-[1.02]` : 'bg-white border-transparent text-slate-600 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50'}`}
                   >
                     <span className="flex items-center gap-3">
                       <span className={`${cat.color} ${selectedCategory === cat.id ? 'text-white' : 'bg-opacity-10 text-brand'} w-8 h-8 rounded-lg flex items-center justify-center transition-colors`}>
