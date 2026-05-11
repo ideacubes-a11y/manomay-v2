@@ -16,6 +16,7 @@ import Manufacturing from "./pages/Manufacturing";
 import ITProfessionalServices from "./pages/ITProfessionalServices";
 import CRMHelpDesk from "./pages/CRMHelpDesk";
 import WhyManomay from "./pages/WhyManomay";
+import OdooModulesExplorer from "./pages/OdooModulesExplorer";
 import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/netsuite-implementations" element={<NetSuite />} />
           <Route path="/odoo-implementations" element={<Odoo />} />
+          <Route path="/odoo-modules" element={<OdooModulesExplorer />} />
           <Route path="/solutions/odoo-pos" element={<OdooPOS />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/industries/retail-ecommerce" element={<RetailEcommerce />} />

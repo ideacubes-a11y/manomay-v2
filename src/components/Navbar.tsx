@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { 
+  Menu, X, ChevronRight, ChevronDown,
+  Layers, Store, Settings, Calculator,
+  ShoppingBag, Factory, Briefcase, LifeBuoy,
+  Sparkles, Layout
+} from "lucide-react";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -41,10 +47,37 @@ export default function Navbar() {
       path: "/#solutions", 
       isAnchor: true,
       subLinks: [
-        { name: "Odoo Implementations", path: "/odoo-implementations" },
-        { name: "Odoo POS Solutions", path: "/solutions/odoo-pos" },
-        { name: "NetSuite Implementations", path: "/netsuite-implementations" },
-        { name: "Odoo Pricing", path: "https://www.odoo.com/pricing", isExternal: true }
+        { 
+          name: "Odoo Modules Explorer", 
+          path: "/odoo-modules",
+          icon: <Sparkles className="w-5 h-5" />,
+          description: "Complete list of Odoo modules deeply explained."
+        },
+        { 
+          name: "Odoo Implementations", 
+          path: "/odoo-implementations",
+          icon: <Layers className="w-5 h-5" />,
+          description: "Full-scale ERP deployment for scaling enterprises."
+        },
+        { 
+          name: "Odoo POS Solutions", 
+          path: "/solutions/odoo-pos",
+          icon: <Store className="w-5 h-5" />,
+          description: "Unified retail & restaurant management across channels."
+        },
+        { 
+          name: "NetSuite Implementations", 
+          path: "/netsuite-implementations",
+          icon: <Settings className="w-5 h-5" />,
+          description: "Premium Oracle NetSuite integrations for complex ops."
+        },
+        { 
+          name: "Odoo Pricing", 
+          path: "https://www.odoo.com/pricing", 
+          isExternal: true,
+          icon: <Calculator className="w-5 h-5" />,
+          description: "Transparent cost analysis for your architecture."
+        }
       ]
     },
     { 
@@ -52,13 +85,45 @@ export default function Navbar() {
       path: "/#industries", 
       isAnchor: true,
       subLinks: [
-        { name: "Retail & E-commerce", path: "/industries/retail-ecommerce" },
-        { name: "Manufacturing", path: "/industries/manufacturing" },
-        { name: "IT & Professional Services", path: "/industries/it-professional-services" },
-        { name: "CRM & HelpDesk", path: "/industries/crm-helpdesk" }
+        { 
+          name: "Retail & E-commerce", 
+          path: "/industries/retail-ecommerce",
+          icon: <ShoppingBag className="w-5 h-5" />,
+          description: "Omnichannel growth for high-volume storefronts."
+        },
+        { 
+          name: "Manufacturing", 
+          path: "/industries/manufacturing",
+          icon: <Factory className="w-5 h-5" />,
+          description: "Lean production systems & floor intelligence."
+        },
+        { 
+          name: "IT & Professional Services", 
+          path: "/industries/it-professional-services",
+          icon: <Briefcase className="w-5 h-5" />,
+          description: "Streamlined resources & project profitability."
+        },
+        { 
+          name: "CRM & HelpDesk", 
+          path: "/industries/crm-helpdesk",
+          icon: <LifeBuoy className="w-5 h-5" />,
+          description: "Enterprise-grade relationship & support ecosystems."
+        }
       ]
     },
-    { name: "Modules", path: "/#modules", isAnchor: true },
+    { 
+      name: "Modules", 
+      path: "/#modules", 
+      isAnchor: true,
+      subLinks: [
+        { 
+          name: "Odoo Modules Explorer", 
+          path: "/odoo-modules",
+          icon: <Layout className="w-5 h-5" />,
+          description: "Complete list of Odoo modules deeply explained."
+        }
+      ]
+    },
   ];
 
   return (
@@ -69,44 +134,89 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <div key={link.name} className="relative group">
+            <div 
+              key={link.name} 
+              className="relative py-4"
+              onMouseEnter={() => setActiveDropdown(link.name)}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
               {link.isAnchor ? (
-                <a href={link.path} className="text-lg font-medium text-slate-600 hover:text-brand transition-colors py-2 flex items-center gap-1">
+                <a href={link.path} className="text-lg font-bold text-slate-600 hover:text-brand transition-colors flex items-center gap-1.5 group/link">
                   {link.name}
+                  {link.subLinks && <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover/link:w-full"></span>
                 </a>
               ) : (
-                <Link to={link.path} className="text-lg font-medium text-slate-600 hover:text-brand transition-colors py-2">
+                <Link to={link.path} className="text-lg font-bold text-slate-600 hover:text-brand transition-colors relative group/link">
                   {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-brand transition-all duration-300 group-hover/link:w-full"></span>
                 </Link>
               )}
               
-              {link.subLinks && (
-                <div className="absolute top-full -left-4 pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
-                  <div className="bg-white rounded-xl shadow-xl shadow-slate-200/50 border border-slate-100 p-2 w-64 flex flex-col">
-                    {link.subLinks.map((sub) => (
-                      sub.isExternal ? (
-                        <a 
-                          key={sub.name}
-                          href={sub.path}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-lg transition-colors"
-                        >
-                          {sub.name}
-                        </a>
-                      ) : (
-                        <Link 
-                          key={sub.name}
-                          to={sub.path} 
-                          className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-lg transition-colors"
-                        >
-                          {sub.name}
+              <AnimatePresence>
+                {link.subLinks && activeDropdown === link.name && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full -left-12 pt-2 z-50"
+                  >
+                    <div className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 p-3 w-[450px] grid grid-cols-1 gap-1 relative">
+                      <div className="absolute top-0 left-12 w-4 h-4 bg-white border-l border-t border-slate-100 -rotate-45 -translate-y-2"></div>
+                      {link.subLinks.map((sub, idx) => {
+                        const Content = (
+                          <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all group/item">
+                            <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover/item:bg-brand/10 group-hover/item:text-brand transition-colors">
+                              {sub.icon}
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="font-bold text-slate-900 group-hover/item:text-brand transition-colors flex items-center justify-between">
+                                {sub.name}
+                                <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all" />
+                              </h4>
+                              <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                                {sub.description}
+                              </p>
+                            </div>
+                          </div>
+                        );
+
+                        return sub.isExternal ? (
+                          <a 
+                            key={sub.name}
+                            href={sub.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {Content}
+                          </a>
+                        ) : (
+                          <Link 
+                            key={sub.name}
+                            to={sub.path} 
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            {Content}
+                          </Link>
+                        );
+                      })}
+                      
+                      <div className="mt-2 p-4 bg-slate-50 rounded-2xl flex items-center justify-between group/audit cursor-pointer" onClick={() => setActiveDropdown(null)}>
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-brand">
+                            <Sparkles className="w-4 h-4" />
+                          </div>
+                          <span className="text-sm font-bold text-slate-700">Needs architecture advice?</span>
+                        </div>
+                        <Link to="/contact" className="text-xs font-black uppercase tracking-widest text-brand group-hover/audit:translate-x-1 transition-transform">
+                          Talk to Expert
                         </Link>
-                      )
-                    ))}
-                  </div>
-                </div>
-              )}
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           ))}
           <Link to="/contact" className="bg-brand text-white px-8 py-3.5 rounded-full text-lg font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 text-center active:scale-95 group">
@@ -166,31 +276,45 @@ export default function Navbar() {
                     )}
                     
                     {link.subLinks && (
-                      <div className="grid gap-4 pl-4 mt-2">
+                      <div className="grid gap-2 pl-4 mt-2">
                         {link.subLinks.map((sub) => (
-                          sub.isExternal ? (
-                            <a 
-                              key={sub.name}
-                              href={sub.path}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-xl font-medium text-slate-500 hover:text-brand flex items-center gap-3"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <ChevronRight size={18} className="text-brand" />
-                              {sub.name}
-                            </a>
-                          ) : (
-                            <Link 
-                              key={sub.name}
-                              to={sub.path} 
-                              className="text-xl font-medium text-slate-500 hover:text-brand flex items-center gap-3"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              <ChevronRight size={18} className="text-brand" />
-                              {sub.name}
-                            </Link>
-                          )
+                          <div key={sub.name}>
+                            {sub.isExternal ? (
+                              <a 
+                                href={sub.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 transition-all group"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <div className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-brand group-hover:bg-brand/10 transition-colors">
+                                  {sub.icon}
+                                </div>
+                                <div className="flex-1">
+                                  <div className="text-lg font-bold text-slate-700 flex items-center justify-between">
+                                    {sub.name}
+                                    <ChevronRight size={16} />
+                                  </div>
+                                </div>
+                              </a>
+                            ) : (
+                              <Link 
+                                to={sub.path} 
+                                className="flex items-center gap-4 p-3 rounded-xl hover:bg-slate-50 transition-all group"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                <div className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:text-brand group-hover:bg-brand/10 transition-colors">
+                                  {sub.icon}
+                                </div>
+                                <div className="flex-1">
+                                  <div className="text-lg font-bold text-slate-700 flex items-center justify-between">
+                                    {sub.name}
+                                    <ChevronRight size={16} />
+                                  </div>
+                                </div>
+                              </Link>
+                            )}
+                          </div>
                         ))}
                       </div>
                     )}

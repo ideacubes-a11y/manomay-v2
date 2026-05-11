@@ -12,7 +12,7 @@ const industries = [
   },
   {
     name: "Manufacturing",
-    description: "Advanced MRP, PLM, and quality control systems to optimize production floor efficiency and supply chain.",
+    description: "Advanced Material Requirements Planning, PLM, and quality control systems to optimize production floor efficiency and supply chain.",
     icon: Factory,
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
     link: "/industries/manufacturing"

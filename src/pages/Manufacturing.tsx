@@ -23,7 +23,7 @@ export default function Manufacturing() {
   const challenges = [
     {
       title: "Production planning on guesswork",
-      description: "Without automated MRP, planners rely on spreadsheets and experience—leading to material shortages and idle time."
+      description: "Without automated Material Requirements Planning, planners rely on spreadsheets and experience—leading to material shortages and idle time."
     },
     {
       title: "No real-time shop floor visibility",
@@ -45,7 +45,7 @@ export default function Manufacturing() {
 
   const solutions = [
     {
-      title: "Automated MRP",
+      title: "Automated Material Requirements Planning",
       description: "Automatically generate production and purchase orders based on real demand, ensuring materials arrive just in time.",
       icon: <Cpu className="w-8 h-8 text-brand" />
     },
@@ -73,7 +73,7 @@ export default function Manufacturing() {
       icon: <Settings className="w-6 h-6 text-brand" />
     },
     {
-      title: "MRP Fine-Tuning",
+      title: "Material Requirements Planning Fine-Tuning",
       desc: "We configure reorder rules and lead times specific to your supplier base and production cycles, not out-of-the-box defaults.",
       icon: <Zap className="w-6 h-6 text-brand" />
     },
@@ -135,7 +135,7 @@ export default function Manufacturing() {
               </h1>
               
               <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed font-light max-w-2xl">
-                Advanced MRP and quality control systems that <span className="text-white font-medium">eliminate shop floor chaos</span> and maximize production efficiency.
+                Advanced Material Requirements Planning and quality control systems that <span className="text-white font-medium">eliminate shop floor chaos</span> and maximize production efficiency.
               </p>
               
               <div className="flex flex-wrap gap-6">
@@ -230,12 +230,12 @@ export default function Manufacturing() {
                 How Odoo <span className="font-display italic font-normal text-brand">Connects Operations.</span>
               </h3>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed font-light">
-                Connect planning, production, procurement, quality, and costing in one system. The MRP engine handles the math so your team can focus on production.
+                Connect planning, production, procurement, quality, and costing in one system. The Material Requirements Planning engine handles the math so your team can focus on production.
               </p>
               
               <div className="space-y-4">
                 {[
-                  "MRP generates production orders from sales forecasts.",
+                  "Material Requirements Planning generates production orders from sales forecasts.",
                   "Operators log work orders directly on shop floor tablets.",
                   "Quality checkpoints defined at any production stage.",
                   "Actual material & labor tracked against planned costs."
