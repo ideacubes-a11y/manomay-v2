@@ -111,7 +111,7 @@ export default function EfficiencyGrid() {
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 to-transparent" />
               <div>
-                <h3 className="text-3xl font-bold mb-4 relative z-10">Ready for an <br />Architecture Audit?</h3>
+                <h3 className="text-3xl font-bold mb-4 relative z-10">Ready for a <br />Free Consultation?</h3>
                 <p className="text-white/80 text-sm leading-relaxed relative z-10">
                   Let our experts analyze your current ERP landscape and design a high-performance roadmap for Odoo & NetSuite.
                 </p>

@@ -267,7 +267,7 @@ const CRMHelpDesk = () => {
                 We don't just configure software; we map the human interactions that define your brand. From SLA design to hands-on sales team training, we ensure your tools serve your strategy.
               </p>
               <Link to="/contact" className="text-brand font-bold flex items-center gap-2 group text-lg">
-                Schedule a Process Audit
+                Schedule a Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -287,7 +287,7 @@ const CRMHelpDesk = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95 group flex items-center justify-center gap-3">
-              Audit My Customer Experience
+              Book Free Consultation
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
             <a 

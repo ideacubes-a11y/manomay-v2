@@ -159,7 +159,7 @@ const categories = [
           "Automated Elimination Entries",
           "Currency Translation & Adjustments",
           "Real-time Global Financial View",
-          "Audit Trail for Consolidated Records"
+          "Compliance Tracking for Consolidated Records"
         ]
       },
       { 
@@ -680,7 +680,7 @@ const categories = [
           "Secure E-Signature Workflows",
           "PDF Template Preparation",
           "Signature Order Management",
-          "Audit Trail for Signed Files"
+          "History Tracking for Signed Files"
         ]
       },
       { 
@@ -1134,7 +1134,7 @@ export default function OdooModulesExplorer() {
               Implementing the wrong module at the wrong time can lead to unnecessary complexity. Talk to our implementation consultants for a tailored roadmap.
             </p>
             <Link to="/contact" className="bg-white text-brand px-12 py-6 rounded-full text-xl font-bold hover:bg-slate-50 transition-all shadow-2xl active:scale-95 inline-flex items-center gap-4 group">
-              Book Architecture Audit 
+              Book Free Consultation 
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>

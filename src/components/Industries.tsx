@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { ShoppingBag, Factory, Laptop, Users } from "lucide-react";
+import { ShoppingBag, Factory, Laptop, Users, Store } from "lucide-react";
 
 const industries = [
   {
@@ -9,6 +9,13 @@ const industries = [
     icon: ShoppingBag,
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
     link: "/industries/retail-ecommerce"
+  },
+  {
+    name: "Odoo POS Solutions",
+    description: "Unified retail & restaurant management across channels with real-time inventory and customer analytics.",
+    icon: Store,
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+    link: "/solutions/odoo-pos"
   },
   {
     name: "Manufacturing",

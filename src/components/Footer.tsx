@@ -48,7 +48,7 @@ export default function Footer() {
                 <a href="https://www.odoo.com/pricing" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand text-sm transition-colors font-medium">Odoo Price Calculator</a>
               </li>
               <li>
-                <Link to="/contact" className="text-slate-500 hover:text-brand text-sm transition-colors">Audit</Link>
+                <Link to="/contact" className="text-slate-500 hover:text-brand text-sm transition-colors">Free Consultation</Link>
               </li>
             </ul>
           </div>

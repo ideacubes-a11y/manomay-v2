@@ -16,7 +16,7 @@ export default function SavingsCalculator() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6 font-jakarta tracking-tight text-center">
-            Efficiency <span className="font-display italic font-normal text-brand text-3xl sm:text-4xl lg:text-5xl ml-2">Audit.</span>
+            Efficiency <span className="font-display italic font-normal text-brand text-3xl sm:text-4xl lg:text-5xl ml-2">Review.</span>
           </h2>
           <p className="text-slate-600">
             Estimate the potential impact of a unified Odoo & NetSuite architecture on your operations.
@@ -72,7 +72,7 @@ export default function SavingsCalculator() {
               
                   <Link to="/contact" className="w-full bg-white text-slate-900 py-4 rounded-xl font-bold hover:bg-white hover:shadow-xl hover:shadow-slate-200/50 hover:-translate-y-1 transition-all flex items-center justify-center gap-2 active:scale-95">
                     <Calculator className="w-5 h-5" />
-                    Get Detailed Audit
+                    Get Detailed Estimate
                   </Link>
             </div>
           </div>

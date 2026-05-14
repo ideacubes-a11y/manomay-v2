@@ -1,13 +1,44 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
 import emailjs from '@emailjs/browser';
+
+const COUNTRIES = [
+  { code: "+1", name: "USA", flag: "🇺🇸" },
+  { code: "+44", name: "UK", flag: "🇬🇧" },
+  { code: "+91", name: "IND", flag: "🇮🇳" },
+  { code: "+971", name: "UAE", flag: "🇦🇪" },
+  { code: "+61", name: "AUS", flag: "🇦🇺" },
+  { code: "+1", name: "CAN", flag: "🇨🇦" },
+  { code: "+65", name: "SGP", flag: "🇸🇬" },
+  { code: "+49", name: "GER", flag: "🇩🇪" },
+  { code: "+33", name: "FRA", flag: "🇫🇷" },
+  { code: "+31", name: "NLD", flag: "🇳🇱" },
+  { code: "+39", name: "ITA", flag: "🇮🇹" },
+  { code: "+34", name: "ESP", flag: "🇪🇸" },
+  { code: "+41", name: "CHE", flag: "🇨🇭" },
+  { code: "+81", name: "JPN", flag: "🇯🇵" },
+  { code: "+82", name: "KOR", flag: "🇰🇷" },
+  { code: "+60", name: "MYS", flag: "🇲🇾" },
+  { code: "+63", name: "PHL", flag: "🇵🇭" },
+  { code: "+64", name: "NZL", flag: "🇳🇿" },
+  { code: "+27", name: "ZAF", flag: "🇿🇦" },
+  { code: "+55", name: "BRA", flag: "🇧🇷" },
+  { code: "+52", name: "MEX", flag: "🇲🇽" },
+  { code: "+966", name: "SAU", flag: "🇸🇦" },
+  { code: "+974", name: "QAT", flag: "🇶🇦" },
+  { code: "+965", name: "KWT", flag: "🇰🇼" },
+  { code: "+968", name: "OMN", flag: "🇴🇲" },
+].sort((a, b) => a.name.localeCompare(b.name));
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    requestType: "Request Architecture Audit",
+    requestType: "Book Free Consultation",
     erpPreference: "Odoo",
-    name: "",
+    firstName: "",
+    lastName: "",
+    countryCode: "+1",
+    countryFlag: "🇺🇸",
     mobile: "",
     email: "",
     companyName: "",
@@ -16,6 +47,7 @@ export default function Contact() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,9 +65,12 @@ export default function Contact() {
         setIsSubmitted(true);
         setIsSubmitting(false);
         setFormData({
-          requestType: "Request Architecture Audit",
+          requestType: "Book Free Consultation",
           erpPreference: "Odoo",
-          name: "",
+          firstName: "",
+          lastName: "",
+          countryCode: "+1",
+          countryFlag: "🇺🇸",
           mobile: "",
           email: "",
           companyName: "",
@@ -54,8 +89,8 @@ export default function Contact() {
           subject: formData.requestType,
           request_type: formData.requestType,
           erp_preference: formData.erpPreference,
-          user_name: formData.name,
-          user_mobile: formData.mobile,
+          user_name: `${formData.firstName} ${formData.lastName}`,
+          user_mobile: `${formData.countryCode} ${formData.mobile}`,
           user_email: formData.email,
           company_name: formData.companyName,
           company_address: formData.companyAddress,
@@ -66,9 +101,12 @@ export default function Contact() {
       
       setIsSubmitted(true);
       setFormData({
-        requestType: "Request Architecture Audit",
+        requestType: "Book Free Consultation",
         erpPreference: "Odoo",
-        name: "",
+        firstName: "",
+        lastName: "",
+        countryCode: "+1",
+        countryFlag: "🇺🇸",
         mobile: "",
         email: "",
         companyName: "",
@@ -101,11 +139,11 @@ export default function Contact() {
               <Mail className="w-4 h-4" /> Get In Touch
             </div>
             <h1 className="text-5xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1] font-jakarta">
-              Let's Architect Your <br />
-              <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Next Milestone.</span>
+              Your Journey to Efficiency <br />
+              <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Starts with a Conversation.</span>
             </h1>
             <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-lg">
-              Whether you're looking for a fresh Odoo implementation or an enterprise-grade NetSuite migration, our experts are ready to guide you.
+              Book a free consultation with our ERP experts. We'll help you define your roadmap, optimize your workflows, and choose the right solutions for your growth.
             </p>
 
             <div className="space-y-8">
@@ -158,7 +196,7 @@ export default function Contact() {
                   onChange={handleChange}
                   className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all outline-none"
                 >
-                  <option>Request Architecture Audit</option>
+                  <option>Book Free Consultation</option>
                   <option>Consult with an expert</option>
                   <option>Schedule a Demo</option>
                 </select>
@@ -189,27 +227,78 @@ export default function Contact() {
               {/* Personal Info */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Full Name</label>
+                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">First Name</label>
                   <input
                     type="text"
-                    name="name"
+                    name="firstName"
                     required
-                    value={formData.name}
+                    value={formData.firstName}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="John"
                     className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Mobile Number</label>
+                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Last Name</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    required
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Doe"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Mobile Number</label>
+                <div className="flex gap-3">
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
+                      className="w-32 bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 flex items-center justify-between gap-2 hover:border-brand/40 transition-all focus:outline-none focus:ring-2 focus:ring-brand"
+                    >
+                      <span className="flex items-center gap-2">
+                        <span>{formData.countryFlag}</span>
+                        <span className="font-semibold">{formData.countryCode}</span>
+                      </span>
+                      <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${isCountryDropdownOpen ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {isCountryDropdownOpen && (
+                      <>
+                        <div className="fixed inset-0 z-10" onClick={() => setIsCountryDropdownOpen(false)} />
+                        <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-2xl z-20 py-2 max-h-64 overflow-y-auto">
+                          {COUNTRIES.map((country, idx) => (
+                            <button
+                              key={`${country.name}-${idx}`}
+                              type="button"
+                              onClick={() => {
+                                setFormData(prev => ({ ...prev, countryCode: country.code, countryFlag: country.flag }));
+                                setIsCountryDropdownOpen(false);
+                              }}
+                              className="w-full px-4 py-2 hover:bg-slate-50 flex items-center gap-3 text-left transition-colors"
+                            >
+                              <span className="text-lg">{country.flag}</span>
+                              <span className="text-sm font-semibold text-slate-700 w-12">{country.code}</span>
+                              <span className="text-sm text-slate-500 whitespace-nowrap overflow-hidden text-ellipsis">{country.name}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
                   <input
                     type="tel"
                     name="mobile"
                     required
                     value={formData.mobile}
                     onChange={handleChange}
-                    placeholder="+1 (000) 000-0000"
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                    placeholder="000-000-0000"
+                    className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
                   />
                 </div>
               </div>

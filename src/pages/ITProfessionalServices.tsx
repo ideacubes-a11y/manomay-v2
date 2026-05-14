@@ -283,7 +283,7 @@ const ITProfessionalServices = () => {
           </h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
             <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95">
-              Audit Our Workflow
+              Book Free Consultation
             </Link>
             <a 
               href="https://www.odoo.com/pricing" 

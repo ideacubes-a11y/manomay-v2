@@ -32,7 +32,7 @@ const slides: Slide[] = [
     title: "Embrace the future",
     highlight: "of business transformation",
     description: "Our expert ERP implementations empower your organization to achieve new heights of efficiency and success. Manomay Global Solutions is the trusted partner for small and mid-sized companies across retail, manufacturing, IT, and e-commerce sectors.",
-    cta1: "Request Architecture Audit",
+    cta1: "Book Free Consultation",
     cta1Link: "/contact",
     cta2: "View Solutions",
     cta2Link: "#solutions",

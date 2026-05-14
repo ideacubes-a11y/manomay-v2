@@ -43,28 +43,90 @@ export default function OdooPOS() {
     }
   ];
 
-  const sectorFeatures = [
+  const industrySolutions = [
     {
-      category: "Retail",
-      icon: <Store className="w-12 h-12 text-brand" />,
-      points: [
-        "Multiple price lists and multi-currency support",
-        "Loyalty programs and gift cards",
-        "Inventory tracking across multiple branches",
-        "Customer history and personalized marketing"
+      id: "retail",
+      category: "POS for Retail",
+      icon: <Store className="w-8 h-8 text-brand" />,
+      intro: "Smart Point of Sale for supermarkets, fashion stores, electronics retailers, and every store in between.",
+      quote: "Your cashier is the last impression your customer has before they leave. If that moment is slow, error-prone, or disconnected from your inventory — you are losing sales, trust, and repeat visits without realising it.",
+      description: "Retail POS is no longer just a billing machine. Today's retailers need a POS that knows what's in stock before the customer asks, applies the right discount automatically, accepts any payment method without friction, and updates inventory in real time the moment a sale happens. Whether you run a single supermarket, a chain of fashion outlets, or an electronics store with high-value SKUs — the cost of a poor POS system shows up in shrinkage, billing errors, long queues, and customers who don't come back.\n\nOdoo POS was built for modern retail. It runs on any device — tablet, laptop, or dedicated terminal — works even when the internet goes down, and connects natively to your inventory, pricing, loyalty programme, and accounting. No middleware, no integrations to maintain, no data mismatch between what was sold and what was billed.",
+      challenges: [
+        { title: "Slow checkout creating long queues", desc: "A POS that takes too long to load products, apply discounts, or process payments turns a good shopping experience into a frustrating one — and customers notice." },
+        { title: "Inventory not updated in real time", desc: "When a sale at the counter doesn't immediately reduce stock, your team makes promises to customers based on wrong numbers — leading to overselling and embarrassing stockouts." },
+        { title: "Discount and pricing errors at checkout", desc: "Manual discount application, expired offer codes, and pricing inconsistencies between the shelf and the billing counter erode customer trust and margin simultaneously." },
+        { title: "Offline dependency causing business stoppage", desc: "Internet outages that halt billing operations are unacceptable. A POS that can't work offline is a liability during network issues." },
+        { title: "No visibility across multiple store locations", desc: "Retail chains running separate POS systems at each outlet have no consolidated view of sales, stock, or performance — making management decisions slow and reactive." },
+        { title: "Loyalty and promotions not integrated", desc: "When loyalty programmes run on a separate system from the POS, cashiers can't apply points or rewards automatically — and customers experience friction at the moment that matters most." },
+        { title: "End-of-day reconciliation is manual and slow", desc: "Manually tallying cash, card, and digital payments against POS records at close of business wastes time and introduces human error into financial reporting." }
+      ],
+      solutionsIntro: "Odoo POS is a browser-based, device-agnostic point of sale system that works seamlessly online and offline. Every sale made on the POS instantly updates inventory across all warehouses and locations. Pricing rules, discount structures, and promotional offers are configured centrally and applied automatically at checkout — no manual intervention needed. The cashier interface is clean and fast, designed to minimise training time and maximise throughput during peak hours.\n\nFor retail chains, Odoo gives head office a live view of sales, stock levels, and cashier performance across every outlet in one dashboard. Loyalty programmes, gift cards, and customer accounts are all native — the cashier simply scans a loyalty card or enters a phone number and rewards are applied instantly. End-of-day closing is automated, with cash register reconciliation and financial entries posted directly to accounting without any manual steps.",
+      solutions: [
+        { title: "Works offline, syncs instantly", desc: "Sales continue uninterrupted during internet outages and sync automatically when connectivity returns — no lost transactions, no manual reconciliation." },
+        { title: "Real-time inventory sync", desc: "Every sale updates stock levels across all locations instantly — preventing overselling and giving accurate availability to every team member." },
+        { title: "Automated pricing and promotions", desc: "Discounts, bundle offers, and time-limited promotions are configured once and applied automatically at checkout — eliminating cashier errors." },
+        { title: "Built-in loyalty and gift cards", desc: "Customers earn and redeem points natively at the POS — no separate app, no manual tracking, no friction at checkout." },
+        { title: "Multi-store management from one dashboard", desc: "Sales, stock, and cashier performance across every outlet visible in real time — giving management instant clarity without visiting each store." },
+        { title: "Automated end-of-day closing", desc: "Cash reconciliation and accounting entries are generated automatically at session close — saving hours of manual work and eliminating errors." }
       ]
     },
     {
-      category: "Restaurants",
-      icon: <Utensils className="w-12 h-12 text-brand" />,
-      points: [
-        "Table mapping and management",
-        "Kitchen printing and status tracking",
-        "Splitting bills and tipping support",
-        "Seamless table-service or fast-food modes"
+      id: "restaurant",
+      category: "POS for Restaurant",
+      icon: <Utensils className="w-8 h-8 text-brand" />,
+      intro: "Complete restaurant management — from table orders and KOT to billing, kitchen display, and delivery — all in one system.",
+      quote: "A table that waits too long to order loses patience. An order that reaches the kitchen wrong loses food cost. A bill that takes five minutes to arrive loses the tip — and sometimes the customer. Every minute of friction in your restaurant is money walking out the door.",
+      description: "Running a restaurant is unlike any other retail operation. You are managing tables, kitchen queues, delivery orders, staff shifts, ingredient stock, and customer experience — all simultaneously, all in real time. A POS built for a clothing store cannot handle a restaurant. You need a system that understands table management, kitchen order tickets, modifier-based ordering, split bills, and home delivery — natively.\n\nWhether you run a quick service counter, a fine dining establishment, a cafe, or a cloud kitchen, Odoo Restaurant POS is designed for the pace and complexity of food service. It connects the front of house to the kitchen, tracks ingredient consumption against each recipe, and gives managers live visibility into table status, order flow, and daily revenue — all from one screen.",
+      challenges: [
+        { title: "Order errors between front of house and kitchen", desc: "Handwritten KOTs and verbal order communication lead to wrong dishes, missing modifiers, and frustrated customers — especially during peak service." },
+        { title: "No real-time table status visibility", desc: "Without a live floor map, staff don't know which tables are available, occupied, or waiting for billing — causing seating delays and poor table turn management." },
+        { title: "Slow billing at peak hours", desc: "Manually calculating bills, applying discounts, and splitting payments during a busy dinner service creates bottlenecks that frustrate customers at the moment they are ready to leave." },
+        { title: "Ingredient stock not tracked against recipes", desc: "Without recipe-level inventory deduction, restaurants over-purchase, waste ingredients, and run out of items mid-service without warning — damaging both margin and customer experience." },
+        { title: "No integration between delivery and dine-in orders", desc: "Managing Swiggy, Zomato, and direct orders on separate systems alongside dine-in creates chaos in the kitchen — no unified order queue, no accurate wait times." },
+        { title: "Staff shifts and tip management is manual", desc: "Tracking which waiter handled which table, managing split tips, and reconciling cash against covers at shift end is time-consuming and error-prone without system support." },
+        { title: "Menu changes are slow and inconsistent", desc: "Updating prices, removing unavailable items, or launching new dishes across all terminals and delivery platforms manually takes too long and creates inconsistencies." }
+      ],
+      solutionsIntro: "Odoo Restaurant POS brings together table management, kitchen order ticketing, delivery integration, and billing into one connected system. Waiters take orders on a tablet using a floor map that shows live table status — occupied, available, or waiting for bill. Orders are sent directly to the kitchen display or KOT printer the moment they are placed, with modifiers, special instructions, and course sequencing included. No paper notes, no shouting across the pass.\n\nIngredient stock is deducted automatically based on recipes — so when a margherita pizza is sold, flour, tomato, and cheese are reduced from inventory in the right quantities. Managers can see which items are running low before service begins. For delivery, Odoo integrates with third-party platforms so all orders — dine-in, takeaway, and delivery — arrive in one kitchen queue with no duplication. Billing supports split bills, partial payments, room charges for hotels, and GST-compliant receipts — all in seconds.",
+      solutions: [
+        { title: "Live floor map and table management", desc: "Visual floor plan shows real-time table status — seated, ordering, waiting for bill — so staff manage covers and turns efficiently." },
+        { title: "Instant KOT to kitchen", desc: "Orders appear on the kitchen display screen or KOT printer the moment they are placed — with modifiers, notes, and course order included." },
+        { title: "Recipe-based inventory deduction", desc: "Each dish sold automatically reduces ingredient stock based on its recipe — giving real-time visibility into what will run out before service ends." },
+        { title: "Unified order queue for all channels", desc: "Dine-in, takeaway, and delivery orders arrive in one kitchen queue — no separate tablets, no missed orders, no confusion during peak service." },
+        { title: "Fast, flexible billing", desc: "Split bills by item or guest, accept multiple payment methods in one transaction, and generate GST-compliant receipts in seconds." },
+        { title: "Live sales and menu performance reports", desc: "See which dishes sell, which don't, peak service hours, and average cover value — updated in real time so managers make informed daily decisions." }
       ]
     }
   ];
+
+  const manomayAdvantage = {
+    retail: [
+      { title: "Hardware + software setup", desc: "Manomay handles not just the Odoo configuration but the full POS hardware setup — receipt printers, barcode scanners, cash drawers, and payment terminals — so everything works together from day one." },
+      { title: "Product catalogue and pricing migration", desc: "We migrate your existing product catalogue, pricing tiers, and promotional structures into Odoo accurately — so your team isn't re-entering thousands of SKUs manually." },
+      { title: "Cashier training with real scenarios", desc: "We train your cashiers with your actual products, your discount workflows, and your customer scenarios — not generic software demos. Average cashier proficiency in under two hours." },
+      { title: "Multi-location rollout expertise", desc: "Manomay has experience rolling out Odoo POS across retail chains with multiple outlets — with a phased approach that minimises business disruption at each location." },
+      { title: "Payment gateway integration", desc: "We integrate your preferred payment gateways and UPI/card terminals with Odoo POS — so digital and cash payments reconcile automatically without manual entries." },
+      { title: "Ongoing seasonal support", desc: "Peak seasons like Diwali, end-of-season sales, and festive promotions need POS configurations updated quickly. Manomay provides fast-turnaround support so your promotions are live when you need them." }
+    ],
+    restaurant: [
+      { title: "Restaurant workflow mapping before setup", desc: "Manomay maps your service flow — number of floors, table layout, kitchen sections, and service sequence — before configuring Odoo. The system is built around your restaurant, not the other way around." },
+      { title: "Recipe and menu engineering in Odoo", desc: "We enter your full menu with recipes, modifiers, variants, and combo offers into Odoo — including ingredient quantities for accurate stock deduction from day one." },
+      { title: "Kitchen display and KOT hardware setup", desc: "Manomay handles the full kitchen hardware setup — KOT printers per section, kitchen display screens, and bump bar configuration — so the kitchen team is ready without any technical learning curve." },
+      { title: "Delivery platform integration", desc: "We integrate Swiggy, Zomato, and direct online ordering with Odoo so all orders land in one kitchen queue — eliminating the chaos of managing multiple tablets during service." },
+      { title: "Staff training by role", desc: "Waiters, cashiers, kitchen staff, and managers each receive separate, role-specific training. Your floor team learns the order flow. Your manager learns reporting and menu management. No one is overwhelmed." },
+      { title: "GST and compliance setup", desc: "Manomay configures GST rates, FSSAI compliance, and receipt formats specific to restaurant billing requirements — so you are compliant from the first bill printed." }
+    ]
+  };
+
+  const whyManomayFeatures = [
+    { title: "End-to-end POS partner", desc: "Manomay doesn't just configure software. We scope your hardware needs, set up devices, integrate payment terminals, and train your team — everything under one engagement." },
+    { title: "Go-live in days, not months", desc: "A well-scoped POS implementation doesn't need to take months. Manomay's industry-specific playbooks for retail and restaurant mean we move fast without cutting corners." },
+    { title: "Works the way your business works", desc: "Every retail store and restaurant has unique workflows — different pricing structures, different kitchen setups, different customer flows. Manomay configures Odoo to match your operation exactly." },
+    { title: "Training until adoption, not just go-live", desc: "We stay with your team until they are genuinely comfortable — not just until the software is installed. Real adoption means your investment delivers real returns." },
+    { title: "Ongoing menu and catalogue updates", desc: "Menus change. Prices change. Products are added and discontinued. Manomay offers fast-turnaround support for ongoing changes so your team is never stuck waiting for updates." },
+    { title: "Transparent, fixed-scope pricing", desc: "You know exactly what Manomay will deliver, by when, and for what cost — before you commit. No surprise invoices, no scope creep billed at daily rates." }
+  ];
+
+  const [activeTab, setActiveTab] = useState("retail");
 
   const benefits = [
     {
@@ -215,7 +277,7 @@ export default function OdooPOS() {
                       <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Architecture Audit</h4>
+                      <h4 className="font-bold text-slate-900">Free Consultation</h4>
                       <p className="text-sm text-slate-500">We analyze your current store setup and design a custom Odoo architecture.</p>
                     </div>
                   </div>
@@ -381,40 +443,130 @@ export default function OdooPOS() {
         </div>
       </section>
 
-      {/* Sectors */}
-      <section className="py-24 bg-slate-900 text-white overflow-hidden relative rounded-[3rem] mx-4 sm:mx-8">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
+      {/* Industries Sectors */}
+      <section className="py-32 bg-slate-50 relative">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Domain Expertise</h2>
-            <h3 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight text-white font-jakarta">
+            <h3 className="text-3xl lg:text-5xl font-black mb-8 tracking-tight text-slate-900 font-jakarta">
               Smart Solutions for <span className="font-display italic font-normal text-brand">Both Worlds.</span>
             </h3>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            {sectorFeatures.map((sector, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="bg-white/5 border border-white/10 backdrop-blur-sm p-12 rounded-[2.5rem] hover:bg-white/10 transition-colors"
-              >
-                <div className="bg-brand/20 w-20 h-20 rounded-3xl flex items-center justify-center mb-8">
-                  {sector.icon}
-                </div>
-                <h4 className="text-3xl font-black mb-6 font-jakarta">{sector.category}</h4>
-                <div className="space-y-4">
-                  {sector.points.map((point, pIdx) => (
-                    <div key={pIdx} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-brand rounded-full"></div>
-                      <span className="text-slate-300 font-medium">{point}</span>
+          <div className="flex justify-center mb-16">
+            <div className="inline-flex bg-white rounded-full shadow-sm p-2 border border-slate-200">
+              {industrySolutions.map((sol) => (
+                <button
+                  key={sol.id}
+                  onClick={() => setActiveTab(sol.id)}
+                  className={`flex items-center gap-3 px-8 py-4 rounded-full text-lg font-bold transition-all ${
+                    activeTab === sol.id 
+                      ? 'bg-brand text-white shadow-lg shadow-brand/20' 
+                      : 'text-slate-600 hover:bg-slate-50 hover:text-brand'
+                  }`}
+                >
+                  <div className={activeTab === sol.id ? 'text-white' : 'text-slate-400'}>{sol.icon}</div>
+                  {sol.category}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            {industrySolutions.map((sol) => (
+              activeTab === sol.id && (
+                <motion.div
+                  key={sol.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24">
+                    <div className="lg:col-span-5 space-y-8 sticky top-32">
+                      <div>
+                        <h4 className="text-2xl lg:text-4xl font-black text-slate-900 mb-6 font-jakarta">{sol.intro}</h4>
+                        <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl relative inline-block">
+                          <div className="absolute top-6 left-6 text-brand/10 text-6xl font-serif">“</div>
+                          <p className="text-lg italic font-light text-slate-700 relative z-10 pt-4 leading-relaxed">
+                            {sol.quote}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="prose prose-slate max-w-none text-slate-600 font-light leading-relaxed whitespace-pre-wrap text-lg">
+                        {sol.description}
+                      </div>
+
+                      <div className="bg-brand/5 border border-brand/10 rounded-3xl p-8">
+                         <h5 className="font-bold text-brand text-lg mb-6 flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-brand"></div> The Manomay Advantage</h5>
+                         <div className="space-y-6">
+                            {manomayAdvantage[sol.id as keyof typeof manomayAdvantage].map((adv, idx) => (
+                              <div key={idx}>
+                                <h6 className="font-bold text-slate-900">{adv.title}</h6>
+                                <p className="text-sm text-slate-600 mt-1 leading-relaxed">{adv.desc}</p>
+                              </div>
+                            ))}
+                         </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </motion.div>
+                    
+                    <div className="lg:col-span-7 space-y-12">
+                      <div>
+                        <div className="inline-block bg-red-50 text-red-600 px-4 py-2 rounded-full font-bold text-sm tracking-widest uppercase mb-6 flex items-center gap-2 w-max">
+                           <span className="w-2 h-2 bg-red-500 rounded-full"></span> Major Challenges
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-6">
+                          {sol.challenges.map((challenge, idx) => (
+                            <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+                              <h5 className="font-bold text-slate-900 mb-3 group-hover:text-red-500 transition-colors flex items-start gap-2">
+                                <span className="text-red-400 mt-1 shrink-0">✕</span> {challenge.title}
+                              </h5>
+                              <p className="text-slate-500 text-sm leading-relaxed">{challenge.desc}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="inline-block bg-emerald-50 text-emerald-600 px-4 py-2 rounded-full font-bold text-sm tracking-widest uppercase mb-6 flex items-center gap-2 w-max">
+                           <span className="w-2 h-2 bg-emerald-500 rounded-full"></span> What Odoo Delivers
+                        </div>
+                        <p className="text-lg text-slate-600 mb-8 whitespace-pre-wrap font-light leading-relaxed">
+                          {sol.solutionsIntro}
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-6">
+                          {sol.solutions.map((solution, idx) => (
+                            <div key={idx} className="bg-white border border-emerald-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+                              <h5 className="font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors flex items-start gap-2">
+                                <span className="text-emerald-500 mt-1 shrink-0">✓</span> {solution.title}
+                              </h5>
+                              <p className="text-slate-500 text-sm leading-relaxed">{solution.desc}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )
             ))}
+          </div>
+          
+          <div className="bg-slate-900 rounded-[3rem] p-12 lg:p-20 text-white mt-24">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h3 className="text-3xl lg:text-5xl font-black tracking-tight font-jakarta mb-6">Why Manomay for POS?</h3>
+              <p className="text-lg text-slate-300 font-light">A POS system is only as good as the team that sets it up, trains your staff, and supports you after launch. Here is what makes Manomay the right partner for your POS implementation.</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {whyManomayFeatures.map((feat, idx) => (
+                 <div key={idx} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors">
+                   <div className="w-12 h-12 bg-brand/20 rounded-2xl flex items-center justify-center mb-6">
+                     <CheckCircle2 className="w-6 h-6 text-brand" />
+                   </div>
+                   <h4 className="text-xl font-bold mb-4">{feat.title}</h4>
+                   <p className="text-slate-400 leading-relaxed text-sm">{feat.desc}</p>
+                 </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

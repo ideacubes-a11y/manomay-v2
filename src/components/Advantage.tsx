@@ -43,7 +43,7 @@ export default function Advantage() {
               ))}
             </div>
             
-            <Link to="/contact" className="inline-flex items-center justify-center bg-white text-brand px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all shadow-2xl shadow-black/10 active:scale-95 group">
+            <Link to="/contact" className="mt-12 inline-flex items-center justify-center bg-white text-brand px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all shadow-2xl shadow-black/10 active:scale-95 group">
               Explore Our Methodology
             </Link>
           </div>

@@ -70,14 +70,14 @@ export default function NetSuite() {
     { title: "Business & Financial Discovery", num: "01", desc: "Understanding your current state and financial requirements." },
     { title: "Solution Architecture & Planning", num: "02", desc: "Designing a scalable NetSuite structure for your operations." },
     { title: "Configuration & Customization", num: "03", desc: "Building and tailoring the system to your exact workflows." },
-    { title: "Data Migration & Validation", num: "04", desc: "Securely transferring and auditing your entire data history." },
+    { title: "Data Migration & Validation", num: "04", desc: "Securely transferring and validating your entire data history." },
     { title: "User Acceptance Testing (UAT)", num: "05", desc: "Rigorous testing to ensure everything works flawlessly." },
     { title: "Go-Live & Hypercare Support", num: "06", desc: "Smooth launch followed by intensive post-go-live care." }
   ];
 
   const outcomes = [
     { icon: <FileText className="w-6 h-6 text-sky-600" />, text: "Real-Time Financial Reporting" },
-    { icon: <ShieldCheck className="w-6 h-6 text-sky-600" />, text: "Stronger Compliance & Audit Readiness" },
+    { icon: <ShieldCheck className="w-6 h-6 text-sky-600" />, text: "Stronger Internal Controls & Compliance" },
     { icon: <RefreshCw className="w-6 h-6 text-sky-600" />, text: "Streamlined Operations Across Departments" },
     { icon: <TrendingUp className="w-6 h-6 text-sky-600" />, text: "Scalable Infrastructure for Growth" },
     { icon: <Clock className="w-6 h-6 text-sky-600" />, text: "Faster Month-End Close" },

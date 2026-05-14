@@ -327,7 +327,7 @@ export default function RetailEcommerce() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all flex items-center justify-center gap-3 group shadow-2xl shadow-brand/40 active:scale-95">
-              Book Your Retail Audit
+              Book Free Consultation
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
