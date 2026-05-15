@@ -374,212 +374,132 @@ export default function OdooPOS() {
         </div>
       </section>
 
-      {/* Unified Ecosystem Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-slate-50 rounded-[3rem] p-12 lg:p-20 border border-slate-100 overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            
-            <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
-              <div>
-                <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Unified Business Flow</h2>
-                <h3 className="text-3xl font-black text-slate-900 mb-8 tracking-tight font-jakarta">
-                  Beyond Just a <span className="font-display italic font-normal text-brand">Transaction.</span>
-                </h3>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed font-light">
-                  Most POS systems are islands. Odoo POS is a bridge. It integrates directly with every aspect of your business, turning every sale into a data point for your entire operation.
-                </p>
-                
-                <div className="space-y-6">
-                  <div className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-                    <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center shrink-0">
-                      <BarChart3 className="w-6 h-6 text-indigo-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">Live Inventory Sync</h4>
-                      <p className="text-sm text-slate-500">Every sale automatically triggers stock picking, ensuring your web store and physical store quantities are always perfectly aligned.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-                    <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center shrink-0">
-                      <ShieldCheck className="w-6 h-6 text-amber-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">Automated Accounting</h4>
-                      <p className="text-sm text-slate-500">Sales journals, tax reporting, and payment reconciliations are handled automatically, saving your finance team hours of manual work.</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100">
-                    <div className="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center shrink-0">
-                      <Layers className="w-6 h-6 text-pink-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">Omnichannel Loyalty</h4>
-                      <p className="text-sm text-slate-500">Customers can earn points online and spend them in-store, or vice versa, creating a truly unified brand experience.</p>
-                    </div>
-                  </div>
-                </div>
+      {/* Industry Verticals Section - High-Density Premium Bento */}
+      <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+        {/* Decorative Grid Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.4]"></div>
+        
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-px w-12 bg-brand/30"></div>
+                <h2 className="text-brand font-black uppercase tracking-[0.5em] text-[10px]">
+                  Specialized Ecosystems
+                </h2>
               </div>
-              
-              <div className="relative">
-                <div className="aspect-square bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 p-8 flex flex-col justify-center">
-                  <div className="space-y-8">
-                     {[
-                       { label: 'Total Sales Today', value: '$12,450.00', color: 'text-emerald-500' },
-                       { label: 'Inventory Level (Main)', value: '84% Optimal', color: 'text-brand' },
-                       { label: 'Customer Satisfaction', value: '4.9/5.0', color: 'text-amber-500' },
-                       { label: 'Offline Trans. Pending', value: '0 - All Synced', color: 'text-slate-400' }
-                     ].map((stat, i) => (
-                       <div key={i} className="border-b border-slate-50 pb-6 last:border-0 last:pb-0">
-                         <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">{stat.label}</div>
-                         <div className={`text-3xl font-black ${stat.color}`}>{stat.value}</div>
-                       </div>
-                     ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Sectors - Radical Architectural Redesign */}
-      <section className="bg-slate-50 relative overflow-hidden">
-        {/* Subtle Section Divider */}
-        <div className="absolute top-0 left-0 w-full h-24 bg-white/50 backdrop-blur-3xl border-b border-slate-100"></div>
-
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-48 pb-40">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24">
-            <div className="max-w-4xl">
-              <h2 className="text-brand font-bold uppercase tracking-[0.4em] text-[10px] mb-6 flex items-center gap-6">
-                <div className="w-12 h-px bg-brand/30"></div> 
-                Industry Verticals
-              </h2>
-              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 tracking-tight">
-                Solutions for <br className="hidden md:block"/>
-                <span className="font-display italic font-normal text-brand">Every Operational Niche.</span>
+              <h3 className="text-5xl lg:text-7xl font-black text-slate-900 mb-6 tracking-tight leading-[0.9] font-jakarta">
+                Built for <br/>
+                <span className="font-display italic font-normal text-brand">Your Sector.</span>
               </h3>
             </div>
             
-            <div className="flex flex-col gap-6">
-              <div className="inline-flex bg-white rounded-2xl shadow-sm p-1.5 border border-slate-200">
-                {industrySolutions.map((sol) => (
-                  <button
-                    key={sol.id}
-                    onClick={() => setActiveTab(sol.id)}
-                    className={`flex items-center gap-3 px-8 py-3.5 rounded-xl text-base font-bold transition-all duration-300 whitespace-nowrap ${
-                      activeTab === sol.id 
-                        ? 'bg-slate-900 text-white shadow-xl' 
-                        : 'text-slate-400 hover:text-slate-600'
-                    }`}
-                  >
-                    <div className={activeTab === sol.id ? 'scale-110' : 'opacity-40'}>{sol.icon}</div>
-                    {sol.id.charAt(0).toUpperCase() + sol.id.slice(1)}
-                  </button>
-                ))}
-              </div>
+            <div className="flex bg-slate-100/50 p-2 rounded-3xl border border-slate-200/60 backdrop-blur-sm">
+              {industrySolutions.map((sol) => (
+                <button
+                  key={sol.id}
+                  onClick={() => setActiveTab(sol.id)}
+                  className={`flex items-center gap-3 px-12 py-5 rounded-2xl text-[10px] font-black uppercase tracking-[0.3em] transition-all duration-500 ${
+                    activeTab === sol.id 
+                      ? 'bg-white text-slate-900 shadow-xl shadow-slate-200/50 scale-105 border border-slate-100' 
+                      : 'text-slate-400 hover:text-slate-600'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${activeTab === sol.id ? 'bg-brand shadow-[0_0_10px_rgba(var(--brand),0.5)]' : 'bg-slate-300'}`}></span>
+                  {sol.id}
+                </button>
+              ))}
             </div>
           </div>
-
-          <div className="relative">
+ 
+          <div className="relative min-h-[850px]">
             {industrySolutions.map((sol) => (
               activeTab === sol.id && (
                 <motion.div
                   key={sol.id}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -30 }}
-                  transition={{ duration: 0.6 }}
-                  className="grid lg:grid-cols-2 gap-px bg-slate-200 rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl"
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-6"
                 >
-                  {/* Left Column: Challenges */}
-                  <div className="bg-white p-10 lg:p-20 flex flex-col justify-between relative">
+                  {/* Hero Bento Card */}
+                  <div className="lg:col-span-2 lg:row-span-2 bg-slate-50 p-12 lg:p-16 rounded-[4rem] border border-slate-100 flex flex-col justify-between group overflow-hidden relative shadow-sm hover:shadow-2xl hover:shadow-brand/5 transition-all duration-700">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 blur-[120px] -translate-y-1/2 translate-x-1/2 rounded-full"></div>
                     <div className="relative z-10">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-bold uppercase tracking-wider mb-10">
-                        Operational Friction
+                      <div className="w-20 h-20 bg-white rounded-[2.5rem] flex items-center justify-center text-brand mb-12 shadow-sm border border-slate-100 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        {sol.icon}
                       </div>
-                      <h4 className="text-2xl lg:text-3xl font-black text-slate-900 mb-10 tracking-tight leading-tight">
+                      <h4 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 tracking-tighter leading-tight uppercase font-jakarta italic">
                         {sol.intro}
                       </h4>
-                      
-                      <div className="grid gap-4 mb-16">
-                        {sol.challenges.slice(0, 5).map((challenge, idx) => (
-                          <div key={idx} className="group flex items-start gap-4">
-                            <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500 shrink-0 mt-1">
-                              <span className="text-[10px]">✕</span>
-                            </div>
-                            <div>
-                              <div className="text-base font-bold text-slate-900 mb-0.5">{challenge.title}</div>
-                              <div className="text-sm text-slate-500 leading-relaxed">{challenge.desc}</div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+                      <p className="text-xl lg:text-2xl text-slate-500 leading-relaxed font-light max-w-lg">
+                        {sol.description.split('\n\n')[0]}
+                      </p>
                     </div>
-
-                    <div className="pt-10 border-t border-slate-100 mt-auto">
-                       <p className="text-lg lg:text-xl text-slate-500 font-light italic leading-relaxed border-l-4 border-brand/20 pl-8">
-                         "{sol.quote}"
-                       </p>
+                    <div className="relative z-10 pt-16 flex items-center gap-8">
+                      <Link to="/contact" className="inline-flex items-center gap-4 py-5 px-12 bg-slate-900 text-white rounded-full font-black text-xs uppercase tracking-widest hover:bg-brand transition-all shadow-2xl shadow-slate-900/20 active:scale-95">
+                        Start Industry Consultation
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
                     </div>
                   </div>
-
-                  {/* Right Column: Unified Core */}
-                  <div className="bg-slate-900 p-10 lg:p-20 flex flex-col justify-between text-white relative">
-                     <div className="relative z-10">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 text-white/70 rounded-full text-[10px] font-bold uppercase tracking-wider mb-10 border border-white/10">
-                          The Manomay Core
+ 
+                  {/* Metric Card */}
+                  <div className="bg-white p-10 rounded-[3.5rem] border border-slate-100 flex flex-col items-center justify-center text-center group hover:border-brand transition-all duration-1000 shadow-sm shadow-slate-200/50">
+                    <div className="text-8xl font-black text-slate-900 mb-2 tracking-tighter group-hover:text-brand transition-colors">
+                      {sol.id === 'retail' ? '40%' : '25%'}
+                    </div>
+                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.6em] mb-8">Performance Lift</div>
+                    <div className="h-1.5 w-16 bg-slate-100 rounded-full overflow-hidden">
+                       <motion.div 
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="h-full bg-brand"
+                       />
+                    </div>
+                  </div>
+ 
+                  {/* Quote Card */}
+                  <div className="bg-white p-12 rounded-[3.5rem] border border-brand/20 shadow-sm flex flex-col justify-between group relative overflow-hidden hover:border-brand transition-colors duration-500">
+                    <div className="text-brand/20 text-9xl font-serif absolute -top-8 -left-4 pointer-events-none select-none">“</div>
+                    <p className="text-xl font-medium italic text-slate-700 leading-relaxed relative z-10 pt-4">
+                      "{sol.quote}"
+                    </p>
+                    <div className="flex items-center gap-4 mt-8 relative z-10">
+                      <div className="w-8 h-[2px] bg-brand"></div>
+                      <span className="text-[10px] font-black text-brand uppercase tracking-[0.3em]">Market Verdict</span>
+                    </div>
+                  </div>
+ 
+                  {/* Solution Blueprint */}
+                  <div className="lg:col-span-2 bg-white p-12 rounded-[3.5rem] border border-slate-100 shadow-sm group hover:shadow-xl transition-all">
+                    <div className="flex items-center gap-6 mb-12">
+                       <h4 className="text-2xl font-black text-slate-900 uppercase tracking-tighter">The Blueprint</h4>
+                       <div className="h-px flex-1 bg-slate-100 group-hover:bg-brand/20 transition-colors"></div>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
+                      {sol.solutions.slice(0, 4).map((s, i) => (
+                        <div key={i} className="group/item">
+                          <h5 className="font-bold text-slate-900 text-sm mb-3 flex items-center gap-3 group-hover/item:text-brand transition-colors">
+                            <Zap className="w-4 h-4 text-brand" />
+                            {s.title}
+                          </h5>
+                          <p className="text-[11px] text-slate-400 leading-relaxed font-medium pl-7">{s.desc}</p>
                         </div>
-                        <h4 className="text-2xl lg:text-3xl font-black text-white mb-10 tracking-tight leading-tight">
-                          Integrated Enterprise <br className="hidden lg:block"/> Deployment.
-                        </h4>
-
-                        <div className="grid gap-6">
-                           {sol.solutions.map((item, idx) => (
-                             <div 
-                               key={idx}
-                               className="bg-white/5 border border-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-all"
-                             >
-                                <div className="flex items-start gap-6">
-                                   <div className="w-10 h-10 bg-brand text-white rounded-xl flex items-center justify-center shrink-0">
-                                      <Zap className="w-5 h-5 text-white" />
-                                   </div>
-                                   <div>
-                                      <h5 className="text-xl font-bold mb-2 tracking-tight">{item.title}</h5>
-                                      <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-                                   </div>
-                                </div>
-                             </div>
-                           ))}
-                        </div>
-                     </div>
-
-                     <div className="mt-20 pt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-10">
-                        <div className="flex items-center gap-6">
-                           <div className="flex -space-x-3">
-                              {[1,2,3].map(i => (
-                                <div key={i} className="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 overflow-hidden">
-                                   <img src={`https://i.pravatar.cc/100?img=${i+20}`} alt="" />
-                                </div>
-                              ))}
-                           </div>
-                           <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global Implementations</div>
-                        </div>
-                        <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-brand text-white rounded-full font-bold text-base hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 text-center">
-                          Strategy Session
-                        </Link>
-                     </div>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               )
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* Why Manomay Section - Vertical Redesign */}
-      <section className="bg-slate-50 py-32 overflow-hidden border-y border-slate-200">
+      {/* Why Manomay Section - Clean Vertical Design */}
+      <section className="bg-slate-50 py-24 overflow-hidden border-y border-slate-200">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-12 gap-20">
             <div className="lg:col-span-4 sticky top-32 h-fit">
