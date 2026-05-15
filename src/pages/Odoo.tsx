@@ -16,7 +16,6 @@ import {
   ChevronDown,
   Layers,
   Store,
-  Globe,
   Award,
   GraduationCap,
   HeartHandshake,
@@ -30,13 +29,17 @@ import {
   Briefcase,
   Factory,
   Building2,
-  Heart
+  Heart,
+  Calculator
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import odooHero from "../assets/images/regenerated_image_1778649322700.jpg";
 
 export default function Odoo() {
+  const [activeModule, setActiveModule] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
 
   const modules = [
     { 
@@ -83,33 +86,6 @@ export default function Odoo() {
     }
   ];
 
-  const caseStudies = [
-    {
-      company: "One Acre Fund – Kenya",
-      industry: "NGO & Agriculture Support",
-      implemented: ["Procure-to-Pay Management", "Purchase", "Inventory", "Invoicing", "SAP Integration", "Portal Integrations"],
-      impact: "Streamlined procurement and inventory operations, improving farmer support systems."
-    },
-    {
-      company: "Barq Al Mustaqbal Co – Saudi Arabia",
-      industry: "Construction",
-      implemented: ["HR & Payroll", "Purchase", "Sales", "Project Management", "Accounting", "Inventory", "E-Invoicing Integration"],
-      impact: "Improved operational efficiency and financial management across construction projects."
-    },
-    {
-      company: "Casa Bambino – Kuwait",
-      industry: "Retail & Fashion",
-      implemented: ["Sales", "Accounting", "Inventory", "POS", "Shopify Integration"],
-      impact: "Improved retail operations and online-offline sales synchronization."
-    },
-    {
-      company: "Carazon – India",
-      industry: "Home Interior",
-      implemented: ["CRM", "Inventory", "Accounting", "Email/WhatsApp/Social Marketing", "Document Management"],
-      impact: "Enhanced customer engagement and improved operational workflow management."
-    }
-  ];
-
   const processSteps = [
     { title: "Requirement Gathering", num: "01", desc: "Understanding your business operations and challenges." },
     { title: "ERP Planning & Consultation", num: "02", desc: "Selecting modules and defining implementation strategy." },
@@ -121,11 +97,11 @@ export default function Odoo() {
   ];
 
   const trustedBrands = [
-    { name: "Toyota", logo: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Toyota_logo_%282020%29.svg" },
-    { name: "Danone", logo: "https://upload.wikimedia.org/wikipedia/commons/1/13/Danone_logo.svg" },
-    { name: "WWF", logo: "https://upload.wikimedia.org/wikipedia/en/2/24/WWF_logo.svg" },
-    { name: "Hyatt Hotels", logo: "https://upload.wikimedia.org/wikipedia/commons/7/73/Hyatt_logo.svg" },
-    { name: "JPL", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e0/JPL_logo.svg" }
+    { name: "Toyota", logo: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Toyota_logo_%282019%29.svg" },
+    { name: "Danone", logo: "https://www.vectorlogo.zone/logos/danone/danone-ar21.svg" },
+    { name: "WWF", logo: "https://cdn.simpleicons.org/wwf/white" },
+    { name: "Hyatt", logo: "https://www.vectorlogo.zone/logos/hyatt/hyatt-ar21.svg" },
+    { name: "JPL", logo: "https://cdn.simpleicons.org/nasa/white" }
   ];
 
   return (
@@ -162,9 +138,6 @@ export default function Odoo() {
                   Book Free Consultation
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                <Link to="/contact" className="bg-white text-slate-900 border border-slate-200 px-12 py-6 rounded-full text-xl font-black hover:bg-slate-100 transition-all flex items-center justify-center gap-2 active:scale-95">
-                  Discuss Requirements
-                </Link>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-8 border-t border-slate-200 pt-8 items-center justify-center lg:justify-start">
@@ -188,7 +161,7 @@ export default function Odoo() {
               <div className="relative aspect-[16/11] lg:aspect-[4/3]">
                 <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 border-8 border-white bg-white">
                   <img 
-                    src="/src/assets/images/regenerated_image_1778649322700.jpg" 
+                    src={odooHero} 
                     alt="Working with Odoo ERP" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -207,7 +180,7 @@ export default function Odoo() {
                   </div>
                   <div>
                     <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Real-time</div>
-                    <div className="text-xl font-black text-slate-900">+65% Efficiency</div>
+                    <div className="text-xl font-black text-slate-900">Process Automation</div>
                   </div>
                 </motion.div>
 
@@ -243,7 +216,7 @@ export default function Odoo() {
               <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-6 flex items-center gap-3">
                 <div className="w-10 h-px bg-brand"></div> Why Businesses Need ERP
               </h2>
-              <h3 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-tight">
+              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-tight">
                 Stop Managing Tools. <br/><span className="font-display italic font-normal text-brand">Start Managing Growth.</span>
               </h3>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-medium">
@@ -296,7 +269,7 @@ export default function Odoo() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
              <div>
                 <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-4">What is Odoo ERP?</h2>
-                <h3 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">One Unified Platform <br />For Everything.</h3>
+                <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">One Unified Platform <br />For Everything.</h3>
                 <p className="text-xl text-slate-600 leading-relaxed font-light">
                   Odoo is a modern, open-source ERP platform that integrates all major business functions into one unified system. 
                   Instead of using separate tools for CRM, accounting, HR, and sales, Odoo allows businesses to manage everything from a single centralized platform.
@@ -343,63 +316,99 @@ export default function Odoo() {
         </div>
       </section>
 
-      {/* How Manomay Helps */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-4">How We Help</h2>
-            <h3 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6">Strategic Technology Partner</h3>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
-              At Manomay Global Solutions, we do not simply install software. We understand your business model before designing a customized ERP strategy.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-               { title: "Operational Efficiency", icon: <Zap /> },
-               { title: "Faster Business Growth", icon: <TrendingUp /> },
-               { title: "Cost Optimization", icon: <DollarSign /> },
-               { title: "Process Control", icon: <Settings /> }
-            ].map((benefit, idx) => (
-              <div key={idx} className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 text-center">
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-brand mx-auto mb-6 shadow-sm">
-                  {benefit.icon}
-                </div>
-                <h4 className="text-xl font-bold text-slate-900">{benefit.title}</h4>
-              </div>
-            ))}
-          </div>
+      {/* Odoo Modules - Strategic Technical Overhaul */}
+      <section className="bg-slate-950 text-white py-0 overflow-hidden">
+        {/* Header Strip */}
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 border-b border-white/5">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col lg:flex-row items-baseline gap-12"
+          >
+              <h2 className="text-2xl lg:text-4xl font-black tracking-tighter leading-[0.8] text-white">
+                MODULE <br/>
+                <span className="text-brand inline-flex items-center gap-8">
+                  MATRIX 
+                  <div className="h-px flex-1 bg-white/20 min-w-[100px] hidden lg:block"></div>
+                </span>
+              </h2>
+            <div className="max-w-md">
+              <p className="text-xl lg:text-2xl text-slate-400 font-medium leading-relaxed font-mono uppercase tracking-tight">
+                // System Architecture v4.0 <br/>
+                Deep vertical integration across the enterprise core.
+              </p>
+            </div>
+          </motion.div>
         </div>
-      </section>
 
-      {/* Implementation Services Detailed */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 text-center mb-16">
-          <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-4">Our Odoo Modules</h2>
-          <h3 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6">Tailored Configurations.</h3>
-          <p className="text-slate-600 max-w-2xl mx-auto">We configure and implement the exact modules your business needs to operate efficiently.</p>
-        </div>
-        
-        <div className="max-w-[1400px] mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Modules Waterfall */}
+        <div className="space-y-0">
           {modules.map((module, idx) => (
             <motion.div 
               key={idx}
-              whileHover={{ y: -5 }}
-              className="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-xl transition-all group"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, margin: "-200px" }}
+              transition={{ duration: 1 }}
+              className={`group relative border-b border-white/5 min-h-[70vh] flex flex-col lg:flex-row items-stretch ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
-              <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-brand/10 group-hover:text-brand mb-8 transition-all">
-                {module.icon}
+              {/* Massive Image/Identity Side */}
+              <div className="lg:w-1/2 relative overflow-hidden bg-slate-900 border-x border-white/5">
+                 <div className="absolute inset-0 opacity-20 mix-blend-overlay group-hover:scale-110 transition-transform duration-[2s]">
+                    <img 
+                      src={`https://images.unsplash.com/photo-${idx === 0 ? '1552664730-d307ca884978' : idx === 1 ? '1554224155-8d04cb21cd6c' : idx === 2 ? '1586528116311-ad8dd3c8310d' : idx === 3 ? '1521791136064-7986c2923216' : idx === 4 ? '1454165833222-38c71595fe66' : idx === 5 ? '1460925895917-afdab827c52f' : '1516321318423-f06f85e504b3'}?auto=format&fit=crop&q=80&w=1200`} 
+                      alt="" 
+                      className="w-full h-full object-cover"
+                    />
+                 </div>
+                 
+                 <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-transparent to-slate-950/50 flex flex-col justify-between p-12 lg:p-20">
+                    <div className="text-[6rem] lg:text-[8rem] font-black text-white/5 leading-none select-none -translate-x-1/4">
+                      0{idx + 1}
+                    </div>
+                    <div className="relative z-10">
+                       <div className="w-24 h-24 bg-brand text-white rounded-full flex items-center justify-center mb-8 shadow-2xl shadow-brand/40 scale-125">
+                         {module.icon}
+                       </div>
+                       <h4 className="text-2xl lg:text-3xl font-black tracking-tighter leading-none mb-6">
+                         {module.name}
+                       </h4>
+                       <div className="h-2 w-32 bg-white/20"></div>
+                    </div>
+                 </div>
               </div>
-              <h4 className="text-2xl font-black text-slate-900 mb-4">{module.name}</h4>
-              <p className="text-slate-500 font-medium leading-relaxed mb-6">{module.desc}</p>
-              <ul className="space-y-2">
-                {(module as any).features.map((feature: string, fidx: number) => (
-                  <li key={fidx} className="flex items-center gap-2 text-sm text-slate-700 font-bold">
-                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+
+              {/* Technical features side */}
+              <div className="lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-slate-950">
+                <p className="text-xl lg:text-2xl font-light text-slate-300 leading-tight mb-16 max-w-2xl font-jakarta italic">
+                  "{module.desc}"
+                </p>
+
+                <div className="grid gap-1 border-t border-white/10 pt-16">
+                  <div className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-12">Deployment Specifications</div>
+                  
+                  <div className="space-y-4">
+                    {module.features.map((feature, fidx) => (
+                      <div key={fidx} className="flex items-center group/item cursor-default">
+                        <div className="w-8 h-px bg-white/10 group-hover/item:w-16 group-hover/item:bg-brand transition-all duration-500 mr-6"></div>
+                        <span className="text-lg lg:text-xl font-black tracking-tight text-white/40 group-hover/item:text-white transition-colors duration-300">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-20 pt-10 border-t border-white/5 flex items-center justify-between">
+                   <div className="flex gap-2">
+                     <div className="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
+                     <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                     <div className="w-2 h-2 rounded-full bg-white/20"></div>
+                   </div>
+                   <div className="font-mono text-[10px] text-white/30 tracking-[0.2em]">INTEGRATION_STATUS: OPTIMAL</div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -442,11 +451,23 @@ export default function Odoo() {
             <h2 className="text-brand font-black uppercase tracking-widest text-xs mb-4">Trusted Worldwide</h2>
             <h3 className="text-3xl font-black text-white">Used by Global Leaders.</h3>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
              {trustedBrands.map((brand, idx) => (
-               <div key={idx} className="flex items-center gap-2">
-                 <img src={brand.logo} alt={brand.name} className="h-8 lg:h-12 w-auto invert brightness-0" />
-                 <span className="text-white font-bold tracking-tighter text-xl">{brand.name}</span>
+               <div key={idx} className="flex items-center justify-center p-4">
+                 {!brokenImages[brand.name] ? (
+                   <img 
+                     src={brand.logo} 
+                     alt={brand.name} 
+                     className="h-8 md:h-12 w-auto object-contain invert brightness-0"
+                     loading="lazy"
+                     referrerPolicy="no-referrer"
+                     onError={() => setBrokenImages(prev => ({ ...prev, [brand.name]: true }))}
+                   />
+                 ) : (
+                   <span className="text-white font-bold opacity-50 text-xl tracking-tight">
+                     {brand.name}
+                   </span>
+                 )}
                </div>
              ))}
           </div>
@@ -487,65 +508,6 @@ export default function Odoo() {
                  ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section className="py-24 bg-slate-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-4">Success Stories</h2>
-          <h3 className="text-4xl lg:text-5xl font-black text-slate-900 mb-16">Successful Implementations.</h3>
-          
-          <div className="space-y-12">
-            {caseStudies.map((study, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className={`flex flex-col lg:flex-row gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className="lg:w-1/2 bg-white p-12 rounded-[3.5rem] border border-slate-200 shadow-xl relative group">
-                  <div className="absolute top-8 right-8 text-6xl font-black text-slate-100 group-hover:text-brand/5 transition-colors select-none italic">
-                    0{idx + 1}
-                  </div>
-                  <h4 className="text-3xl font-black text-slate-900 mb-2">{study.company}</h4>
-                  <p className="text-brand font-bold mb-6 flex items-center gap-2">
-                    <Globe className="w-4 h-4" /> {study.industry}
-                  </p>
-                  <div className="space-y-4 mb-8">
-                    <div className="text-xs font-black text-slate-400 uppercase tracking-widest">Implemented Modules</div>
-                    <div className="flex flex-wrap gap-2">
-                      {study.implemented.map((item, i) => (
-                        <span key={i} className="px-4 py-1.5 bg-slate-50 border border-slate-200 rounded-full text-[10px] font-black text-slate-700 uppercase tracking-wider">
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="p-6 bg-brand/5 border-l-4 border-brand rounded-r-2xl text-slate-800 font-bold leading-relaxed">
-                    "{study.impact}"
-                  </div>
-                </div>
-                <div className="lg:w-1/2">
-                   <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white p-8 rounded-3xl border border-slate-100 flex flex-col items-center text-center">
-                         <div className="text-3xl font-black text-brand mb-1">100%</div>
-                         <div className="text-[10px] font-black text-slate-500 uppercase">Deployed</div>
-                      </div>
-                      <div className="bg-white p-8 rounded-3xl border border-slate-100 flex flex-col items-center text-center">
-                         <div className="text-3xl font-black text-emerald-500 mb-1">Smooth</div>
-                         <div className="text-[10px] font-black text-slate-500 uppercase">Migration</div>
-                      </div>
-                      <div className="bg-white p-8 rounded-3xl border border-slate-100 col-span-2 flex flex-col items-center text-center">
-                         <div className="text-2xl font-black text-slate-900 mb-1">Scale Ready</div>
-                         <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Digital Foundation</div>
-                      </div>
-                   </div>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -611,7 +573,7 @@ export default function Odoo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-[1.1]">
+            <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-[1.1]">
               Transform Your Business <br/><span className="text-brand italic font-display font-normal">With Odoo ERP.</span>
             </h2>
             <p className="text-xl text-slate-600 mb-12 font-light leading-relaxed max-w-3xl mx-auto">
@@ -625,43 +587,12 @@ export default function Odoo() {
                   Book Free Consultation
                   <ArrowRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                <Link to="/contact" className="bg-slate-900 text-white px-12 py-6 rounded-full text-2xl font-black hover:bg-slate-800 transition-all active:scale-95">
-                  Contact Experts
-                </Link>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
     </div>
-  );
-}
-
-function Calculator(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="16" height="20" x="4" y="2" rx="2" />
-      <line x1="8" x2="16" y1="6" y2="6" />
-      <line x1="16" x2="16" y1="14" y2="18" />
-      <path d="M16 10h.01" />
-      <path d="M12 10h.01" />
-      <path d="M8 10h.01" />
-      <path d="M12 14h.01" />
-      <path d="M8 14h.01" />
-      <path d="M12 18h.01" />
-      <path d="M8 18h.01" />
-    </svg>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
+import { Mail, Linkedin, Twitter } from "lucide-react";
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 
@@ -61,13 +61,8 @@ export default function Footer() {
                 info@manomayglobalsolutions.com
               </li>
               <li className="flex items-center gap-3 text-slate-500 text-sm">
-                <Phone className="w-4 h-4 text-brand" />
-                +1 (800) 555-0123
-              </li>
-              <li className="flex items-start gap-3 text-slate-500 text-sm">
-                <MapPin className="w-4 h-4 text-brand mt-1" />
-                Manomay Global Solutions<br />
-                Business District, USA
+                <Linkedin className="w-4 h-4 text-brand" />
+                <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">LinkedIn Profile</a>
               </li>
             </ul>
           </div>
@@ -75,7 +70,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-slate-400 text-xs">
-            © 2024 Manomay Global Solutions. All rights reserved.
+            © {(new Date()).getFullYear()} Manomay Global Solutions. All rights reserved.
           </div>
           <div className="flex gap-8">
             <a href="#" className="text-slate-400 hover:text-brand text-xs transition-colors">Privacy Policy</a>

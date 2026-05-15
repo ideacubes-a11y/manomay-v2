@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
+import { Mail, Linkedin, Send, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
 import emailjs from '@emailjs/browser';
 
 const COUNTRIES = [
@@ -43,6 +43,7 @@ export default function Contact() {
     email: "",
     companyName: "",
     companyAddress: "",
+    businessNeeds: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -75,6 +76,7 @@ export default function Contact() {
           email: "",
           companyName: "",
           companyAddress: "",
+          businessNeeds: "",
         });
         setTimeout(() => setIsSubmitted(false), 5000);
       }, 1500);
@@ -94,6 +96,7 @@ export default function Contact() {
           user_email: formData.email,
           company_name: formData.companyName,
           company_address: formData.companyAddress,
+          business_needs: formData.businessNeeds,
           to_email: 'sales@manomayglobalsolutions.com'
         },
         publicKey
@@ -111,6 +114,7 @@ export default function Contact() {
         email: "",
         companyName: "",
         companyAddress: "",
+        businessNeeds: "",
       });
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
@@ -159,21 +163,11 @@ export default function Contact() {
               
               <div className="flex items-start gap-6">
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 flex-shrink-0 shadow-sm text-brand">
-                  <Phone className="w-6 h-6" />
+                  <Linkedin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Call Us</h3>
-                  <p className="text-xl font-bold text-slate-900">+1 (800) 555-0123</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 flex-shrink-0 shadow-sm text-brand">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Global HQ</h3>
-                  <p className="text-xl font-bold text-slate-900">Strategic Operations Base</p>
+                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Follow Us</h3>
+                  <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-slate-900 hover:text-brand transition-colors">LinkedIn Profile</a>
                 </div>
               </div>
             </div>
@@ -339,6 +333,17 @@ export default function Contact() {
                     value={formData.companyAddress}
                     onChange={handleChange}
                     placeholder="Street, City, State, ZIP"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Business Needs / Introduction (Optional)</label>
+                  <textarea
+                    name="businessNeeds"
+                    rows={4}
+                    value={formData.businessNeeds}
+                    onChange={handleChange}
+                    placeholder="Briefly describe your business needs or provide an introduction..."
                     className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
                   />
                 </div>

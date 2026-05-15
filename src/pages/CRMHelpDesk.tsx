@@ -130,7 +130,7 @@ const CRMHelpDesk = () => {
               
               <div className="flex flex-wrap gap-6">
                 <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group active:scale-95">
-                  Design My Customer Journey
+                  Book Free Consultation
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
@@ -290,15 +290,6 @@ const CRMHelpDesk = () => {
               Book Free Consultation
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
-            <a 
-              href="https://www.odoo.com/pricing" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-3 active:scale-95 group"
-            >
-              Odoo Pricing
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-            </a>
           </div>
         </div>
       </section>

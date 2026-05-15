@@ -192,9 +192,9 @@ export default function OdooPOS() {
               <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-white border border-slate-200 text-brand text-sm font-bold uppercase tracking-widest mb-10 shadow-sm justify-center">
                  <Store className="w-3.5 h-3.5 text-brand" /> Odoo Point of Sale
               </div>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-slate-900 mb-6 tracking-tight leading-tight lg:leading-[1] font-jakarta">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight lg:leading-[1.1] font-jakarta">
                 Optimize Your <br className="hidden md:block"/>
-                <span className="font-display italic font-normal text-brand text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] px-1">Points of Sale</span>
+                <span className="font-display italic font-normal text-brand px-1">Points of Sale</span>
                 <br className="hidden md:block"/> With Odoo.
               </h1>
               <p className="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg mx-auto lg:mx-0">
@@ -203,7 +203,7 @@ export default function OdooPOS() {
               
               <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
                 <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 flex items-center justify-center gap-3 group active:scale-95">
-                  Book a Free Demo
+                  Book Free Consultation
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
@@ -262,7 +262,7 @@ export default function OdooPOS() {
               <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-brand"></div> Our Expertise
               </h2>
-              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-tight tracking-tight font-jakarta">
+              <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-8 tracking-tight font-jakarta">
                 How Manomay Global Solutions <br/>
                 <span className="font-display italic font-normal text-brand">Can help you implement Odoo POS.</span>
               </h3>
@@ -346,7 +346,7 @@ export default function OdooPOS() {
               <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center justify-center gap-2">
                 <div className="w-8 h-px bg-brand"></div> Innovation in Retail
               </h2>
-              <h3 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">What makes Odoo POS <span className="font-display italic font-normal text-brand">Special?</span></h3>
+              <h3 className="text-2xl lg:text-4xl font-black text-slate-900 mb-6 tracking-tight font-jakarta">What makes Odoo POS <span className="font-display italic font-normal text-brand">Special?</span></h3>
               <p className="text-xl text-slate-600 leading-relaxed font-light">
                 Odoo Point of Sale is a web-based interface that combines the power of a standard desktop application with the flexibility of the cloud.
               </p>
@@ -443,128 +443,177 @@ export default function OdooPOS() {
         </div>
       </section>
 
-      {/* Industries Sectors */}
-      <section className="py-32 bg-slate-50 relative">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Domain Expertise</h2>
-            <h3 className="text-3xl lg:text-5xl font-black mb-8 tracking-tight text-slate-900 font-jakarta">
-              Smart Solutions for <span className="font-display italic font-normal text-brand">Both Worlds.</span>
-            </h3>
-          </div>
-          
-          <div className="flex justify-center mb-16">
-            <div className="inline-flex bg-white rounded-full shadow-sm p-2 border border-slate-200">
-              {industrySolutions.map((sol) => (
-                <button
-                  key={sol.id}
-                  onClick={() => setActiveTab(sol.id)}
-                  className={`flex items-center gap-3 px-8 py-4 rounded-full text-lg font-bold transition-all ${
-                    activeTab === sol.id 
-                      ? 'bg-brand text-white shadow-lg shadow-brand/20' 
-                      : 'text-slate-600 hover:bg-slate-50 hover:text-brand'
-                  }`}
-                >
-                  <div className={activeTab === sol.id ? 'text-white' : 'text-slate-400'}>{sol.icon}</div>
-                  {sol.category}
-                </button>
-              ))}
+      {/* Industries Sectors - Radical Architectural Redesign */}
+      <section className="bg-slate-50 relative overflow-hidden">
+        {/* Subtle Section Divider */}
+        <div className="absolute top-0 left-0 w-full h-24 bg-white/50 backdrop-blur-3xl border-b border-slate-100"></div>
+
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-48 pb-40">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24">
+            <div className="max-w-4xl">
+              <h2 className="text-brand font-bold uppercase tracking-[0.4em] text-[10px] mb-6 flex items-center gap-6">
+                <div className="w-12 h-px bg-brand/30"></div> 
+                Industry Verticals
+              </h2>
+              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-4 tracking-tight">
+                Solutions for <br className="hidden md:block"/>
+                <span className="font-display italic font-normal text-brand">Every Operational Niche.</span>
+              </h3>
+            </div>
+            
+            <div className="flex flex-col gap-6">
+              <div className="inline-flex bg-white rounded-2xl shadow-sm p-1.5 border border-slate-200">
+                {industrySolutions.map((sol) => (
+                  <button
+                    key={sol.id}
+                    onClick={() => setActiveTab(sol.id)}
+                    className={`flex items-center gap-3 px-8 py-3.5 rounded-xl text-base font-bold transition-all duration-300 whitespace-nowrap ${
+                      activeTab === sol.id 
+                        ? 'bg-slate-900 text-white shadow-xl' 
+                        : 'text-slate-400 hover:text-slate-600'
+                    }`}
+                  >
+                    <div className={activeTab === sol.id ? 'scale-110' : 'opacity-40'}>{sol.icon}</div>
+                    {sol.id.charAt(0).toUpperCase() + sol.id.slice(1)}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
-          <div>
+          <div className="relative">
             {industrySolutions.map((sol) => (
               activeTab === sol.id && (
                 <motion.div
                   key={sol.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.6 }}
+                  className="grid lg:grid-cols-2 gap-px bg-slate-200 rounded-[3rem] overflow-hidden border border-slate-200 shadow-2xl"
                 >
-                  <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24">
-                    <div className="lg:col-span-5 space-y-8 sticky top-32">
-                      <div>
-                        <h4 className="text-2xl lg:text-4xl font-black text-slate-900 mb-6 font-jakarta">{sol.intro}</h4>
-                        <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl relative inline-block">
-                          <div className="absolute top-6 left-6 text-brand/10 text-6xl font-serif">“</div>
-                          <p className="text-lg italic font-light text-slate-700 relative z-10 pt-4 leading-relaxed">
-                            {sol.quote}
-                          </p>
-                        </div>
+                  {/* Left Column: Challenges */}
+                  <div className="bg-white p-10 lg:p-20 flex flex-col justify-between relative">
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-bold uppercase tracking-wider mb-10">
+                        Operational Friction
                       </div>
-                      <div className="prose prose-slate max-w-none text-slate-600 font-light leading-relaxed whitespace-pre-wrap text-lg">
-                        {sol.description}
-                      </div>
-
-                      <div className="bg-brand/5 border border-brand/10 rounded-3xl p-8">
-                         <h5 className="font-bold text-brand text-lg mb-6 flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-brand"></div> The Manomay Advantage</h5>
-                         <div className="space-y-6">
-                            {manomayAdvantage[sol.id as keyof typeof manomayAdvantage].map((adv, idx) => (
-                              <div key={idx}>
-                                <h6 className="font-bold text-slate-900">{adv.title}</h6>
-                                <p className="text-sm text-slate-600 mt-1 leading-relaxed">{adv.desc}</p>
-                              </div>
-                            ))}
-                         </div>
+                      <h4 className="text-2xl lg:text-3xl font-black text-slate-900 mb-10 tracking-tight leading-tight">
+                        {sol.intro}
+                      </h4>
+                      
+                      <div className="grid gap-4 mb-16">
+                        {sol.challenges.slice(0, 5).map((challenge, idx) => (
+                          <div key={idx} className="group flex items-start gap-4">
+                            <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-500 shrink-0 mt-1">
+                              <span className="text-[10px]">✕</span>
+                            </div>
+                            <div>
+                              <div className="text-base font-bold text-slate-900 mb-0.5">{challenge.title}</div>
+                              <div className="text-sm text-slate-500 leading-relaxed">{challenge.desc}</div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    
-                    <div className="lg:col-span-7 space-y-12">
-                      <div>
-                        <div className="inline-block bg-red-50 text-red-600 px-4 py-2 rounded-full font-bold text-sm tracking-widest uppercase mb-6 flex items-center gap-2 w-max">
-                           <span className="w-2 h-2 bg-red-500 rounded-full"></span> Major Challenges
-                        </div>
-                        <div className="grid sm:grid-cols-2 gap-6">
-                          {sol.challenges.map((challenge, idx) => (
-                            <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all group">
-                              <h5 className="font-bold text-slate-900 mb-3 group-hover:text-red-500 transition-colors flex items-start gap-2">
-                                <span className="text-red-400 mt-1 shrink-0">✕</span> {challenge.title}
-                              </h5>
-                              <p className="text-slate-500 text-sm leading-relaxed">{challenge.desc}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
 
-                      <div>
-                        <div className="inline-block bg-emerald-50 text-emerald-600 px-4 py-2 rounded-full font-bold text-sm tracking-widest uppercase mb-6 flex items-center gap-2 w-max">
-                           <span className="w-2 h-2 bg-emerald-500 rounded-full"></span> What Odoo Delivers
-                        </div>
-                        <p className="text-lg text-slate-600 mb-8 whitespace-pre-wrap font-light leading-relaxed">
-                          {sol.solutionsIntro}
-                        </p>
-                        <div className="grid sm:grid-cols-2 gap-6">
-                          {sol.solutions.map((solution, idx) => (
-                            <div key={idx} className="bg-white border border-emerald-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all group">
-                              <h5 className="font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors flex items-start gap-2">
-                                <span className="text-emerald-500 mt-1 shrink-0">✓</span> {solution.title}
-                              </h5>
-                              <p className="text-slate-500 text-sm leading-relaxed">{solution.desc}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                    <div className="pt-10 border-t border-slate-100 mt-auto">
+                       <p className="text-lg lg:text-xl text-slate-500 font-light italic leading-relaxed border-l-4 border-brand/20 pl-8">
+                         "{sol.quote}"
+                       </p>
                     </div>
+                  </div>
+
+                  {/* Right Column: Unified Core */}
+                  <div className="bg-slate-900 p-10 lg:p-20 flex flex-col justify-between text-white relative">
+                     <div className="relative z-10">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 text-white/70 rounded-full text-[10px] font-bold uppercase tracking-wider mb-10 border border-white/10">
+                          The Manomay Core
+                        </div>
+                        <h4 className="text-2xl lg:text-3xl font-black text-white mb-10 tracking-tight leading-tight">
+                          Integrated Enterprise <br className="hidden lg:block"/> Deployment.
+                        </h4>
+
+                        <div className="grid gap-6">
+                           {sol.solutions.map((item, idx) => (
+                             <div 
+                               key={idx}
+                               className="bg-white/5 border border-white/5 p-8 rounded-[2rem] hover:bg-white/10 transition-all"
+                             >
+                                <div className="flex items-start gap-6">
+                                   <div className="w-10 h-10 bg-brand text-white rounded-xl flex items-center justify-center shrink-0">
+                                      <Zap className="w-5 h-5 text-white" />
+                                   </div>
+                                   <div>
+                                      <h5 className="text-xl font-bold mb-2 tracking-tight">{item.title}</h5>
+                                      <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+                                   </div>
+                                </div>
+                             </div>
+                           ))}
+                        </div>
+                     </div>
+
+                     <div className="mt-20 pt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-10">
+                        <div className="flex items-center gap-6">
+                           <div className="flex -space-x-3">
+                              {[1,2,3].map(i => (
+                                <div key={i} className="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-800 overflow-hidden">
+                                   <img src={`https://i.pravatar.cc/100?img=${i+20}`} alt="" />
+                                </div>
+                              ))}
+                           </div>
+                           <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global Implementations</div>
+                        </div>
+                        <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-brand text-white rounded-full font-bold text-base hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 text-center">
+                          Strategy Session
+                        </Link>
+                     </div>
                   </div>
                 </motion.div>
               )
             ))}
           </div>
-          
-          <div className="bg-slate-900 rounded-[3rem] p-12 lg:p-20 text-white mt-24">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h3 className="text-3xl lg:text-5xl font-black tracking-tight font-jakarta mb-6">Why Manomay for POS?</h3>
-              <p className="text-lg text-slate-300 font-light">A POS system is only as good as the team that sets it up, trains your staff, and supports you after launch. Here is what makes Manomay the right partner for your POS implementation.</p>
+
+        </div>
+      </section>
+
+      {/* Why Manomay Section - Vertical Redesign */}
+      <section className="bg-slate-50 py-32 overflow-hidden border-y border-slate-200">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-12 gap-20">
+            <div className="lg:col-span-4 sticky top-32 h-fit">
+              <h2 className="text-brand font-bold uppercase tracking-[0.4em] text-[10px] mb-6 flex items-center gap-6">
+                <div className="w-12 h-px bg-brand/30"></div> 
+                The Partner Advantage
+              </h2>
+              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-[1] tracking-tight">
+                Why <br/>
+                <span className="text-brand font-display italic font-normal text-4xl lg:text-5xl">Manomay?</span>
+              </h3>
+              <p className="text-lg text-slate-500 font-light leading-relaxed max-w-sm">
+                A POS system is only as good as the team that sets it up. We ensure your investment delivers real returns through deep domain expertise.
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-8">
               {whyManomayFeatures.map((feat, idx) => (
-                 <div key={idx} className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors">
-                   <div className="w-12 h-12 bg-brand/20 rounded-2xl flex items-center justify-center mb-6">
-                     <CheckCircle2 className="w-6 h-6 text-brand" />
-                   </div>
-                   <h4 className="text-xl font-bold mb-4">{feat.title}</h4>
-                   <p className="text-slate-400 leading-relaxed text-sm">{feat.desc}</p>
-                 </div>
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white p-10 rounded-[3rem] border border-slate-200 group hover:border-brand/40 transition-all hover:shadow-2xl hover:shadow-brand/5"
+                >
+                  <div className="text-brand font-black text-xs mb-8 flex items-center gap-4">
+                    <span className="opacity-40">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
+                    <div className="h-px flex-1 bg-brand/10"></div>
+                  </div>
+                  <h4 className="text-2xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-brand transition-colors">{feat.title}</h4>
+                  <p className="text-slate-500 font-light leading-relaxed">{feat.desc}</p>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -647,7 +696,7 @@ export default function OdooPOS() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Why Odoo POS?</h2>
-            <h3 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight font-jakarta">
+            <h3 className="text-2xl lg:text-4xl font-black text-slate-900 tracking-tight font-jakarta">
               Benefits Turned into <span className="font-display italic font-normal text-brand">Results.</span>
             </h3>
           </div>
@@ -761,15 +810,15 @@ export default function OdooPOS() {
         <div className="bg-brand rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-slate-900/10 backdrop-blur-3xl"></div>
           <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-5xl font-black text-white mb-6 tracking-tight leading-tight font-jakarta text-center">
-              Ready to Upgrade Your <span className="font-display italic font-normal text-white/80">Business?</span>
-            </h2>
+                <h3 className="text-2xl lg:text-4xl font-black text-slate-900 mb-8 tracking-tight font-jakarta text-center">
+                  Ready to Upgrade Your <span className="font-display italic font-normal text-white/80">Business?</span>
+                </h3>
             <p className="text-xl text-white/90 mb-12 font-light leading-relaxed">
               Don't let legacy POS systems hold you back. Experience the power of unified retail and restaurant operations with Odoo.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/contact" className="bg-white text-brand px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-3 shadow-xl active:scale-95 group">
-                Get a Custom Quote
+                Book Free Consultation
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>

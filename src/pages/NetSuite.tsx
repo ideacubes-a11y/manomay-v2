@@ -132,9 +132,6 @@ export default function NetSuite() {
                   Book Free Consultation
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
-                <Link to="/contact" className="bg-white text-slate-900 border border-slate-200 py-5 px-10 rounded-full text-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm flex items-center justify-center gap-2 group active:scale-95">
-                  Request a Demo
-                </Link>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 border-t border-slate-200 pt-8 flex-wrap items-center justify-center lg:justify-start">
@@ -455,11 +452,8 @@ export default function NetSuite() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 flex items-center justify-center gap-3 group active:scale-95">
-                Schedule Your Free Consultation
+                Book Free Consultation
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </Link>
-              <Link to="/contact" className="bg-white/10 text-white backdrop-blur-md border border-white/20 px-10 py-5 rounded-full text-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center group active:scale-95">
-                Get a Tailored NetSuite Demo
               </Link>
             </div>
 

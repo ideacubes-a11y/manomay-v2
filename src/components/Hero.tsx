@@ -34,8 +34,8 @@ const slides: Slide[] = [
     description: "Our expert ERP implementations empower your organization to achieve new heights of efficiency and success. Manomay Global Solutions is the trusted partner for small and mid-sized companies across retail, manufacturing, IT, and e-commerce sectors.",
     cta1: "Book Free Consultation",
     cta1Link: "/contact",
-    cta2: "View Solutions",
-    cta2Link: "#solutions",
+    cta2: "",
+    cta2Link: "",
     image: "/hero-implementation.jpeg",
     imageAlt: "Odoo and NetSuite Implementation Partner Workspace",
     overlayTitle: "Official Partner",
@@ -52,10 +52,10 @@ const slides: Slide[] = [
     title: "Unify your business",
     highlight: "with powerful Odoo solutions",
     description: "Streamline your entire business with Odoo's fully integrated, highly customizable suite of applications. We deliver scalable architectures designed to adapt effortlessly as your company grows.",
-    cta1: "Explore Odoo Services",
-    cta1Link: "/odoo-implementations",
-    cta2: "Odoo Price Calculator",
-    cta2Link: "https://www.odoo.com/pricing",
+    cta1: "Book Free Consultation",
+    cta1Link: "/contact",
+    cta2: "",
+    cta2Link: "",
     image: "/Happ_CFO_With_Odoo.jpeg",
     imageAlt: "Successful CFO using Odoo ERP solution",
     overlayTitle: "Odoo Excellence",
@@ -72,10 +72,10 @@ const slides: Slide[] = [
     title: "Scale your enterprise",
     highlight: "with expert NetSuite solutions",
     description: "Unlock visibility and control. Our NetSuite implementations provide world-class financial management, CRM, and ecommerce capabilities for ambitious mid-market to enterprise organizations.",
-    cta1: "NetSuite Implementation",
-    cta1Link: "/netsuite-implementations",
-    cta2: "Consult with an Expert",
-    cta2Link: "/netsuite-implementations#consult",
+    cta1: "Book Free Consultation",
+    cta1Link: "/contact",
+    cta2: "",
+    cta2Link: "",
     image: "/Happy_NetSuite_Office.jpeg",
     imageAlt: "Modern NetSuite implementation office environment",
     overlayTitle: "NetSuite Mastery",
@@ -161,16 +161,6 @@ export default function Hero() {
                     {slide.cta1}
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                   </Link>
-                )}
-                
-                {slide.cta2Link?.startsWith('/') ? (
-                  <Link to={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-white hover:border-slate-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex items-center justify-center gap-2 group active:scale-95">
-                    {slide.cta2}
-                  </Link>
-                ) : (
-                  <a href={slide.cta2Link} className="bg-white text-slate-900 border border-slate-200 px-10 py-5 rounded-full text-xl font-bold hover:bg-white hover:border-slate-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex items-center justify-center gap-2 group active:scale-95">
-                    {slide.cta2}
-                  </a>
                 )}
               </div>
               

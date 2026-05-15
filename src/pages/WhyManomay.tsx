@@ -231,14 +231,7 @@ export default function WhyManomay() {
               to="/contact" 
               className="w-full sm:w-auto bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 active:scale-95 flex items-center justify-center gap-3 group"
             >
-              Get Started Now
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-            </Link>
-            <Link 
-              to="/odoo-implementations" 
-              className="w-full sm:w-auto bg-white border border-slate-200 text-slate-900 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-50 transition-all active:scale-95 flex items-center justify-center gap-3 group"
-            >
-              View Methodologies
+              Book Free Consultation
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </div>
