@@ -111,13 +111,13 @@ export default function OdooModules() {
               Every Module is <br className="hidden sm:block" />
               <span className="text-violet-400 italic font-display font-normal">Deeply Integrated.</span>
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-400 text-[19px] leading-[28.25px]">
               Odoo's modular approach allows you to start with what you need and scale as you grow, with every app communicating perfectly with the rest.
             </p>
           </div>
           <div className="hidden lg:block">
             <div className="text-right">
-              <div className="text-6xl font-bold text-brand/20 mb-2">50+</div>
+              <div className="text-6xl font-bold text-[#664d98] mb-2">50+</div>
               <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">Connected Apps</div>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function OdooModules() {
                 </div>
                 
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand transition-colors">{cat.category}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
+                <p className="text-slate-400 text-[18px] leading-[21.75px] group-hover:text-slate-300 transition-colors">
                   {cat.desc}
                 </p>
               </div>

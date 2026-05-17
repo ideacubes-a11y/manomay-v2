@@ -116,7 +116,7 @@ export default function Manufacturing() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-violet-500/10 border border-violet-500/20 text-white text-[13px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
+                className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-violet-500/10 border border-violet-500/20 text-white text-sm font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
               >
                  <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></div>
                  Production Floor Excellence
@@ -205,11 +205,11 @@ export default function Manufacturing() {
             <div className="grid grid-cols-2 gap-4">
               {challenges.map((c, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-brand/30 transition-all group">
-                  <div className="text-brand font-black text-sm mb-2 uppercase tracking-widest flex items-center gap-2">
+                  <div className="text-brand font-black text-base mb-2 uppercase tracking-widest flex items-center gap-2">
                     <AlertTriangle className="w-4 h-4" /> Challenge 0{i+1}
                   </div>
                   <h4 className="font-bold text-slate-900 mb-2">{c.title}</h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">{c.description}</p>
+                  <p className="text-base text-slate-500 leading-relaxed">{c.description}</p>
                 </div>
               ))}
             </div>
@@ -262,7 +262,7 @@ export default function Manufacturing() {
                     {React.cloneElement(s.icon as React.ReactElement, { className: "w-6 h-6 text-indigo-600 group-hover:text-white transition-colors" })}
                   </div>
                   <h4 className="text-lg font-bold text-slate-900 mb-2 transition-colors">{s.title}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed transition-colors">{s.description}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed transition-colors">{s.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -292,7 +292,7 @@ export default function Manufacturing() {
                 {adv.icon}
               </div>
               <h4 className="text-xl font-bold text-slate-900 mb-2">{adv.title}</h4>
-              <p className="text-slate-500 font-medium text-sm leading-relaxed">{adv.desc}</p>
+              <p className="text-slate-500 font-medium text-base leading-relaxed">{adv.desc}</p>
             </motion.div>
           ))}
           
@@ -302,7 +302,7 @@ export default function Manufacturing() {
               <h4 className="text-2xl mb-4 tracking-tighter font-jakarta">
                 <span className="font-bold">Ready to</span> <span className="font-display italic font-normal">Optimize?</span>
               </h4>
-              <p className="text-white/80 text-sm font-medium leading-relaxed">
+              <p className="text-white/80 text-base font-medium leading-relaxed">
                 Connect your floor to your office. Get your production floor roadmap and eliminate the guesswork.
               </p>
             </div>

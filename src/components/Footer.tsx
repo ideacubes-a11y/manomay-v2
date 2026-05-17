@@ -23,45 +23,45 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Solutions</h4>
+            <h4 className="font-bold text-slate-900 mb-6 uppercase text-sm tracking-widest">Solutions</h4>
             <ul className="space-y-4">
               {["Agile Implementation", "Financial Orchestration", "Supply Chain Velocity", "Custom Development", "Global Support"].map((item) => (
                 <li key={item}>
-                  <a href="#solutions" className="text-slate-500 hover:text-brand text-sm transition-colors">{item}</a>
+                  <a href="#solutions" className="text-slate-500 hover:text-brand text-sm transition-colors font-medium">{item}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Company</h4>
+            <h4 className="font-bold text-slate-900 mb-6 uppercase text-sm tracking-widest">Company</h4>
             <ul className="space-y-4">
               {["About Us", "Industries", "Modules", "Advantage"].map((item) => (
                 <li key={item}>
-                  <a href={`/#${item.toLowerCase().replace(" ", "")}`} className="text-slate-500 hover:text-brand text-sm transition-colors">{item}</a>
+                  <a href={`/#${item.toLowerCase().replace(" ", "")}`} className="text-slate-500 hover:text-brand text-sm transition-colors font-medium">{item}</a>
                 </li>
               ))}
               <li>
-                <Link to="/solutions/odoo-pos" className="text-slate-500 hover:text-brand text-sm transition-colors font-medium">Odoo POS Solutions</Link>
+                <Link to="/solutions/odoo-pos" className="text-slate-500 hover:text-brand text-sm transition-colors font-bold">Odoo POS Solutions</Link>
               </li>
               <li>
-                <a href="https://www.odoo.com/pricing" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand text-sm transition-colors font-medium">Odoo Price Calculator</a>
+                <a href="https://www.odoo.com/pricing" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand text-sm transition-colors font-bold">Odoo Price Calculator</a>
               </li>
               <li>
-                <Link to="/contact" className="text-slate-500 hover:text-brand text-sm transition-colors">Free Consultation</Link>
+                <Link to="/contact" className="text-slate-500 hover:text-brand text-sm transition-colors font-bold">Free Consultation</Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-slate-900 mb-6 uppercase text-xs tracking-widest">Contact</h4>
+            <h4 className="font-bold text-slate-900 mb-6 uppercase text-sm tracking-widest">Contact</h4>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-slate-500 text-sm">
-                <Mail className="w-4 h-4 text-brand" />
+              <li className="flex items-center gap-3 text-slate-500 text-sm font-bold">
+                <Mail className="w-5 h-5 text-brand" />
                 info@manomayglobalsolutions.com
               </li>
-              <li className="flex items-center gap-3 text-slate-500 text-sm">
-                <Linkedin className="w-4 h-4 text-brand" />
+              <li className="flex items-center gap-3 text-slate-500 text-sm font-bold">
+                <Linkedin className="w-5 h-5 text-brand" />
                 <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">LinkedIn Profile</a>
               </li>
             </ul>
@@ -69,12 +69,12 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-slate-400 text-xs">
+          <div className="text-slate-400 text-sm font-medium">
             © {(new Date()).getFullYear()} Manomay Global Solutions. All rights reserved.
           </div>
           <div className="flex gap-8">
-            <a href="#" className="text-slate-400 hover:text-brand text-xs transition-colors">Privacy Policy</a>
-            <a href="#" className="text-slate-400 hover:text-brand text-xs transition-colors">Terms of Service</a>
+            <a href="#" className="text-slate-400 hover:text-brand text-sm font-medium transition-colors">Privacy Policy</a>
+            <a href="#" className="text-slate-400 hover:text-brand text-sm font-medium transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

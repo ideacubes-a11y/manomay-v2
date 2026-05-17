@@ -21,7 +21,7 @@ export default function Advantage() {
             <h2 className="text-3xl lg:text-5xl font-black mb-8 tracking-tight font-jakarta">
               The Manomay <span className="font-display italic font-normal text-white text-3xl lg:text-5xl">Advantage.</span>
             </h2>
-            <p className="text-white/70 text-lg mb-12">
+            <p className="text-white/70 text-[19px] leading-[27px] mb-12">
               Why 85% of our clients come from legacy ERPs. We don't just implement software; we architect business outcomes.
             </p>
             

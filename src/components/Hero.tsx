@@ -215,7 +215,7 @@ export default function Hero() {
                   {/* Image Overlay Content */}
                   <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8">
                     <div className="text-white">
-                      <h3 className="font-bold text-lg sm:text-2xl mb-1">{slide.overlayTitle}</h3>
+                      <h3 className="font-bold text-xl sm:text-2xl mb-1">{slide.overlayTitle}</h3>
                       <p className="text-white/80 text-[10px] sm:text-sm">{slide.overlayDesc}</p>
                     </div>
                   </div>

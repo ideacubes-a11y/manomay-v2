@@ -152,7 +152,7 @@ export default function Navbar() {
                 {link.isAnchor ? (
                   <a 
                     href={link.path} 
-                    className={`text-lg font-bold transition-colors flex items-center gap-1.5 group/link ${isActive(link.path, link.isAnchor) ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
+                    className={`text-base font-bold transition-colors flex items-center gap-1.5 group/link ${isActive(link.path, link.isAnchor) ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
                   >
                     {link.name}
                     {link.subLinks && <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === link.name ? 'rotate-180' : ''}`} />}
@@ -161,7 +161,7 @@ export default function Navbar() {
                 ) : (
                   <Link 
                     to={link.path} 
-                    className={`text-lg font-bold transition-colors group/link ${isActive(link.path, link.isAnchor) ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
+                    className={`text-base font-bold transition-colors group/link ${isActive(link.path, link.isAnchor) ? 'text-brand' : 'text-slate-600 hover:text-brand'}`}
                   >
                     {link.name}
                     <span className={`absolute bottom-0 left-0 h-0.5 bg-brand transition-all duration-300 ${isActive(link.path, link.isAnchor) ? 'w-full' : 'w-0 group-hover/link:w-full'}`}></span>
@@ -190,7 +190,7 @@ export default function Navbar() {
                                   {sub.name}
                                   <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all" />
                                 </h4>
-                                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                                <p className="text-sm text-slate-500 mt-1 leading-relaxed">
                                   {sub.description}
                                 </p>
                               </div>
@@ -234,7 +234,7 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
             ))}
-            <Link to="/contact" className="bg-brand text-white px-8 py-3.5 rounded-full text-lg font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 text-center active:scale-95 group">
+            <Link to="/contact" className="bg-brand text-white px-8 py-3.5 rounded-full text-base font-bold hover:bg-brand/90 transition-all shadow-xl shadow-brand/20 text-center active:scale-95 group">
               Book Free Consultation
             </Link>
           </div>

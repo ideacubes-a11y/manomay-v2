@@ -31,6 +31,22 @@ const COUNTRIES = [
   { code: "+968", name: "OMN", flag: "🇴🇲" },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
+const INDUSTRIES = [
+  "Manufacturing",
+  "Retail & E-commerce",
+  "Wholesale & Distribution",
+  "Professional Services",
+  "Healthcare",
+  "Construction & Real Estate",
+  "Education",
+  "Food & Beverage",
+  "Technology & IT",
+  "Agriculture",
+  "Non-Profit",
+  "Logistics & Supply Chain",
+  "Other"
+];
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     requestType: "Book Free Consultation",
@@ -42,6 +58,7 @@ export default function Contact() {
     mobile: "",
     email: "",
     companyName: "",
+    industry: "",
     companyAddress: "",
     businessNeeds: "",
   });
@@ -75,6 +92,7 @@ export default function Contact() {
           mobile: "",
           email: "",
           companyName: "",
+          industry: "",
           companyAddress: "",
           businessNeeds: "",
         });
@@ -95,6 +113,7 @@ export default function Contact() {
           user_mobile: `${formData.countryCode} ${formData.mobile}`,
           user_email: formData.email,
           company_name: formData.companyName,
+          company_industry: formData.industry,
           company_address: formData.companyAddress,
           business_needs: formData.businessNeeds,
           to_email: 'sales@manomayglobalsolutions.com'
@@ -139,8 +158,8 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-slate-50 border border-slate-200 text-brand text-sm font-bold uppercase tracking-widest mb-10 shadow-sm">
-              <Mail className="w-4 h-4" /> Get In Touch
+            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-slate-50 border border-slate-200 text-brand text-base font-bold uppercase tracking-widest mb-10 shadow-sm">
+              <Mail className="w-5 h-5" /> Get In Touch
             </div>
             <h1 className="text-5xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1] font-jakarta">
               Your Journey to Efficiency <br />
@@ -156,8 +175,8 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Email Us</h3>
-                  <p className="text-xl font-bold text-slate-900">sales@manomayglobalsolutions.com</p>
+                  <h3 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-1">Email Us</h3>
+                  <p className="text-2xl font-bold text-slate-900">sales@manomayglobalsolutions.com</p>
                 </div>
               </div>
               
@@ -166,8 +185,8 @@ export default function Contact() {
                   <Linkedin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Follow Us</h3>
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-slate-900 hover:text-brand transition-colors">LinkedIn Profile</a>
+                  <h3 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-1">Follow Us</h3>
+                  <a href="#" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-slate-900 hover:text-brand transition-colors">LinkedIn Profile</a>
                 </div>
               </div>
             </div>
@@ -183,12 +202,12 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Request Type Dropdown */}
               <div>
-                <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">I want to...</label>
+                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">I want to...</label>
                 <select
                   name="requestType"
                   value={formData.requestType}
                   onChange={handleChange}
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all outline-none"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all outline-none font-medium"
                 >
                   <option>Book Free Consultation</option>
                   <option>Consult with an expert</option>
@@ -198,7 +217,7 @@ export default function Contact() {
 
               {/* ERP Preference Radio */}
               <div>
-                <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-3">Preferred ERP</label>
+                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-3">Preferred ERP</label>
                 <div className="flex gap-6">
                   {["Odoo", "NetSuite"].map((erp) => (
                     <label key={erp} className="flex items-center gap-3 cursor-pointer group">
@@ -208,9 +227,9 @@ export default function Contact() {
                         value={erp}
                         checked={formData.erpPreference === erp}
                         onChange={handleChange}
-                        className="w-5 h-5 text-brand border-slate-300 focus:ring-brand"
+                        className="w-6 h-6 text-brand border-slate-300 focus:ring-brand"
                       />
-                      <span className={`font-semibold transition-colors ${formData.erpPreference === erp ? 'text-brand' : 'text-slate-500 group-hover:text-slate-700'}`}>
+                      <span className={`text-lg font-bold transition-colors ${formData.erpPreference === erp ? 'text-brand' : 'text-slate-500 group-hover:text-slate-700'}`}>
                         {erp}
                       </span>
                     </label>
@@ -221,7 +240,7 @@ export default function Contact() {
               {/* Personal Info */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">First Name</label>
+                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">First Name</label>
                   <input
                     type="text"
                     name="firstName"
@@ -229,11 +248,11 @@ export default function Contact() {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="John"
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Last Name</label>
+                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Last Name</label>
                   <input
                     type="text"
                     name="lastName"
@@ -241,25 +260,25 @@ export default function Contact() {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Doe"
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Mobile Number</label>
+                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Mobile Number</label>
                 <div className="flex gap-3">
                   <div className="relative">
                     <button
                       type="button"
                       onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                      className="w-32 bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 flex items-center justify-between gap-2 hover:border-brand/40 transition-all focus:outline-none focus:ring-2 focus:ring-brand"
+                      className="w-[110px] bg-white border border-slate-200 rounded-xl px-3 py-4 text-slate-900 flex items-center justify-between gap-1 hover:border-brand/40 transition-all focus:outline-none focus:ring-2 focus:ring-brand"
                     >
                       <span className="flex items-center gap-2">
                         <span>{formData.countryFlag}</span>
-                        <span className="font-semibold">{formData.countryCode}</span>
+                        <span className="font-bold text-base">{formData.countryCode}</span>
                       </span>
-                      <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${isCountryDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform flex-shrink-0 ${isCountryDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     {isCountryDropdownOpen && (
@@ -292,13 +311,13 @@ export default function Contact() {
                     value={formData.mobile}
                     onChange={handleChange}
                     placeholder="000-000-0000"
-                    className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                    className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Email Address</label>
+                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Email Address</label>
                 <input
                   type="email"
                   name="email"
@@ -306,14 +325,14 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="john@company.com"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
                 />
               </div>
 
               {/* Company Info */}
               <div className="space-y-6 pt-2">
                 <div>
-                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Company Name</label>
+                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Company Name</label>
                   <input
                     type="text"
                     name="companyName"
@@ -321,11 +340,29 @@ export default function Contact() {
                     value={formData.companyName}
                     onChange={handleChange}
                     placeholder="Enterprises Ltd."
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
                   />
                 </div>
+                <div className="relative">
+                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Industry</label>
+                  <div className="relative">
+                    <select
+                      name="industry"
+                      required
+                      value={formData.industry}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg appearance-none"
+                    >
+                      <option value="" disabled>Select Industry</option>
+                      {INDUSTRIES.map((industry) => (
+                        <option key={industry} value={industry}>{industry}</option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+                  </div>
+                </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Company Address</label>
+                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Company Address</label>
                   <textarea
                     name="companyAddress"
                     required
@@ -333,18 +370,18 @@ export default function Contact() {
                     value={formData.companyAddress}
                     onChange={handleChange}
                     placeholder="Street, City, State, ZIP"
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Business Needs / Introduction (Optional)</label>
+                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Business Needs / Introduction (Optional)</label>
                   <textarea
                     name="businessNeeds"
                     rows={4}
                     value={formData.businessNeeds}
                     onChange={handleChange}
                     placeholder="Briefly describe your business needs or provide an introduction..."
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
                   />
                 </div>
               </div>
@@ -370,7 +407,7 @@ export default function Contact() {
                 )}
               </button>
               
-              <p className="text-center text-xs text-slate-400">
+              <p className="text-center text-sm font-medium text-slate-400">
                 By submitting, you agree to our privacy policy and terms of service.
               </p>
             </form>

@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { 
   ArrowRight, 
   CheckCircle2, 
@@ -32,7 +32,7 @@ import {
   Heart,
   Calculator
 } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import odooHero from "../assets/images/regenerated_image_1778649322700.jpg";
 
@@ -179,7 +179,7 @@ export default function Odoo() {
                     <TrendingUp className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Real-time</div>
+                    <div className="text-sm font-black text-slate-500 uppercase tracking-widest">Real-time</div>
                     <div className="text-xl font-black text-slate-900">Process Automation</div>
                   </div>
                 </motion.div>
@@ -193,7 +193,7 @@ export default function Odoo() {
                     <Rocket className="w-6 h-6 text-brand" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Unified</div>
+                    <div className="text-sm font-black text-slate-500 uppercase tracking-widest">Unified</div>
                     <div className="text-xl font-black text-slate-900">Total Integration</div>
                   </div>
                 </motion.div>
@@ -269,7 +269,7 @@ export default function Odoo() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
              <div>
                 <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-4">What is Odoo ERP?</h2>
-                <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">One Unified Platform <br />For Everything.</h3>
+                <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">One Unified Platform <br /><span className="font-display italic font-normal text-[#503d78]">For Everything.</span></h3>
                 <p className="text-xl text-slate-600 leading-relaxed font-light">
                   Odoo is a modern, open-source ERP platform that integrates all major business functions into one unified system. 
                   Instead of using separate tools for CRM, accounting, HR, and sales, Odoo allows businesses to manage everything from a single centralized platform.
@@ -284,7 +284,7 @@ export default function Odoo() {
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white p-6 rounded-3xl border border-slate-200">
                     <h4 className="font-black text-slate-900 mb-1">{item.title}</h4>
-                    <p className="text-xs text-slate-500">{item.desc}</p>
+                    <p className="text-sm text-slate-500">{item.desc}</p>
                   </div>
                 ))}
              </div>
@@ -317,100 +317,136 @@ export default function Odoo() {
       </section>
 
       {/* Odoo Modules - Strategic Technical Overhaul */}
-      <section className="bg-slate-950 text-white py-0 overflow-hidden">
-        {/* Header Strip */}
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-32 border-b border-white/5">
+      <section className="bg-slate-50 py-32 overflow-hidden relative">
+         {/* Subtle background element */}
+         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand/5 blur-[120px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+         <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-brand/5 blur-[120px] rounded-full pointer-events-none -translate-x-1/3 translate-y-1/3"></div>
+
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col lg:flex-row items-baseline gap-12"
+            className="flex flex-col lg:flex-row items-baseline justify-between gap-12 mb-20 relative z-20"
           >
-              <h2 className="text-2xl lg:text-4xl font-black tracking-tighter leading-[0.8] text-white">
-                MODULE <br/>
-                <span className="text-brand inline-flex items-center gap-8">
-                  MATRIX 
-                  <div className="h-px flex-1 bg-white/20 min-w-[100px] hidden lg:block"></div>
-                </span>
+            <div>
+              <h2 className="text-sm font-black text-brand uppercase tracking-[0.5em] mb-6 flex items-center gap-6">
+                <div className="w-12 h-px bg-brand/40"></div>
+                System Architecture v4.0
               </h2>
+              <h3 className="text-4xl lg:text-5xl font-black tracking-tight text-slate-900">
+                Module <span className="font-display italic font-normal text-brand">Matrix.</span>
+              </h3>
+            </div>
             <div className="max-w-md">
-              <p className="text-xl lg:text-2xl text-slate-400 font-medium leading-relaxed font-mono uppercase tracking-tight">
-                // System Architecture v4.0 <br/>
-                Deep vertical integration across the enterprise core.
+              <p className="text-xl text-slate-600 font-light leading-relaxed">
+                Deep vertical integration across the enterprise core. Scalable, modular, and designed to unify your entire business operations.
               </p>
             </div>
           </motion.div>
-        </div>
 
-        {/* Modules Waterfall */}
-        <div className="space-y-0">
-          {modules.map((module, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-200px" }}
-              transition={{ duration: 1 }}
-              className={`group relative border-b border-white/5 min-h-[70vh] flex flex-col lg:flex-row items-stretch ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-            >
-              {/* Massive Image/Identity Side */}
-              <div className="lg:w-1/2 relative overflow-hidden bg-slate-900 border-x border-white/5">
-                 <div className="absolute inset-0 opacity-20 mix-blend-overlay group-hover:scale-110 transition-transform duration-[2s]">
-                    <img 
-                      src={`https://images.unsplash.com/photo-${idx === 0 ? '1552664730-d307ca884978' : idx === 1 ? '1554224155-8d04cb21cd6c' : idx === 2 ? '1586528116311-ad8dd3c8310d' : idx === 3 ? '1521791136064-7986c2923216' : idx === 4 ? '1454165833222-38c71595fe66' : idx === 5 ? '1460925895917-afdab827c52f' : '1516321318423-f06f85e504b3'}?auto=format&fit=crop&q=80&w=1200`} 
-                      alt="" 
-                      className="w-full h-full object-cover"
-                    />
-                 </div>
-                 
-                 <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-transparent to-slate-950/50 flex flex-col justify-between p-12 lg:p-20">
-                    <div className="text-[6rem] lg:text-[8rem] font-black text-white/5 leading-none select-none -translate-x-1/4">
-                      0{idx + 1}
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            {/* Interactive Sidebar */}
+            <div className="lg:col-span-4 space-y-3 relative z-20">
+              {modules.map((module, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveModule(idx)}
+                  className={`w-full text-left flex items-center justify-between p-6 lg:p-7 rounded-3xl transition-all duration-500 overflow-hidden relative group border ${
+                    activeModule === idx 
+                      ? 'bg-slate-900 border-slate-900 shadow-2xl scale-[1.02]' 
+                      : 'bg-white border-slate-100/60 hover:border-brand/30 hover:shadow-lg hover:shadow-slate-200/50'
+                  }`}
+                >
+                  <div className="relative z-10 flex items-center gap-5">
+                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-colors duration-500 ${
+                      activeModule === idx ? 'bg-brand text-white shadow-lg' : 'bg-slate-50 text-slate-400 group-hover:text-brand group-hover:bg-brand/5'
+                    }`}>
+                      {module.icon}
                     </div>
-                    <div className="relative z-10">
-                       <div className="w-24 h-24 bg-brand text-white rounded-full flex items-center justify-center mb-8 shadow-2xl shadow-brand/40 scale-125">
-                         {module.icon}
-                       </div>
-                       <h4 className="text-2xl lg:text-3xl font-black tracking-tighter leading-none mb-6">
-                         {module.name}
-                       </h4>
-                       <div className="h-2 w-32 bg-white/20"></div>
-                    </div>
-                 </div>
-              </div>
-
-              {/* Technical features side */}
-              <div className="lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center bg-slate-950">
-                <p className="text-xl lg:text-2xl font-light text-slate-300 leading-tight mb-16 max-w-2xl font-jakarta italic">
-                  "{module.desc}"
-                </p>
-
-                <div className="grid gap-1 border-t border-white/10 pt-16">
-                  <div className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-12">Deployment Specifications</div>
-                  
-                  <div className="space-y-4">
-                    {module.features.map((feature, fidx) => (
-                      <div key={fidx} className="flex items-center group/item cursor-default">
-                        <div className="w-8 h-px bg-white/10 group-hover/item:w-16 group-hover/item:bg-brand transition-all duration-500 mr-6"></div>
-                        <span className="text-lg lg:text-xl font-black tracking-tight text-white/40 group-hover/item:text-white transition-colors duration-300">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
+                    <span className={`text-lg font-bold tracking-tight ${activeModule === idx ? 'text-white' : 'text-slate-800 group-hover:text-brand'}`}>
+                      {module.name}
+                    </span>
                   </div>
-                </div>
+                  {activeModule === idx && (
+                    <motion.div layoutId="active-indicator-odoo" className="relative z-10">
+                      <ArrowRight className="w-5 h-5 text-brand" />
+                    </motion.div>
+                  )}
+                  {/* Subtle active background effect for the active state */}
+                  {activeModule === idx && (
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand/20 blur-[50px] rounded-full pointer-events-none"></div>
+                  )}
+                </button>
+              ))}
+            </div>
 
-                <div className="mt-20 pt-10 border-t border-white/5 flex items-center justify-between">
-                   <div className="flex gap-2">
-                     <div className="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
-                     <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                     <div className="w-2 h-2 rounded-full bg-white/20"></div>
-                   </div>
-                   <div className="font-mono text-[10px] text-white/30 tracking-[0.2em]">INTEGRATION_STATUS: OPTIMAL</div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            {/* Dynamic Content Panel */}
+            <div className="lg:col-span-8 relative min-h-[550px] z-10">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeModule}
+                  initial={{ opacity: 0, x: 20, scale: 0.98 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -20, scale: 0.98 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="bg-white rounded-[3rem] p-10 lg:p-16 border border-slate-100 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.05)] h-full flex flex-col justify-between relative overflow-hidden"
+                >
+                  {/* Decorative numeric watermark */}
+                  <div className="absolute -top-10 -right-10 text-[15rem] font-black leading-none text-slate-50 select-none pointer-events-none font-jakarta tracking-tighter">
+                    0{activeModule + 1}
+                  </div>
+
+                  <div className="relative z-10">
+                    <div className="w-20 h-20 bg-brand/5 text-brand rounded-[2rem] flex items-center justify-center mb-10 border border-brand/10 shadow-sm shrink-0">
+                      {React.cloneElement(modules[activeModule].icon as React.ReactElement, { className: "w-10 h-10" })}
+                    </div>
+
+                    <h4 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 font-jakarta tracking-tight">
+                      {modules[activeModule].name}
+                    </h4>
+                    
+                    <p className="text-xl lg:text-[22px] font-medium text-slate-600 leading-relaxed max-w-2xl font-display italic mb-16">
+                      "{modules[activeModule].desc}"
+                    </p>
+
+                    <div>
+                      <div className="text-xs font-black text-brand uppercase tracking-[0.4em] mb-10 flex items-center gap-6">
+                        Deployment Specifications
+                        <div className="h-px flex-1 bg-slate-100"></div>
+                      </div>
+                      
+                      <div className="grid sm:grid-cols-2 gap-y-8 gap-x-12">
+                        {modules[activeModule].features.map((feature, fidx) => (
+                          <div key={fidx} className="flex items-start gap-4 group cursor-default">
+                             <div className="mt-1 flex-shrink-0">
+                               <CheckCircle2 className="w-5 h-5 text-emerald-500 group-hover:scale-110 group-hover:text-brand transition-all duration-300" />
+                             </div>
+                             <div>
+                                <span className="text-base lg:text-[17px] font-bold tracking-tight text-slate-800 group-hover:text-brand transition-colors duration-300 block leading-tight">
+                                  {feature}
+                                </span>
+                             </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="relative z-10 mt-16 pt-10 border-t border-slate-100 flex items-center justify-between">
+                     <div className="flex gap-2">
+                       <div className="w-2 h-2 rounded-full bg-brand animate-pulse"></div>
+                       <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+                       <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+                     </div>
+                     <div className="font-mono text-[11px] text-slate-400 uppercase tracking-[0.3em] font-bold">
+                       Status: Optimal Integration
+                     </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -448,7 +484,7 @@ export default function Odoo() {
       <section className="py-20 bg-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-brand font-black uppercase tracking-widest text-xs mb-4">Trusted Worldwide</h2>
+            <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-4">Trusted Worldwide</h2>
             <h3 className="text-3xl font-black text-white">Used by Global Leaders.</h3>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
@@ -535,7 +571,7 @@ export default function Odoo() {
               <div key={idx} className="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] hover:bg-white/10 transition-all group">
                 <div className="text-sky-300 mb-6 group-hover:scale-110 transition-transform">{ind.icon}</div>
                 <h4 className="text-2xl font-bold mb-2">{ind.name}</h4>
-                <p className="text-slate-100/60 font-medium text-sm leading-relaxed">{ind.desc}</p>
+                <p className="text-slate-100/60 font-medium text-base leading-relaxed">{ind.desc}</p>
               </div>
             ))}
           </div>
@@ -558,7 +594,7 @@ export default function Odoo() {
                <div key={idx} className="p-8 bg-slate-50 rounded-3xl border border-slate-100">
                   <div className="text-4xl font-black text-brand/20 mb-4">{step.num}</div>
                   <h4 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h4>
-                  <p className="text-slate-500 text-sm font-medium leading-relaxed">{step.desc}</p>
+                  <p className="text-slate-500 text-base font-medium leading-relaxed">{step.desc}</p>
                </div>
              ))}
           </div>

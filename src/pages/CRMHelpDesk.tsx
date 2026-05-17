@@ -106,7 +106,7 @@ const CRMHelpDesk = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-brand/10 border border-brand/20 text-white text-[13px] font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-brand/20"
+                className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-brand/10 border border-brand/20 text-white text-sm font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-brand/20"
               >
                  <div className="w-2.5 h-2.5 rounded-full bg-white animate-pulse"></div>
                  Relationship Management
@@ -236,7 +236,7 @@ const CRMHelpDesk = () => {
                   {result.icon}
                 </div>
                 <h4 className="text-xl font-bold text-slate-900 mb-4">{result.title}</h4>
-                <p className="text-slate-500 text-sm leading-relaxed">{result.desc}</p>
+                <p className="text-slate-500 text-base leading-relaxed">{result.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -252,8 +252,8 @@ const CRMHelpDesk = () => {
                 {advisorAdvantage.map((adv, i) => (
                   <div key={i} className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100">
                     <div className="text-brand mb-4">{adv.icon}</div>
-                    <h5 className="font-bold text-slate-900 mb-2 text-sm">{adv.title}</h5>
-                    <p className="text-xs text-slate-500 leading-relaxed">{adv.desc}</p>
+                    <h5 className="font-bold text-slate-900 mb-2 text-base">{adv.title}</h5>
+                    <p className="text-sm text-slate-500 leading-relaxed">{adv.desc}</p>
                   </div>
                 ))}
               </div>

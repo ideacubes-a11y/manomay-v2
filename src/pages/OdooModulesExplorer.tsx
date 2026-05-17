@@ -965,12 +965,12 @@ export default function OdooModulesExplorer() {
                   whileHover={{ x: 5, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => handleCategoryChange("all")}
-                  className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all ${selectedCategory === "all" ? 'bg-brand text-white shadow-xl shadow-brand/40 scale-[1.02]' : 'bg-white border border-slate-100 text-slate-600 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50'}`}
+                  className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all text-lg ${selectedCategory === "all" ? 'bg-brand text-white shadow-xl shadow-brand/40 scale-[1.02]' : 'bg-white border border-slate-100 text-slate-600 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50'}`}
                 >
                   <span className="flex items-center gap-3">
-                    <Sparkles className="w-5 h-5" /> All Modules
+                    <Sparkles className="w-6 h-6" /> All Modules
                   </span>
-                  <ChevronRight className={`w-4 h-4 transition-transform ${selectedCategory === "all" ? 'rotate-90' : ''}`} />
+                  <ChevronRight className={`w-5 h-5 transition-transform ${selectedCategory === "all" ? 'rotate-90' : ''}`} />
                 </motion.button>
                 {categories.map((cat) => (
                   <motion.button 
@@ -978,15 +978,15 @@ export default function OdooModulesExplorer() {
                     whileHover={{ x: 5, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleCategoryChange(cat.id)}
-                    className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all border-l-4 ${selectedCategory === cat.id ? `bg-white border-brand text-brand shadow-xl shadow-slate-200/50 scale-[1.02]` : 'bg-white border-transparent text-slate-600 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50'}`}
+                    className={`w-full text-left px-5 py-4 rounded-2xl font-bold flex items-center justify-between transition-all border-l-4 text-lg ${selectedCategory === cat.id ? `bg-white border-brand text-brand shadow-xl shadow-slate-200/50 scale-[1.02]` : 'bg-white border-transparent text-slate-600 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50'}`}
                   >
                     <span className="flex items-center gap-3">
-                      <span className={`${cat.color} ${selectedCategory === cat.id ? 'text-white' : 'bg-opacity-10 text-brand'} w-8 h-8 rounded-lg flex items-center justify-center transition-colors`}>
+                      <span className={`${cat.color} ${selectedCategory === cat.id ? 'text-white' : 'bg-opacity-10 text-brand'} w-10 h-10 rounded-lg flex items-center justify-center transition-colors`}>
                         {cat.icon}
                       </span>
                       {cat.name}
                     </span>
-                    <ChevronRight className={`w-4 h-4 transition-transform ${selectedCategory === cat.id ? 'rotate-90' : ''}`} />
+                    <ChevronRight className={`w-5 h-5 transition-transform ${selectedCategory === cat.id ? 'rotate-90' : ''}`} />
                   </motion.button>
                 ))}
               </nav>
@@ -1028,14 +1028,14 @@ export default function OdooModulesExplorer() {
                         <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-2xl mb-6">{cat.description}</p>
                         
                         {(cat as any).tips && (
-                          <motion.div 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="bg-slate-50 border-l-4 border-brand p-4 text-sm text-slate-600 font-medium italic rounded-r-xl max-w-xl"
-                          >
-                            <span className="font-black text-brand uppercase text-[10px] block mb-1 tracking-widest">Industry Insight</span>
-                            "{(cat as any).tips}"
-                          </motion.div>
+                            <motion.div 
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              className="bg-slate-50 border-l-4 border-brand p-4 text-sm text-slate-600 font-medium italic rounded-r-xl max-w-xl"
+                            >
+                              <span className="font-black text-brand uppercase text-xs block mb-1 tracking-widest">Industry Insight</span>
+                              "{(cat as any).tips}"
+                            </motion.div>
                         )}
                       </div>
                     </motion.div>
@@ -1083,7 +1083,7 @@ export default function OdooModulesExplorer() {
                             <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-brand/40 group-hover:text-brand group-hover:scale-110 transition-all">
                               <Zap className="w-4 h-4 fill-current" />
                             </div>
-                            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition-colors">
+                            <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-brand transition-colors">
                               Ready for Implementation
                             </span>
                           </div>

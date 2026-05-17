@@ -151,7 +151,7 @@ export default function RetailEcommerce() {
       <section className="py-24 bg-white">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center mb-20">
-            <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center justify-center gap-3">
+            <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4 flex items-center justify-center gap-3">
               <div className="w-12 h-1.5 bg-gradient-to-r from-brand to-violet-500 rounded-full"></div> The Reality Check
             </h2>
             <h3 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">
@@ -185,8 +185,8 @@ export default function RetailEcommerce() {
                   <div className="text-brand font-black text-sm mb-2 uppercase tracking-widest flex items-center gap-2">
                     <AlertTriangle className="w-4 h-4" /> Issue 0{i+1}
                   </div>
-                  <h4 className="font-bold text-slate-900 mb-2">{c.title}</h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">{c.description}</p>
+                  <h4 className="font-bold text-slate-900 mb-2 text-base">{c.title}</h4>
+                  <p className="text-base text-slate-500 leading-relaxed">{c.description}</p>
                 </div>
               ))}
             </div>
@@ -200,7 +200,7 @@ export default function RetailEcommerce() {
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-violet-600 uppercase mb-4 flex items-center gap-2">
+              <h2 className="text-base font-bold tracking-widest text-violet-600 uppercase mb-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-violet-600"></div> Unified Commerce
               </h2>
               <h3 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight text-slate-900 font-jakarta">
@@ -219,7 +219,7 @@ export default function RetailEcommerce() {
                 ].map((text, idx) => (
                   <div key={idx} className="flex items-center gap-4 bg-white p-4 rounded-2xl border border-violet-100 shadow-sm transition-transform hover:translate-x-2">
                     <CheckCircle2 className="w-5 h-5 text-violet-500 shrink-0" />
-                    <span className="font-semibold text-slate-700">{text}</span>
+                    <span className="font-bold text-slate-700 text-lg">{text}</span>
                   </div>
                 ))}
               </div>
@@ -238,8 +238,8 @@ export default function RetailEcommerce() {
                   <div className="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-violet-600 group-hover:scale-110 transition-all shadow-sm">
                     {React.cloneElement(s.icon as React.ReactElement, { className: "w-6 h-6 text-violet-600 group-hover:text-white transition-colors" })}
                   </div>
-                  <h4 className="text-lg font-bold text-slate-900 mb-2 transition-colors">{s.title}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed transition-colors">{s.description}</p>
+                  <h4 className="text-xl font-bold text-slate-900 mb-2 transition-colors">{s.title}</h4>
+                  <p className="text-sm text-slate-500 leading-relaxed transition-colors">{s.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -250,7 +250,7 @@ export default function RetailEcommerce() {
       {/* The Manomay Advantage */}
       <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 font-jakarta">Why Manomay?</h2>
+          <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4 font-jakarta">Why Manomay?</h2>
           <h3 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight font-jakarta">
             Strategic <span className="font-display italic font-normal text-brand">Retail Partners.</span>
           </h3>
@@ -294,8 +294,8 @@ export default function RetailEcommerce() {
               <div className="w-12 h-12 bg-brand/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 {adv.icon}
               </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-2">{adv.title}</h4>
-              <p className="text-slate-500 font-medium text-sm leading-relaxed">{adv.desc}</p>
+              <h4 className="text-2xl font-bold text-slate-900 mb-2">{adv.title}</h4>
+              <p className="text-slate-600 font-bold text-base leading-relaxed">{adv.desc}</p>
             </motion.div>
           ))}
           

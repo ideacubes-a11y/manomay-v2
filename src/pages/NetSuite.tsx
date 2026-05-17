@@ -116,7 +116,7 @@ export default function NetSuite() {
               className="text-center lg:text-left"
             >
               <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-white border border-slate-200 text-brand text-sm font-bold uppercase tracking-widest mb-10 shadow-sm justify-center">
-                 <Cloud className="w-3.5 h-3.5 text-brand" /> Enterprise ERP Solutions
+                 <Cloud className="w-4 h-4 text-brand" /> Enterprise ERP Solutions
               </div>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-slate-900 mb-6 tracking-tight leading-tight lg:leading-[1] font-jakarta">
                 Scale Smarter with <br className="hidden md:block"/>
@@ -135,18 +135,18 @@ export default function NetSuite() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 border-t border-slate-200 pt-8 flex-wrap items-center justify-center lg:justify-start">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-brand" />
-                  <span className="font-semibold text-slate-700 text-sm">Certified NetSuite Consultants</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-brand" />
-                  <span className="font-semibold text-slate-700 text-sm">Enterprise-Grade Solutions</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-brand" />
-                  <span className="font-semibold text-slate-700 text-sm">End-to-End Implementation</span>
-                </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand" />
+                    <span className="font-semibold text-slate-700 text-base">Certified NetSuite Consultants</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand" />
+                    <span className="font-semibold text-slate-700 text-base">Enterprise-Grade Solutions</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-brand" />
+                    <span className="font-semibold text-slate-700 text-base">End-to-End Implementation</span>
+                  </div>
               </div>
             </motion.div>
 
@@ -175,7 +175,7 @@ export default function NetSuite() {
                     <LineChart className="w-6 h-6 text-sky-600" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-500 uppercase">Visibility</div>
+                    <div className="text-sm font-bold text-slate-500 uppercase tracking-widest">Visibility</div>
                     <div className="text-lg font-bold text-slate-900">Real-Time Data</div>
                   </div>
                 </motion.div>
@@ -189,7 +189,7 @@ export default function NetSuite() {
                     <Cloud className="w-6 h-6 text-indigo-600" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-500 uppercase">Enterprise</div>
+                    <div className="text-sm font-bold text-slate-500 uppercase tracking-widest">Enterprise</div>
                     <div className="text-lg font-bold text-slate-900">100% Unified</div>
                   </div>
                 </motion.div>
@@ -209,7 +209,7 @@ export default function NetSuite() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
+              <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
                 <div className="w-8 h-px bg-brand"></div> What We Do
               </h2>
               <h3 className="text-3xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight font-jakarta">
@@ -229,7 +229,7 @@ export default function NetSuite() {
       {/* Services Grid */}
       <section className="py-24 max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Our NetSuite Services</h2>
+          <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4">Our NetSuite Services</h2>
           <h3 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight font-jakarta">
             Comprehensive <span className="font-display italic font-normal text-brand">Implementations.</span>
           </h3>
@@ -261,7 +261,7 @@ export default function NetSuite() {
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Industries We Serve</h2>
+              <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4">Industries We Serve</h2>
               <h3 className="text-3xl lg:text-4xl font-black mb-8 tracking-tight text-white font-jakarta">
                 Digital <span className="font-display italic font-normal text-brand">Growth</span> Verticals.
               </h3>
@@ -269,14 +269,14 @@ export default function NetSuite() {
                 {industries.map((ind, idx) => (
                   <div key={idx} className="flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-colors p-4 rounded-xl border border-white/5 backdrop-blur-sm">
                     <CheckCircle2 className="w-5 h-5 text-brand" />
-                    <span className="font-medium text-slate-200">{ind}</span>
+                    <span className="font-bold text-slate-200">{ind}</span>
                   </div>
                 ))}
               </div>
             </div>
             
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Why Choose Us?</h2>
+              <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4">Why Choose Us?</h2>
               <h3 className="text-3xl lg:text-4xl font-black mb-6 tracking-tight leading-tight text-white font-jakarta">High-Stakes <span className="font-display italic font-normal text-brand">Strategic</span> Partners.</h3>
               <ul className="space-y-5">
                 {[
@@ -287,11 +287,11 @@ export default function NetSuite() {
                   "Transparent Timeline & Cost Control",
                   "Dedicated NetSuite Experts"
                 ].map((reason, idx) => (
-                  <li key={idx} className="flex items-center gap-4 bg-white/5 p-3 rounded-lg">
+                  <li key={idx} className="flex items-center gap-4 bg-white/5 p-4 rounded-xl">
                     <div className="bg-sky-500/20 p-2 rounded-full shrink-0">
                       <CheckCircle2 className="w-5 h-5 text-sky-400" />
                     </div>
-                    <span className="text-slate-200 font-medium">{reason}</span>
+                    <span className="text-slate-200 font-bold">{reason}</span>
                   </li>
                 ))}
               </ul>
@@ -303,7 +303,7 @@ export default function NetSuite() {
       {/* Process */}
       <section className="py-32 max-w-7xl mx-auto px-6">
         <div className="text-center mb-20 max-w-3xl mx-auto">
-          <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Our Implementation Methodology</h2>
+          <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4">Our Implementation Methodology</h2>
           <h3 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight font-jakarta">
             Strategic <span className="font-display italic font-normal text-brand">Deployment.</span>
           </h3>
@@ -332,7 +332,7 @@ export default function NetSuite() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
+              <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
                  <div className="w-8 h-px bg-brand"></div> Key Business Outcomes
               </h2>
               <h3 className="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight mb-8 font-jakarta">
@@ -358,7 +358,7 @@ export default function NetSuite() {
             </div>
 
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
+              <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
                  <div className="w-8 h-px bg-brand"></div> Client Success Snapshot
               </h2>
               <div className="space-y-6">
@@ -404,7 +404,7 @@ export default function NetSuite() {
       <section className="py-32 bg-slate-50">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Support & Guidance</h2>
+            <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4">Support & Guidance</h2>
             <h3 className="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight font-jakarta text-center">Expert <span className="font-display italic font-normal text-brand">Insights.</span></h3>
           </div>
           <div className="space-y-4">

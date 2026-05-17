@@ -12,7 +12,8 @@ import {
   ShieldCheck, 
   Zap,
   Layers,
-  ChevronDown
+  ChevronDown,
+  Sparkles
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -244,7 +245,7 @@ export default function OdooPOS() {
                     <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <div className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase">Performance</div>
+                    <div className="text-xs sm:text-sm font-bold text-slate-500 uppercase">Performance</div>
                     <div className="text-sm sm:text-lg font-bold text-slate-900">Instant Sync</div>
                   </div>
                 </motion.div>
@@ -277,8 +278,8 @@ export default function OdooPOS() {
                       <Monitor className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Free Consultation</h4>
-                      <p className="text-sm text-slate-500">We analyze your current store setup and design a custom Odoo architecture.</p>
+                      <h4 className="font-bold text-slate-900 text-lg">Free Consultation</h4>
+                      <p className="text-base text-slate-500">We analyze your current store setup and design a custom Odoo architecture.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -286,8 +287,8 @@ export default function OdooPOS() {
                       <Zap className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Hardware Setup</h4>
-                      <p className="text-sm text-slate-500">Integration with printers, scanners, and terminals for a plug-and-play experience.</p>
+                      <h4 className="font-bold text-slate-900 text-lg">Hardware Setup</h4>
+                      <p className="text-base text-slate-500">Integration with printers, scanners, and terminals for a plug-and-play experience.</p>
                     </div>
                   </div>
                 </div>
@@ -297,8 +298,8 @@ export default function OdooPOS() {
                       <Database className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Migration & Sync</h4>
-                      <p className="text-sm text-slate-500">Seamless migration of products, prices, and customer data from your old system.</p>
+                      <h4 className="font-bold text-slate-900 text-lg">Migration & Sync</h4>
+                      <p className="text-base text-slate-500">Seamless migration of products, prices, and customer data from your old system.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -306,8 +307,8 @@ export default function OdooPOS() {
                       <Smartphone className="w-5 h-5 text-brand" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">Staff Training</h4>
-                      <p className="text-sm text-slate-500">Hands-on training sessions to ensure your team is proficient from day one.</p>
+                      <h4 className="font-bold text-slate-900 text-lg">Staff Training</h4>
+                      <p className="text-base text-slate-500">Hands-on training sessions to ensure your team is proficient from day one.</p>
                     </div>
                   </div>
                 </div>
@@ -323,8 +324,8 @@ export default function OdooPOS() {
                  <div className="flex items-center gap-4 mt-6">
                     <div className="w-12 h-12 bg-slate-200 rounded-full"></div>
                     <div>
-                      <div className="font-bold text-slate-900 text-base">Retail Manager</div>
-                      <div className="text-sm text-slate-500">Fast-Track Fashion</div>
+                      <div className="font-bold text-slate-900 text-lg">Retail Manager</div>
+                      <div className="text-base text-slate-500">Fast-Track Fashion</div>
                     </div>
                  </div>
                </div>
@@ -343,7 +344,7 @@ export default function OdooPOS() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center justify-center gap-2">
+              <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4 flex items-center justify-center gap-2">
                 <div className="w-8 h-px bg-brand"></div> Innovation in Retail
               </h2>
               <h3 className="text-2xl lg:text-4xl font-black text-slate-900 mb-6 tracking-tight font-jakarta">What makes Odoo POS <span className="font-display italic font-normal text-brand">Special?</span></h3>
@@ -367,52 +368,52 @@ export default function OdooPOS() {
                   {feature.icon}
                 </div>
                 <h4 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h4>
-                <p className="text-slate-500 leading-relaxed text-sm">{feature.description}</p>
+                <p className="text-slate-500 leading-relaxed text-base">{feature.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industry Verticals Section - High-Density Premium Bento */}
-      <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
-        {/* Decorative Grid Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.4]"></div>
-        
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px w-12 bg-brand/30"></div>
-                <h2 className="text-brand font-black uppercase tracking-[0.5em] text-[10px]">
-                  Specialized Ecosystems
-                </h2>
-              </div>
-              <h3 className="text-5xl lg:text-7xl font-black text-slate-900 mb-6 tracking-tight leading-[0.9] font-jakarta">
-                Built for <br/>
-                <span className="font-display italic font-normal text-brand">Your Sector.</span>
-              </h3>
-            </div>
-            
-            <div className="flex bg-slate-100/50 p-2 rounded-3xl border border-slate-200/60 backdrop-blur-sm">
+      {/* Industry Verticals Section - Premium Light Design */}
+      <section className="py-32 bg-white relative overflow-hidden text-slate-800">
+        {/* Subtle background patterns */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[100px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-10 duration-700">
+            <h2 className="text-brand font-black uppercase tracking-[0.5em] text-sm mb-6 flex items-center justify-center gap-6">
+              <div className="w-8 h-px bg-brand/40"></div> 
+              Sector Specifics
+              <div className="w-8 h-px bg-brand/40"></div>
+            </h2>
+            <h3 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 tracking-tight font-jakarta">
+              Specialized Depth. <br className="hidden md:block"/>
+              <span className="font-display italic font-normal text-brand">Frictionless Scale.</span>
+            </h3>
+          </div>
+
+          {/* Elegant Tabs */}
+          <div className="flex justify-center mb-16">
+            <div className="inline-flex bg-slate-50/50 backdrop-blur-md rounded-full p-2 border border-slate-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
               {industrySolutions.map((sol) => (
                 <button
                   key={sol.id}
                   onClick={() => setActiveTab(sol.id)}
-                  className={`flex items-center gap-3 px-12 py-5 rounded-2xl text-[10px] font-black uppercase tracking-[0.3em] transition-all duration-500 ${
+                  className={`flex items-center gap-3 px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-500 ${
                     activeTab === sol.id 
-                      ? 'bg-white text-slate-900 shadow-xl shadow-slate-200/50 scale-105 border border-slate-100' 
-                      : 'text-slate-400 hover:text-slate-600'
+                      ? 'bg-white text-brand shadow-md scale-105 border border-slate-100/50' 
+                      : 'text-slate-400 hover:text-slate-600 hover:bg-white/50'
                   }`}
                 >
-                  <span className={`w-2 h-2 rounded-full ${activeTab === sol.id ? 'bg-brand shadow-[0_0_10px_rgba(var(--brand),0.5)]' : 'bg-slate-300'}`}></span>
+                  <span className={activeTab === sol.id ? 'text-brand' : ''}>{sol.icon}</span>
                   {sol.id}
                 </button>
               ))}
             </div>
           </div>
- 
-          <div className="relative min-h-[850px]">
+
+          <div className="relative min-h-[600px]">
             {industrySolutions.map((sol) => (
               activeTab === sol.id && (
                 <motion.div
@@ -420,75 +421,101 @@ export default function OdooPOS() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-6"
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="bg-white rounded-[3rem] border border-slate-100 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.05)] overflow-hidden"
                 >
-                  {/* Hero Bento Card */}
-                  <div className="lg:col-span-2 lg:row-span-2 bg-slate-50 p-12 lg:p-16 rounded-[4rem] border border-slate-100 flex flex-col justify-between group overflow-hidden relative shadow-sm hover:shadow-2xl hover:shadow-brand/5 transition-all duration-700">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 blur-[120px] -translate-y-1/2 translate-x-1/2 rounded-full"></div>
-                    <div className="relative z-10">
-                      <div className="w-20 h-20 bg-white rounded-[2.5rem] flex items-center justify-center text-brand mb-12 shadow-sm border border-slate-100 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                        {sol.icon}
-                      </div>
-                      <h4 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 tracking-tighter leading-tight uppercase font-jakarta italic">
-                        {sol.intro}
-                      </h4>
-                      <p className="text-xl lg:text-2xl text-slate-500 leading-relaxed font-light max-w-lg">
-                        {sol.description.split('\n\n')[0]}
-                      </p>
-                    </div>
-                    <div className="relative z-10 pt-16 flex items-center gap-8">
-                      <Link to="/contact" className="inline-flex items-center gap-4 py-5 px-12 bg-slate-900 text-white rounded-full font-black text-xs uppercase tracking-widest hover:bg-brand transition-all shadow-2xl shadow-slate-900/20 active:scale-95">
-                        Start Industry Consultation
-                        <ArrowRight className="w-5 h-5" />
-                      </Link>
-                    </div>
-                  </div>
- 
-                  {/* Metric Card */}
-                  <div className="bg-white p-10 rounded-[3.5rem] border border-slate-100 flex flex-col items-center justify-center text-center group hover:border-brand transition-all duration-1000 shadow-sm shadow-slate-200/50">
-                    <div className="text-8xl font-black text-slate-900 mb-2 tracking-tighter group-hover:text-brand transition-colors">
-                      {sol.id === 'retail' ? '40%' : '25%'}
-                    </div>
-                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.6em] mb-8">Performance Lift</div>
-                    <div className="h-1.5 w-16 bg-slate-100 rounded-full overflow-hidden">
-                       <motion.div 
-                        initial={{ width: 0 }}
-                        animate={{ width: "100%" }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className="h-full bg-brand"
-                       />
-                    </div>
-                  </div>
- 
-                  {/* Quote Card */}
-                  <div className="bg-white p-12 rounded-[3.5rem] border border-brand/20 shadow-sm flex flex-col justify-between group relative overflow-hidden hover:border-brand transition-colors duration-500">
-                    <div className="text-brand/20 text-9xl font-serif absolute -top-8 -left-4 pointer-events-none select-none">“</div>
-                    <p className="text-xl font-medium italic text-slate-700 leading-relaxed relative z-10 pt-4">
-                      "{sol.quote}"
-                    </p>
-                    <div className="flex items-center gap-4 mt-8 relative z-10">
-                      <div className="w-8 h-[2px] bg-brand"></div>
-                      <span className="text-[10px] font-black text-brand uppercase tracking-[0.3em]">Market Verdict</span>
-                    </div>
-                  </div>
- 
-                  {/* Solution Blueprint */}
-                  <div className="lg:col-span-2 bg-white p-12 rounded-[3.5rem] border border-slate-100 shadow-sm group hover:shadow-xl transition-all">
-                    <div className="flex items-center gap-6 mb-12">
-                       <h4 className="text-2xl font-black text-slate-900 uppercase tracking-tighter">The Blueprint</h4>
-                       <div className="h-px flex-1 bg-slate-100 group-hover:bg-brand/20 transition-colors"></div>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10">
-                      {sol.solutions.slice(0, 4).map((s, i) => (
-                        <div key={i} className="group/item">
-                          <h5 className="font-bold text-slate-900 text-sm mb-3 flex items-center gap-3 group-hover/item:text-brand transition-colors">
-                            <Zap className="w-4 h-4 text-brand" />
-                            {s.title}
-                          </h5>
-                          <p className="text-[11px] text-slate-400 leading-relaxed font-medium pl-7">{s.desc}</p>
+                  <div className="grid lg:grid-cols-12">
+                    
+                    {/* Left Column: Context & Inspiration */}
+                    <div className="lg:col-span-5 bg-slate-50 p-10 lg:p-16 flex flex-col justify-between relative overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-100">
+                      {/* Decorative Element */}
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-brand/5 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+                      
+                      <div className="relative z-10">
+                        <div className="w-16 h-16 bg-white shadow-sm rounded-2xl flex items-center justify-center text-brand mb-10 border border-slate-100">
+                           {sol.icon}
                         </div>
-                      ))}
+                        <h4 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 font-jakarta tracking-tight">
+                          {sol.category}
+                        </h4>
+                        <p className="text-xl text-slate-600 font-light leading-relaxed mb-6">
+                          {sol.intro}
+                        </p>
+                        <p className="text-base text-slate-500 leading-relaxed font-light mb-12">
+                          {sol.description.split('\n\n')[0]}
+                        </p>
+                      </div>
+
+                      <div className="relative z-10 mt-10">
+                        <div className="p-8 bg-white rounded-3xl border border-slate-100/60 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.02)] relative">
+                          <div className="absolute -top-4 -left-4 text-brand/20">
+                            <Zap className="w-8 h-8" />
+                          </div>
+                          <p className="text-lg italic text-slate-700 font-medium leading-relaxed relative z-10">
+                            "{sol.quote}"
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Column: Challenges & Solutions */}
+                    <div className="lg:col-span-7 p-10 lg:p-16 flex flex-col justify-between">
+                      
+                      {/* The Pain Points */}
+                      <div className="mb-12">
+                        <div className="flex items-center gap-4 mb-8">
+                           <div className="w-8 h-px bg-red-200"></div>
+                           <h5 className="text-xs font-black text-red-400 uppercase tracking-widest">Operational Risks</h5>
+                           <div className="flex-1 h-px bg-slate-50"></div>
+                        </div>
+                        <div className="grid sm:grid-cols-2 gap-6">
+                          {sol.challenges.slice(0, 4).map((c, i) => (
+                            <div key={i} className="flex gap-4 group">
+                              <div className="mt-1 flex-shrink-0">
+                                <div className="w-1.5 h-1.5 rounded-full bg-red-300 group-hover:bg-red-400 group-hover:scale-150 transition-all"></div>
+                              </div>
+                              <div>
+                                <h6 className="font-bold text-slate-900 text-[15px] mb-1">{c.title}</h6>
+                                <p className="text-sm text-slate-500 leading-relaxed group-hover:text-slate-600 transition-colors">{c.desc}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* The Blueprint */}
+                      <div className="mt-auto">
+                        <div className="flex items-center gap-4 mb-8">
+                           <div className="w-8 h-px bg-brand/30"></div>
+                           <h5 className="text-xs font-black text-brand uppercase tracking-widest">The Solution Blueprint</h5>
+                           <div className="flex-1 h-px bg-slate-50"></div>
+                        </div>
+                        <div className="bg-brand/[0.02] border border-brand/5 p-8 lg:p-10 rounded-[2rem]">
+                           <p className="text-sm text-slate-600 mb-8 max-w-2xl leading-relaxed">
+                             {sol.solutionsIntro.split('\n\n')[0]}
+                           </p>
+                           <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                             {sol.solutions.map((s, i) => (
+                               <div key={i} className="flex gap-4 group">
+                                  <CheckCircle2 className="w-5 h-5 text-brand shrink-0 group-hover:scale-110 transition-transform" />
+                                  <div>
+                                    <h6 className="font-bold text-slate-900 text-[15px] mb-1">{s.title}</h6>
+                                    <p className="text-sm text-slate-500 leading-relaxed font-light">{s.desc}</p>
+                                  </div>
+                               </div>
+                             ))}
+                           </div>
+                        </div>
+                        
+                        {/* Action */}
+                        <div className="mt-10 flex justify-end">
+                          <Link to="/contact" className="inline-flex items-center gap-3 py-3.5 px-8 bg-slate-900 text-white rounded-full font-bold text-xs uppercase tracking-widest hover:bg-brand transition-colors hover:shadow-lg hover:shadow-brand/20">
+                            Start Consultation
+                            <ArrowRight className="w-4 h-4" />
+                          </Link>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </motion.div>
@@ -498,20 +525,25 @@ export default function OdooPOS() {
         </div>
       </section>
 
+
       {/* Why Manomay Section - Clean Vertical Design */}
-      <section className="bg-slate-50 py-24 overflow-hidden border-y border-slate-200">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="bg-[#4c1d95] py-24 overflow-hidden relative">
+        {/* Background Decoration */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand/20 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-20">
             <div className="lg:col-span-4 sticky top-32 h-fit">
-              <h2 className="text-brand font-bold uppercase tracking-[0.4em] text-[10px] mb-6 flex items-center gap-6">
-                <div className="w-12 h-px bg-brand/30"></div> 
+              <h2 className="text-white/60 font-bold uppercase tracking-[0.4em] text-sm mb-6 flex items-center gap-6">
+                <div className="w-12 h-px bg-white/30"></div> 
                 The Partner Advantage
               </h2>
-              <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-[1] tracking-tight">
+              <h3 className="text-3xl lg:text-4xl font-black text-white mb-8 leading-[1] tracking-tight">
                 Why <br/>
-                <span className="text-brand font-display italic font-normal text-4xl lg:text-5xl">Manomay?</span>
+                <span className="text-white/80 font-display italic font-normal text-4xl lg:text-5xl">Manomay?</span>
               </h3>
-              <p className="text-lg text-slate-500 font-light leading-relaxed max-w-sm">
+              <p className="text-lg text-purple-100 font-light leading-relaxed max-w-sm">
                 A POS system is only as good as the team that sets it up. We ensure your investment delivers real returns through deep domain expertise.
               </p>
             </div>
@@ -525,14 +557,14 @@ export default function OdooPOS() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="bg-white p-10 rounded-[3rem] border border-slate-200 group hover:border-brand/40 transition-all hover:shadow-2xl hover:shadow-brand/5"
+                  className="bg-white/5 backdrop-blur-sm p-10 rounded-[3rem] border border-white/10 group hover:border-white/30 transition-all hover:bg-white/[0.08]"
                 >
-                  <div className="text-brand font-black text-xs mb-8 flex items-center gap-4">
+                  <div className="text-white font-black text-sm mb-8 flex items-center gap-4">
                     <span className="opacity-40">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
-                    <div className="h-px flex-1 bg-brand/10"></div>
+                    <div className="h-px flex-1 bg-white/10"></div>
                   </div>
-                  <h4 className="text-2xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-brand transition-colors">{feat.title}</h4>
-                  <p className="text-slate-500 font-light leading-relaxed">{feat.desc}</p>
+                  <h4 className="text-2xl font-black text-white mb-4 tracking-tight group-hover:text-white transition-colors">{feat.title}</h4>
+                  <p className="text-purple-100 font-light leading-relaxed">{feat.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -547,7 +579,7 @@ export default function OdooPOS() {
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-brand/5 blur-[120px] rounded-full"></div>
             <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
               <div>
-                <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
+                <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4 flex items-center gap-2">
                   <div className="w-8 h-px bg-brand"></div> Transparent Licensing
                 </h2>
                 <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-8 leading-tight tracking-tight font-jakarta">
@@ -579,8 +611,8 @@ export default function OdooPOS() {
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900">One Fixed Price</div>
-                      <div className="text-sm text-slate-500">Access all Odoo apps with one license</div>
+                      <div className="font-bold text-slate-900 text-lg">One Fixed Price</div>
+                      <div className="text-base text-slate-500">Access all Odoo apps with one license</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 border-b border-slate-50 pb-6">
@@ -588,8 +620,8 @@ export default function OdooPOS() {
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900">Unlimited Support</div>
-                      <div className="text-sm text-slate-500">Official Odoo support included</div>
+                      <div className="font-bold text-slate-900 text-lg">Unlimited Support</div>
+                      <div className="text-base text-slate-500">Official Odoo support included</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -597,13 +629,13 @@ export default function OdooPOS() {
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900">Cloud Hosting</div>
-                      <div className="text-sm text-slate-500">Odoo.sh or Odoo Online options</div>
+                      <div className="font-bold text-slate-900 text-lg">Cloud Hosting</div>
+                      <div className="text-base text-slate-500">Odoo.sh or Odoo Online options</div>
                     </div>
                   </div>
                 </div>
                 <div className="mt-10 p-6 bg-slate-50 rounded-2xl text-center">
-                  <p className="text-sm text-slate-500 font-medium italic">"The most cost-effective ERP & POS ecosystem on the market today."</p>
+                  <p className="text-base text-slate-500 font-medium italic">"The most cost-effective ERP & POS ecosystem on the market today."</p>
                 </div>
               </div>
             </div>
@@ -615,7 +647,7 @@ export default function OdooPOS() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">Why Odoo POS?</h2>
+            <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4">Why Odoo POS?</h2>
             <h3 className="text-2xl lg:text-4xl font-black text-slate-900 tracking-tight font-jakarta">
               Benefits Turned into <span className="font-display italic font-normal text-brand">Results.</span>
             </h3>
@@ -650,17 +682,17 @@ export default function OdooPOS() {
               <h4 className="text-2xl font-black text-slate-900 mb-6 font-jakarta flex items-center gap-3">
                 <Store className="w-8 h-8 text-brand" /> Smart Investment with Odoo
               </h4>
-              <p className="text-slate-600 leading-relaxed mb-6">
+              <p className="text-slate-600 leading-relaxed mb-6 lg:text-[17px]">
                 Hardware costs are often a barrier for many businesses. Odoo POS is designed for a low Total Cost of Ownership (TCO). Since it is web-based, you can run it on tablets, laptops, or even industrial touchscreens you already own.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-slate-700">
                   <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-1" />
-                  <span>Works on any modern browser</span>
+                  <span className="lg:text-[17px]">Works on any modern browser</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700">
                   <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-1" />
-                  <span>No proprietary expensive hardware locking</span>
+                  <span className="lg:text-[17px]">No proprietary expensive hardware locking</span>
                 </li>
               </ul>
             </motion.div>
@@ -674,17 +706,17 @@ export default function OdooPOS() {
               <h4 className="text-2xl font-black mb-6 font-jakarta flex items-center gap-3">
                 <Zap className="w-8 h-8 text-brand" /> Continuous Improvement
               </h4>
-              <p className="text-slate-300 leading-relaxed mb-6">
+              <p className="text-slate-300 leading-relaxed mb-6 lg:text-[17px]">
                 Odoo is constantly evolving. As an implementation partner, we ensure you always have access to the latest features, from advanced mobile payments to improved AI-driven sales forecasting.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-slate-100">
                   <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-1" />
-                  <span>Automatic updates and security patches</span>
+                  <span className="lg:text-[17px]">Automatic updates and security patches</span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-100">
                   <CheckCircle2 className="w-5 h-5 text-brand shrink-0 mt-1" />
-                  <span>Driven by a massive global community</span>
+                  <span className="lg:text-[17px]">Driven by a massive global community</span>
                 </li>
               </ul>
             </motion.div>
@@ -696,7 +728,7 @@ export default function OdooPOS() {
       <section className="py-24 bg-slate-50">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-brand uppercase mb-4">FAQ</h2>
+            <h2 className="text-base font-bold tracking-widest text-brand uppercase mb-4">FAQ</h2>
             <h3 className="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight font-jakarta">Everything You <span className="font-display italic font-normal text-brand">Need to Know.</span></h3>
           </div>
           <div className="space-y-4">
@@ -730,8 +762,9 @@ export default function OdooPOS() {
         <div className="bg-brand rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-slate-900/10 backdrop-blur-3xl"></div>
           <div className="relative z-10 max-w-3xl mx-auto">
-                <h3 className="text-2xl lg:text-4xl font-black text-slate-900 mb-8 tracking-tight font-jakarta text-center">
-                  Ready to Upgrade Your <span className="font-display italic font-normal text-white/80">Business?</span>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-8 tracking-tight font-jakarta text-center">
+                  Ready to Upgrade Your <br className="hidden sm:block" />
+                  <span className="font-display italic text-[#af9dd4] text-4xl md:text-5xl lg:text-6xl font-bold mt-2 inline-block">Business?</span>
                 </h3>
             <p className="text-xl text-white/90 mb-12 font-light leading-relaxed">
               Don't let legacy POS systems hold you back. Experience the power of unified retail and restaurant operations with Odoo.

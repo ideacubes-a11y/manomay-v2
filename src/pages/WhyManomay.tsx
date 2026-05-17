@@ -175,9 +175,9 @@ export default function WhyManomay() {
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <h2 className="text-sm font-bold text-brand uppercase tracking-widest mb-6">Our Commitment</h2>
-              <h3 className="text-3xl lg:text-5xl font-black mb-8 leading-tight font-jakarta tracking-tight">
+              <h3 className="text-3xl lg:text-[50px] lg:leading-[53.8px] font-black mb-8 font-jakarta tracking-tight">
                 Perfect Implementation. <br />
-                <span className="text-brand italic font-display font-normal">Unmatched Service.</span>
+                <span className="text-brand italic font-display font-normal lg:text-[50px]">Unmatched Service.</span>
               </h3>
               <p className="text-xl text-slate-400 font-light leading-relaxed mb-12">
                 We don't just deliver a piece of software; we deliver a business transformation. From the first discovery meeting to years after you've gone live, Manomay is by your side.

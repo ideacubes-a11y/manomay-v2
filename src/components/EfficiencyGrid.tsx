@@ -86,13 +86,13 @@ export default function EfficiencyGrid() {
               <div className="text-brand font-semibold text-xs mb-6 uppercase tracking-widest">
                 {item.hook}
               </div>
-              <p className="text-slate-500 leading-relaxed mb-8 text-sm">
+              <p className="text-slate-500 text-[17px] leading-[21.75px] mb-8">
                 {item.description}
               </p>
 
               <div className="flex items-center gap-2 text-slate-900 font-bold text-sm group-hover:gap-4 transition-all cursor-pointer">
                 Learn More
-                <ArrowRight className="w-4 h-4 text-brand" />
+                <ArrowRight className="w-5 h-5 text-brand" />
               </div>
             </motion.div>
           ))}
@@ -112,7 +112,7 @@ export default function EfficiencyGrid() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 to-transparent" />
               <div>
                 <h3 className="text-3xl font-bold mb-4 relative z-10">Ready for a <br />Free Consultation?</h3>
-                <p className="text-white/80 text-sm leading-relaxed relative z-10">
+                <p className="text-white/80 text-[17px] leading-[21.75px] relative z-10">
                   Let our experts analyze your current ERP landscape and design a high-performance roadmap for Odoo & NetSuite.
                 </p>
               </div>
