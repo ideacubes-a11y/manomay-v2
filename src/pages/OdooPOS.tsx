@@ -181,47 +181,63 @@ export default function OdooPOS() {
         title="Odoo Point of Sale (POS) Solutions | Manomay Global Solutions" 
         description="Modernize your retail operations with a robust, offline-capable Odoo POS system seamlessly integrated with inventory and accounting." 
       />
-      {/* Hero Section */}
-      <section className="relative pt-28 pb-24 lg:pt-36 lg:pb-32 overflow-hidden bg-slate-50 border-b border-slate-100">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&q=80')] opacity-[0.03] bg-cover bg-center mix-blend-multiply"></div>
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand/10 blur-[150px] -translate-y-1/2 translate-x-1/3 rounded-full pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-sky-500/10 blur-[150px] translate-y-1/2 -translate-x-1/3 rounded-full pointer-events-none"></div>
+      {/* Creative Hero Section */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#240b45] text-white">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-brand/40 blur-[160px] rounded-full animate-pulse"></div>
+          <div className="absolute bottom-[-20%] left-[-10%] w-[700px] h-[700px] bg-violet-500/30 blur-[180px] rounded-full"></div>
+          <div className="absolute inset-0 opacity-[0.2]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(139, 92, 246, 0.5) 1px, transparent 0)', backgroundSize: '32px 32px' }}></div>
+        </div>
         
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="text-center lg:text-left"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="lg:col-span-7"
             >
-              <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-white border border-slate-200 text-brand text-sm font-bold uppercase tracking-widest mb-10 shadow-sm justify-center">
-                 <Store className="w-3.5 h-3.5 text-brand" /> Odoo Point of Sale
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight lg:leading-[1.1] font-jakarta">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-violet-500/10 border border-violet-500/20 text-white text-sm font-black uppercase tracking-[0.3em] mb-10 shadow-xl shadow-violet-900/50"
+              >
+                 <Store className="w-4 h-4 text-brand" /> Odoo Point of Sale
+              </motion.div>
+              
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-black text-white mb-8 tracking-tighter leading-[0.9] font-jakarta">
                 Optimize Your <br className="hidden md:block"/>
-                <span className="font-display italic font-normal text-brand px-1">Points of Sale</span>
+                <motion.span 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5, type: "spring" }}
+                  className="font-display italic font-normal text-white inline-block text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] px-1"
+                >
+                  Points of Sale
+                </motion.span>
                 <br className="hidden md:block"/> With Odoo.
               </h1>
-              <p className="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed font-light max-w-lg mx-auto lg:mx-0">
+              <p className="text-xl text-white/70 mb-10 leading-relaxed font-light max-w-lg mx-auto lg:mx-0">
                 A fast, reliable, and user-friendly interface that works on any device. Scale your retail or restaurant operations with ease.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
-                <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/20 flex items-center justify-center gap-3 group active:scale-95">
+                <Link to="/contact" className="bg-white text-slate-900 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-100 transition-all shadow-2xl flex items-center justify-center gap-3 group active:scale-95 border border-transparent">
                   Book Free Consultation
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 border-t border-slate-200 pt-8 items-center justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 border-t border-white/10 pt-8 items-center justify-center lg:justify-start">
                 <div className="flex items-center gap-3">
-                  <ShieldCheck className="w-6 h-6 text-emerald-500" />
-                  <span className="font-semibold text-slate-700">Enterprise Ready</span>
+                  <ShieldCheck className="w-6 h-6 text-emerald-400" />
+                  <span className="font-semibold text-white/90">Enterprise Ready</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-500" />
-                  <span className="font-semibold text-slate-700">Offline Capability</span>
+                  <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                  <span className="font-semibold text-white/90">Offline Capability</span>
                 </div>
               </div>
             </motion.div>
@@ -230,17 +246,19 @@ export default function OdooPOS() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="relative mt-12 lg:mt-0"
+              className="lg:col-span-5 relative"
             >
-              <div className="relative aspect-square max-w-2xl mx-auto lg:max-w-none">
-                <div className="absolute inset-0 bg-brand rounded-full blur-[80px] opacity-20 animate-pulse"></div>
-                <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-xl bg-white border-[12px] border-white z-10">
-                  <img 
-                    src="/POS_ERP_Support.jpeg" 
-                    alt="Odoo POS Hero" 
-                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                    referrerPolicy="no-referrer"
-                  />
+              <div className="relative">
+                <div className="relative aspect-square">
+                  <div className="absolute inset-0 bg-brand rounded-full blur-[80px] opacity-20 animate-pulse"></div>
+                  <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-2xl bg-white border-[12px] border-white z-10">
+                    <img 
+                      src="/POS_ERP_Support.jpeg" 
+                      alt="Odoo POS Hero" 
+                      className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
