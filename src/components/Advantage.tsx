@@ -22,7 +22,7 @@ export default function Advantage() {
               The Manomay <span className="font-display italic font-normal text-white text-3xl lg:text-5xl">Advantage.</span>
             </h2>
             <p className="text-white/70 text-[19px] leading-[27px] mb-12">
-              Why 85% of our clients come from legacy ERPs. We don't just implement software; we architect business outcomes.
+              Why leading enterprises migrate to our solutions from legacy ERPs. We don't just implement software; we architect business outcomes.
             </p>
             
             <div className="space-y-6">
@@ -51,17 +51,17 @@ export default function Advantage() {
           <div className="relative">
             <div className="aspect-square bg-gradient-to-br from-white/20 to-transparent rounded-full absolute -top-20 -right-20 w-[120%] blur-3xl opacity-50" />
             <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl">
-              <div className="text-sm font-mono text-white/80 mb-4 tracking-widest uppercase">Case Study: Global Logistics Corp</div>
-              <div className="text-3xl font-bold mb-6">"Reduced month-end closing from 12 days to 4 hours."</div>
+              <div className="text-sm font-mono text-white/80 mb-4 tracking-widest uppercase">Client Success Story</div>
+              <div className="text-3xl font-bold mb-6">"Our entire operation became transparent, streamlined, and ready to scale globally."</div>
               <div className="h-px bg-white/20 mb-6" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
-                  <div className="text-4xl font-bold text-white mb-1">98%</div>
+                  <div className="text-2xl font-bold text-white mb-2">Enhanced</div>
                   <div className="text-xs text-white/60 uppercase tracking-widest">Data Accuracy</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-white mb-1">-$2.4M</div>
-                  <div className="text-xs text-white/60 uppercase tracking-widest">Annual OpEx Saved</div>
+                  <div className="text-2xl font-bold text-white mb-2">Maximized</div>
+                  <div className="text-xs text-white/60 uppercase tracking-widest">Operational Efficiency</div>
                 </div>
               </div>
             </div>
