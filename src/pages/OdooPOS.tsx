@@ -232,12 +232,14 @@ export default function OdooPOS() {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="relative mt-12 lg:mt-0"
             >
-              <div className="relative aspect-[4/3] max-w-2xl mx-auto lg:max-w-none">
-                <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-200/50 border-4 sm:border-8 border-white bg-white">
+              <div className="relative aspect-square max-w-2xl mx-auto lg:max-w-none">
+                <div className="absolute inset-0 bg-brand rounded-full blur-[80px] opacity-20 animate-pulse"></div>
+                <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-xl bg-white border-[12px] border-white z-10">
                   <img 
-                    src="/Odoo_POS_Hero.jpeg" 
+                    src="/POS_ERP_Support.jpeg" 
                     alt="Odoo POS Hero" 
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               </div>
