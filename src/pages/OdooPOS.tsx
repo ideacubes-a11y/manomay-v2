@@ -224,7 +224,7 @@ export default function OdooPOS() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
-                <Link to="/contact" className="bg-white text-slate-900 px-10 py-5 rounded-full text-xl font-bold hover:bg-slate-100 transition-all shadow-2xl flex items-center justify-center gap-3 group active:scale-95 border border-transparent">
+                <Link to="/contact" className="bg-brand text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-brand/90 transition-all shadow-2xl shadow-brand/40 flex items-center justify-center gap-3 group active:scale-95">
                   Book Free Consultation
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </Link>

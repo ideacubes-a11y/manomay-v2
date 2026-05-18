@@ -72,16 +72,34 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send the data to your Cloudflare Worker / Pages Function
-      const response = await fetch('/api/submit-contact', {
+      // Direct submission to Web3Forms so you don't need backend environment variables
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "3c8d12ca-985c-449e-8eb3-cec4944e54a4",
+          subject: `New ERP Lead: ${formData.firstName} ${formData.lastName} - ${formData.companyName}`,
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          replyto: formData.email,
+          First_Name: formData.firstName,
+          Last_Name: formData.lastName,
+          Email: formData.email,
+          Mobile: `${formData.countryCode} ${formData.mobile}`,
+          Company: formData.companyName,
+          Industry: formData.industry,
+          Location: formData.companyAddress,
+          Request_Type: formData.requestType,
+          ERP_Preference: formData.erpPreference,
+          Business_Needs: formData.businessNeeds || 'N/A'
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         setIsSubmitted(true);
         setFormData({
           requestType: "Book Free Consultation",
