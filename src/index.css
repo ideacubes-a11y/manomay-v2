@@ -2,6 +2,18 @@
 @import "tailwindcss";
 
 @theme {
+  --text-xs: clamp(0.7rem, 1vw + 0.3rem, 0.75rem);
+  --text-sm: clamp(0.8rem, 1.2vw + 0.3rem, 0.875rem);
+  --text-base: clamp(0.9rem, 1.5vw + 0.3rem, 1rem);
+  --text-lg: clamp(1rem, 1.8vw + 0.3rem, 1.125rem);
+  --text-xl: clamp(1.1rem, 2vw + 0.4rem, 1.25rem);
+  --text-2xl: clamp(1.2rem, 2.5vw + 0.4rem, 1.5rem);
+  --text-3xl: clamp(1.4rem, 3vw + 0.5rem, 1.875rem);
+  --text-4xl: clamp(1.6rem, 4vw + 0.5rem, 2.25rem);
+  --text-5xl: clamp(1.8rem, 5vw + 0.5rem, 3rem);
+  --text-6xl: clamp(2.2rem, 6vw + 0.5rem, 3.75rem);
+  --text-7xl: clamp(2.8rem, 7vw + 0.5rem, 4.5rem);
+  
   --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-display: "Playfair Display", serif;
@@ -26,7 +38,10 @@
 
 @layer base {
   body {
-    @apply bg-white text-slate-900 font-sans antialiased;
+    @apply bg-white text-slate-900 font-sans antialiased overflow-x-hidden w-full;
+  }
+  html {
+    @apply overflow-x-hidden w-full;
   }
 }
 
@@ -45,4 +60,27 @@
 
 .bento-card:hover .bento-card-accent {
   @apply opacity-100;
+}
+
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h3:nth-of-type(1) > span:nth-of-type(1) {
+  color: #b58af1;
+}
+
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > h2:nth-of-type(1) {
+  color: #b58af1;
+}
+
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > h2:nth-of-type(1) {
+  color: #b58af1;
+}
+
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > h3:nth-of-type(1) > span:nth-of-type(1) {
+  color: #b58af1;
+}
+
+@media (min-width: 1024px) {
+  div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1),
+  div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > div:nth-of-type(4) > div:nth-of-type(1) > div:nth-of-type(1) > h1:nth-of-type(1) > span:nth-of-type(1) {
+    font-size: 45px !important;
+  }
 }

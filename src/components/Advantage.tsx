@@ -54,7 +54,7 @@ export default function Advantage() {
               <div className="text-sm font-mono text-white/80 mb-4 tracking-widest uppercase">Case Study: Global Logistics Corp</div>
               <div className="text-3xl font-bold mb-6">"Reduced month-end closing from 12 days to 4 hours."</div>
               <div className="h-px bg-white/20 mb-6" />
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div>
                   <div className="text-4xl font-bold text-white mb-1">98%</div>
                   <div className="text-xs text-white/60 uppercase tracking-widest">Data Accuracy</div>

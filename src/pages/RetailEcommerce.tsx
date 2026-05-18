@@ -179,7 +179,7 @@ export default function RetailEcommerce() {
               </div>
             </motion.div>
             
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {challenges.slice(0, 4).map((c, i) => (
                 <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:border-brand/30 transition-all group">
                   <div className="text-brand font-black text-sm mb-2 uppercase tracking-widest flex items-center gap-2">
@@ -225,7 +225,7 @@ export default function RetailEcommerce() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {solutions.map((s, idx) => (
                 <motion.div
                   key={idx}

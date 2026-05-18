@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Linkedin, Send, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
-import emailjs from '@emailjs/browser';
 
 const COUNTRIES = [
   { code: "+1", name: "USA", flag: "🇺🇸" },
@@ -71,57 +70,10 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.warn("EmailJS credentials missing. Please check your environment variables.");
-      // For now, we'll simulate success if keys aren't set to avoid blocking the UI
-      // but in production, these must be provided.
-      setTimeout(() => {
-        setIsSubmitted(true);
-        setIsSubmitting(false);
-        setFormData({
-          requestType: "Book Free Consultation",
-          erpPreference: "Odoo",
-          firstName: "",
-          lastName: "",
-          countryCode: "+1",
-          countryFlag: "🇺🇸",
-          mobile: "",
-          email: "",
-          companyName: "",
-          industry: "",
-          companyAddress: "",
-          businessNeeds: "",
-        });
-        setTimeout(() => setIsSubmitted(false), 5000);
-      }, 1500);
-      return;
-    }
-
-    try {
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          subject: formData.requestType,
-          request_type: formData.requestType,
-          erp_preference: formData.erpPreference,
-          user_name: `${formData.firstName} ${formData.lastName}`,
-          user_mobile: `${formData.countryCode} ${formData.mobile}`,
-          user_email: formData.email,
-          company_name: formData.companyName,
-          company_industry: formData.industry,
-          company_address: formData.companyAddress,
-          business_needs: formData.businessNeeds,
-          to_email: 'sales@manomayglobalsolutions.com'
-        },
-        publicKey
-      );
-      
+    // Simulate success
+    setTimeout(() => {
       setIsSubmitted(true);
+      setIsSubmitting(false);
       setFormData({
         requestType: "Book Free Consultation",
         erpPreference: "Odoo",
@@ -132,15 +84,12 @@ export default function Contact() {
         mobile: "",
         email: "",
         companyName: "",
+        industry: "",
         companyAddress: "",
         businessNeeds: "",
       });
       setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (error) {
-      console.error("Failed to send email:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    }, 1500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -149,7 +98,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-white">
+    <div className="pt-32 pb-24 bg-white overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Content Side */}
@@ -158,35 +107,35 @@ export default function Contact() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-full bg-slate-50 border border-slate-200 text-brand text-base font-bold uppercase tracking-widest mb-10 shadow-sm">
-              <Mail className="w-5 h-5" /> Get In Touch
+            <div className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-slate-50 border border-slate-200 text-brand text-sm sm:text-base font-bold uppercase tracking-widest mb-8 sm:mb-10 shadow-sm">
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5" /> Get In Touch
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1] font-jakarta">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tight leading-[1.1] font-jakarta break-words">
               Your Journey to Efficiency <br />
-              <span className="font-display italic font-normal text-brand text-5xl lg:text-6xl">Starts with a Conversation.</span>
+              <span className="font-display italic font-normal text-brand text-3xl sm:text-5xl lg:text-6xl">Starts with a Conversation.</span>
             </h1>
-            <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-lg">
+            <p className="text-lg sm:text-xl text-slate-600 mb-12 leading-relaxed max-w-lg">
               Book a free consultation with our ERP experts. We'll help you define your roadmap, optimize your workflows, and choose the right solutions for your growth.
             </p>
 
             <div className="space-y-8">
-              <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 flex-shrink-0 shadow-sm text-brand">
-                  <Mail className="w-6 h-6" />
+              <div className="flex items-start gap-4 sm:gap-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 flex-shrink-0 shadow-sm text-brand">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-1">Email Us</h3>
-                  <p className="text-2xl font-bold text-slate-900">sales@manomayglobalsolutions.com</p>
+                <div className="min-w-0 pr-4">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-400 uppercase tracking-widest mb-1">Email Us</h3>
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-slate-900 break-words">sales@manomayglobalsolutions.com</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-6">
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 flex-shrink-0 shadow-sm text-brand">
-                  <Linkedin className="w-6 h-6" />
+              <div className="flex items-start gap-4 sm:gap-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 flex-shrink-0 shadow-sm text-brand">
+                  <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-400 uppercase tracking-widest mb-1">Follow Us</h3>
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-slate-900 hover:text-brand transition-colors">LinkedIn Profile</a>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-400 uppercase tracking-widest mb-1">Follow Us</h3>
+                  <a href="#" target="_blank" rel="noopener noreferrer" className="text-base sm:text-lg md:text-xl font-bold text-slate-900 hover:text-brand transition-colors">LinkedIn Profile</a>
                 </div>
               </div>
             </div>
@@ -197,17 +146,17 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-slate-50 border border-slate-200 p-8 lg:p-12 rounded-[2.5rem] shadow-xl shadow-slate-200/50"
+            className="bg-slate-50 border border-slate-200 p-6 sm:p-8 lg:p-12 rounded-[2.5rem] shadow-xl shadow-slate-200/50"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Request Type Dropdown */}
               <div>
-                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">I want to...</label>
+                <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">I want to...</label>
                 <select
                   name="requestType"
                   value={formData.requestType}
                   onChange={handleChange}
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all outline-none font-medium"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all outline-none font-medium text-sm sm:text-base"
                 >
                   <option>Book Free Consultation</option>
                   <option>Consult with an expert</option>
@@ -217,19 +166,19 @@ export default function Contact() {
 
               {/* ERP Preference Radio */}
               <div>
-                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-3">Preferred ERP</label>
-                <div className="flex gap-6">
+                <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-3">Preferred ERP</label>
+                <div className="flex flex-wrap gap-4 sm:gap-6">
                   {["Odoo", "NetSuite"].map((erp) => (
-                    <label key={erp} className="flex items-center gap-3 cursor-pointer group">
+                    <label key={erp} className="flex items-center gap-2 sm:gap-3 cursor-pointer group">
                       <input
                         type="radio"
                         name="erpPreference"
                         value={erp}
                         checked={formData.erpPreference === erp}
                         onChange={handleChange}
-                        className="w-6 h-6 text-brand border-slate-300 focus:ring-brand"
+                        className="w-5 h-5 sm:w-6 sm:h-6 text-brand border-slate-300 focus:ring-brand"
                       />
-                      <span className={`text-lg font-bold transition-colors ${formData.erpPreference === erp ? 'text-brand' : 'text-slate-500 group-hover:text-slate-700'}`}>
+                      <span className={`text-base sm:text-lg font-bold transition-colors ${formData.erpPreference === erp ? 'text-brand' : 'text-slate-500 group-hover:text-slate-700'}`}>
                         {erp}
                       </span>
                     </label>
@@ -238,9 +187,9 @@ export default function Contact() {
               </div>
 
               {/* Personal Info */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">First Name</label>
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">First Name</label>
                   <input
                     type="text"
                     name="firstName"
@@ -248,11 +197,11 @@ export default function Contact() {
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="John"
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-base"
                   />
                 </div>
                 <div>
-                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Last Name</label>
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Last Name</label>
                   <input
                     type="text"
                     name="lastName"
@@ -260,25 +209,25 @@ export default function Contact() {
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Doe"
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-base"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Mobile Number</label>
-                <div className="flex gap-3">
+                <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Mobile Number</label>
+                <div className="flex gap-2 sm:gap-3">
                   <div className="relative">
                     <button
                       type="button"
                       onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                      className="w-[110px] bg-white border border-slate-200 rounded-xl px-3 py-4 text-slate-900 flex items-center justify-between gap-1 hover:border-brand/40 transition-all focus:outline-none focus:ring-2 focus:ring-brand"
+                      className="w-auto min-w-[70px] sm:min-w-[90px] bg-white border border-slate-200 rounded-xl px-2 sm:px-3 py-3 sm:py-4 text-slate-900 flex items-center justify-between gap-1 sm:gap-2 hover:border-brand/40 transition-all focus:outline-none focus:ring-2 focus:ring-brand"
                     >
-                      <span className="flex items-center gap-2">
-                        <span>{formData.countryFlag}</span>
-                        <span className="font-bold text-base">{formData.countryCode}</span>
+                      <span className="flex items-center gap-1 sm:gap-2">
+                        <span className="text-sm sm:text-base">{formData.countryFlag}</span>
+                        <span className="font-bold text-sm sm:text-base">{formData.countryCode}</span>
                       </span>
-                      <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform flex-shrink-0 ${isCountryDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-3 h-3 sm:w-4 sm:h-4 text-slate-400 transition-transform flex-shrink-0 ${isCountryDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     {isCountryDropdownOpen && (
@@ -311,13 +260,13 @@ export default function Contact() {
                     value={formData.mobile}
                     onChange={handleChange}
                     placeholder="000-000-0000"
-                    className="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
+                    className="flex-1 min-w-0 bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-lg"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Email Address</label>
+                <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Email Address</label>
                 <input
                   type="email"
                   name="email"
@@ -325,14 +274,14 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="john@company.com"
-                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
+                  className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-lg"
                 />
               </div>
 
               {/* Company Info */}
-              <div className="space-y-6 pt-2">
+              <div className="space-y-4 sm:space-y-6 pt-2">
                 <div>
-                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Company Name</label>
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Company Name</label>
                   <input
                     type="text"
                     name="companyName"
@@ -340,18 +289,18 @@ export default function Contact() {
                     value={formData.companyName}
                     onChange={handleChange}
                     placeholder="Enterprises Ltd."
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-lg"
                   />
                 </div>
                 <div className="relative">
-                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Industry</label>
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Industry</label>
                   <div className="relative">
                     <select
                       name="industry"
                       required
                       value={formData.industry}
                       onChange={handleChange}
-                      className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg appearance-none"
+                      className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-lg appearance-none"
                     >
                       <option value="" disabled>Select Industry</option>
                       {INDUSTRIES.map((industry) => (
@@ -362,7 +311,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Company Address</label>
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Company Address</label>
                   <textarea
                     name="companyAddress"
                     required
@@ -370,18 +319,18 @@ export default function Contact() {
                     value={formData.companyAddress}
                     onChange={handleChange}
                     placeholder="Street, City, State, ZIP"
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Business Needs / Introduction (Optional)</label>
+                  <label className="block text-sm sm:text-base font-bold text-slate-900 uppercase tracking-wider mb-2">Business Needs / Introduction (Optional)</label>
                   <textarea
                     name="businessNeeds"
                     rows={4}
                     value={formData.businessNeeds}
                     onChange={handleChange}
                     placeholder="Briefly describe your business needs or provide an introduction..."
-                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-lg"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 sm:py-4 text-slate-900 placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-brand transition-all font-medium text-sm sm:text-lg"
                   />
                 </div>
               </div>

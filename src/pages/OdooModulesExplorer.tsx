@@ -916,7 +916,7 @@ export default function OdooModulesExplorer() {
                 className="absolute inset-0 bg-white shadow-2xl rounded-3xl border border-white/50 flex items-center justify-center overflow-hidden z-10"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-brand/5 via-transparent to-blue-400/5"></div>
-                <div className="grid grid-cols-2 gap-6 p-10 w-full relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 p-10 w-full relative z-10">
                   {[1, 2, 3, 4].map((i) => (
                     <motion.div 
                       key={i} 
@@ -958,7 +958,7 @@ export default function OdooModulesExplorer() {
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Sidebar Filters */}
           <div className="lg:col-span-3 space-y-4">
-            <div className="sticky top-32">
+            <div className="lg:sticky lg:top-32 relative z-20 bg-slate-50/50 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none p-4 lg:p-0 rounded-2xl lg:rounded-none">
               <h4 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 px-4">Categories</h4>
               <nav className="space-y-2">
                 <motion.button 

@@ -173,28 +173,28 @@ export default function Odoo() {
                 <motion.div 
                   animate={{ y: [0, -15, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="absolute -left-4 lg:-left-12 top-12 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white flex items-center gap-4 z-20"
+                  className="absolute left-2 sm:left-4 lg:-left-12 top-6 sm:top-12 bg-white/95 backdrop-blur-md p-3 sm:p-5 rounded-2xl shadow-xl border border-white flex items-center gap-2 sm:gap-4 z-20 max-w-[85%] sm:max-w-none"
                 >
-                  <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-emerald-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+                    <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
                   </div>
-                  <div>
-                    <div className="text-sm font-black text-slate-500 uppercase tracking-widest">Real-time</div>
-                    <div className="text-xl font-black text-slate-900">Process Automation</div>
+                  <div className="overflow-hidden">
+                    <div className="text-[10px] sm:text-sm font-black text-slate-500 uppercase tracking-widest truncate">Real-time</div>
+                    <div className="text-sm sm:text-xl font-black text-slate-900 leading-tight truncate">Process Automation</div>
                   </div>
                 </motion.div>
 
                 <motion.div 
                   animate={{ y: [0, 15, 0] }}
                   transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                  className="absolute -right-4 lg:-right-8 bottom-12 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl border border-white flex items-center gap-4 z-20"
+                  className="absolute right-2 sm:-right-4 lg:-right-8 bottom-6 sm:bottom-12 bg-white/95 backdrop-blur-md p-3 sm:p-5 rounded-2xl shadow-xl border border-white flex items-center gap-2 sm:gap-4 z-20 max-w-[85%] sm:max-w-none"
                 >
-                  <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center">
-                    <Rocket className="w-6 h-6 text-brand" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-brand" />
                   </div>
-                  <div>
-                    <div className="text-sm font-black text-slate-500 uppercase tracking-widest">Unified</div>
-                    <div className="text-xl font-black text-slate-900">Total Integration</div>
+                  <div className="overflow-hidden">
+                    <div className="text-[10px] sm:text-sm font-black text-slate-500 uppercase tracking-widest truncate">Unified</div>
+                    <div className="text-sm sm:text-xl font-black text-slate-900 leading-tight truncate">Total Integration</div>
                   </div>
                 </motion.div>
               </div>
@@ -269,13 +269,13 @@ export default function Odoo() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
              <div>
                 <h2 className="text-brand font-black uppercase tracking-widest text-sm mb-4">What is Odoo ERP?</h2>
-                <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">One Unified Platform <br /><span className="font-display italic font-normal text-[#503d78]">For Everything.</span></h3>
+                <h3 className="text-3xl lg:text-4xl font-black text-slate-900 mb-6 leading-tight">One Unified Platform <br /><span className="font-display italic font-normal text-brand">For Everything.</span></h3>
                 <p className="text-xl text-slate-600 leading-relaxed font-light">
                   Odoo is a modern, open-source ERP platform that integrates all major business functions into one unified system. 
                   Instead of using separate tools for CRM, accounting, HR, and sales, Odoo allows businesses to manage everything from a single centralized platform.
                 </p>
              </div>
-             <div className="grid grid-cols-2 gap-4">
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { title: "Modular", desc: "Start with what you need, add more later." },
                   { title: "User-Friendly", desc: "Intuitive interface for fast adoption." },
@@ -347,12 +347,12 @@ export default function Odoo() {
 
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             {/* Interactive Sidebar */}
-            <div className="lg:col-span-4 space-y-3 relative z-20">
+            <div className="lg:col-span-4 flex lg:flex-col gap-3 overflow-x-auto lg:overflow-visible pb-6 lg:pb-0 hide-scrollbar snap-x snap-mandatory relative z-20 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {modules.map((module, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveModule(idx)}
-                  className={`w-full text-left flex items-center justify-between p-6 lg:p-7 rounded-3xl transition-all duration-500 overflow-hidden relative group border ${
+                  className={`w-[260px] flex-shrink-0 snap-center lg:w-full text-left flex items-center justify-between p-5 lg:p-7 rounded-3xl transition-all duration-500 overflow-hidden relative group border ${
                     activeModule === idx 
                       ? 'bg-slate-900 border-slate-900 shadow-2xl scale-[1.02]' 
                       : 'bg-white border-slate-100/60 hover:border-brand/30 hover:shadow-lg hover:shadow-slate-200/50'

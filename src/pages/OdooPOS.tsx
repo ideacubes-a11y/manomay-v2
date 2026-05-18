@@ -394,15 +394,15 @@ export default function OdooPOS() {
           </div>
 
           {/* Elegant Tabs */}
-          <div className="flex justify-center mb-16">
-            <div className="inline-flex bg-slate-50/50 backdrop-blur-md rounded-full p-2 border border-slate-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)]">
+          <div className="flex justify-center mb-16 px-4">
+            <div className="flex flex-col sm:flex-row bg-slate-50/50 backdrop-blur-md rounded-3xl sm:rounded-full p-2 border border-slate-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] w-full sm:w-auto">
               {industrySolutions.map((sol) => (
                 <button
                   key={sol.id}
                   onClick={() => setActiveTab(sol.id)}
-                  className={`flex items-center gap-3 px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-500 ${
+                  className={`flex items-center justify-center gap-3 px-6 sm:px-8 py-4 rounded-2xl sm:rounded-full text-sm font-bold uppercase tracking-widest transition-all duration-500 w-full sm:w-auto ${
                     activeTab === sol.id 
-                      ? 'bg-white text-brand shadow-md scale-105 border border-slate-100/50' 
+                      ? 'bg-white text-brand shadow-md scale-[1.02] sm:scale-105 border border-slate-100/50' 
                       : 'text-slate-400 hover:text-slate-600 hover:bg-white/50'
                   }`}
                 >
@@ -534,7 +534,7 @@ export default function OdooPOS() {
         
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-12 gap-20">
-            <div className="lg:col-span-4 sticky top-32 h-fit">
+            <div className="lg:col-span-4 lg:sticky lg:top-32 h-fit mb-8 lg:mb-0">
               <h2 className="text-white/60 font-bold uppercase tracking-[0.4em] text-sm mb-6 flex items-center gap-6">
                 <div className="w-12 h-px bg-white/30"></div> 
                 The Partner Advantage

@@ -248,7 +248,7 @@ const CRMHelpDesk = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative order-2 lg:order-1">
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {advisorAdvantage.map((adv, i) => (
                   <div key={i} className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100">
                     <div className="text-brand mb-4">{adv.icon}</div>
