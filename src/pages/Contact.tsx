@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Linkedin, Send, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import SEO from "../components/SEO";
 
 const COUNTRIES = [
@@ -48,6 +49,7 @@ const INDUSTRIES = [
 ];
 
 export default function Contact() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     requestType: "Book Free Consultation",
     erpPreference: "Odoo",
@@ -101,21 +103,7 @@ export default function Contact() {
 
       if (response.ok && result.success) {
         setIsSubmitted(true);
-        setFormData({
-          requestType: "Book Free Consultation",
-          erpPreference: "Odoo",
-          firstName: "",
-          lastName: "",
-          countryCode: "+1",
-          countryFlag: "🇺🇸",
-          mobile: "",
-          email: "",
-          companyName: "",
-          industry: "",
-          companyAddress: "",
-          businessNeeds: "",
-        });
-        setTimeout(() => setIsSubmitted(false), 5000);
+        navigate('/thank-you');
       } else {
         console.error("Failed to submit form.");
         alert("Failed to submit form. Please try again later.");
