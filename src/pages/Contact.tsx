@@ -71,26 +71,43 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate success
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setIsSubmitting(false);
-      setFormData({
-        requestType: "Book Free Consultation",
-        erpPreference: "Odoo",
-        firstName: "",
-        lastName: "",
-        countryCode: "+1",
-        countryFlag: "🇺🇸",
-        mobile: "",
-        email: "",
-        companyName: "",
-        industry: "",
-        companyAddress: "",
-        businessNeeds: "",
+    try {
+      // Send the data to your Cloudflare Worker / Pages Function
+      const response = await fetch('/api/submit-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({
+          requestType: "Book Free Consultation",
+          erpPreference: "Odoo",
+          firstName: "",
+          lastName: "",
+          countryCode: "+1",
+          countryFlag: "🇺🇸",
+          mobile: "",
+          email: "",
+          companyName: "",
+          industry: "",
+          companyAddress: "",
+          businessNeeds: "",
+        });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        console.error("Failed to submit form.");
+        alert("Failed to submit form. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred while submitting the form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {

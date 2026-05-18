@@ -129,9 +129,9 @@ export default function RetailEcommerce() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="lg:col-span-5 relative"
             >
               <div className="relative">
@@ -139,7 +139,7 @@ export default function RetailEcommerce() {
                   <div className="absolute inset-0 bg-brand rounded-full blur-[80px] opacity-20 animate-pulse"></div>
                   <div className="absolute inset-4 rounded-[4rem] overflow-hidden shadow-2xl bg-white border-[12px] border-white z-10">
                     <img 
-                      src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200" 
+                      src="/Retail_ERP_Support.jpeg" 
                       alt="Retail Transformation" 
                       className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                       referrerPolicy="no-referrer"

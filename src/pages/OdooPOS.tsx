@@ -227,9 +227,9 @@ export default function OdooPOS() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="relative mt-12 lg:mt-0"
             >
               <div className="relative aspect-[4/3] max-w-2xl mx-auto lg:max-w-none">
