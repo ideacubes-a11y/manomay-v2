@@ -240,20 +240,6 @@ export default function OdooPOS() {
                     className="object-cover w-full h-full"
                   />
                 </div>
-                
-                <motion.div 
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="absolute -right-4 -top-8 sm:-right-8 sm:top-12 bg-white/90 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-xl border border-white flex items-center gap-3 sm:gap-4 z-10"
-                >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 rounded-full flex items-center justify-center">
-                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
-                  </div>
-                  <div>
-                    <div className="text-xs sm:text-sm font-bold text-slate-500 uppercase">Performance</div>
-                    <div className="text-sm sm:text-lg font-bold text-slate-900">Instant Sync</div>
-                  </div>
-                </motion.div>
               </div>
             </motion.div>
           </div>
