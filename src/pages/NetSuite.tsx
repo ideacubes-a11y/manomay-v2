@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function NetSuite() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -101,6 +102,10 @@ export default function NetSuite() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-sky-500/20">
+      <SEO 
+        title="Oracle NetSuite Implementation | Manomay Global Solutions" 
+        description="Expert Oracle NetSuite implementations tailored to your business needs by Manomay Global Solutions. Enhance your operations with cloud ERP excellence." 
+      />
       {/* Hero Section */}
       <section className="relative pt-28 pb-24 lg:pt-36 lg:pb-32 overflow-hidden bg-slate-50 border-b border-slate-100">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80')] opacity-[0.03] bg-cover bg-center mix-blend-multiply"></div>

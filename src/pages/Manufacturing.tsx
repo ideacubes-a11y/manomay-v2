@@ -18,6 +18,7 @@ import {
   Boxes
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function Manufacturing() {
   const challenges = [
@@ -96,6 +97,10 @@ export default function Manufacturing() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-brand/20">
+      <SEO 
+        title="Manufacturing ERP Solutions | Manomay Global Solutions" 
+        description="Streamline production, manage supply chains, and gain real-time visibility with our customized manufacturing ERP implementations." 
+      />
       {/* Creative Hero Section */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#240b45] text-white">
         {/* Animated Background Elements */}

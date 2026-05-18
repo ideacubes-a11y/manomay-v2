@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
 import { Mail, Linkedin, Send, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
+import SEO from "../components/SEO";
 
 const COUNTRIES = [
   { code: "+1", name: "USA", flag: "🇺🇸" },
@@ -99,6 +100,10 @@ export default function Contact() {
 
   return (
     <div className="pt-32 pb-24 bg-white overflow-hidden">
+      <SEO 
+        title="Contact Us | Manomay Global Solutions" 
+        description="Book a free consultation with our ERP experts at Manomay Global Solutions. Let's discuss your next NetSuite or Odoo implementation project." 
+      />
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Content Side */}

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function OdooPOS() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -176,6 +177,10 @@ export default function OdooPOS() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-brand/20">
+      <SEO 
+        title="Odoo Point of Sale (POS) Solutions | Manomay Global Solutions" 
+        description="Modernize your retail operations with a robust, offline-capable Odoo POS system seamlessly integrated with inventory and accounting." 
+      />
       {/* Hero Section */}
       <section className="relative pt-28 pb-24 lg:pt-36 lg:pb-32 overflow-hidden bg-slate-50 border-b border-slate-100">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&q=80')] opacity-[0.03] bg-cover bg-center mix-blend-multiply"></div>

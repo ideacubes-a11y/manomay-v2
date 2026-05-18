@@ -17,6 +17,7 @@ import {
   XCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from "../components/SEO";
 
 const ITProfessionalServices = () => {
   const challenges = [
@@ -85,6 +86,10 @@ const ITProfessionalServices = () => {
 
   return (
     <div className="min-h-screen bg-white selection:bg-brand/20">
+      <SEO 
+        title="IT & Professional Services ERP | Manomay Global Solutions" 
+        description="Optimize resource allocation, project tracking, and billing with specialized ERP solutions for IT and Professional Services." 
+      />
       {/* Creative Hero Section */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#240b45] text-white">
         {/* Animated Background Elements */}

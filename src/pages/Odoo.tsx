@@ -35,6 +35,7 @@ import {
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import odooHero from "../assets/images/regenerated_image_1778649322700.jpg";
+import SEO from "../components/SEO";
 
 export default function Odoo() {
   const [activeModule, setActiveModule] = useState(0);
@@ -106,6 +107,10 @@ export default function Odoo() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-brand/20 font-sans">
+      <SEO 
+        title="Odoo Implementation | Manomay Global Solutions" 
+        description="Simplify operations, improve visibility, and accelerate growth with powerful, customized Odoo ERP implementations." 
+      />
       {/* Hero Section */}
       <section className="relative pt-28 pb-20 lg:pt-32 lg:pb-24 overflow-hidden bg-slate-50 border-b border-slate-100 flex items-center min-h-[85vh]">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80')] opacity-[0.03] bg-cover bg-center mix-blend-multiply"></div>

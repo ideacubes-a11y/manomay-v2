@@ -21,6 +21,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function RetailEcommerce() {
   const challenges = [
@@ -71,6 +72,10 @@ export default function RetailEcommerce() {
 
   return (
     <div className="min-h-screen bg-white selection:bg-brand/20">
+      <SEO 
+        title="Retail & eCommerce ERP Solutions | Manomay Global Solutions" 
+        description="Empower your omnichannel retail and eCommerce business with unified ERP solutions that integrate POS, inventory, shipping, and financials." 
+      />
       {/* Creative Hero Section */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#240b45] text-white">
         {/* Animated Background Elements */}

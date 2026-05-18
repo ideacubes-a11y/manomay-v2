@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useState, useMemo, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const categories = [
   {
@@ -823,6 +824,10 @@ export default function OdooModulesExplorer() {
 
   return (
     <div className={`min-h-screen transition-colors duration-1000 selection:bg-brand/20 pt-28 pb-20 ${selectedCategory === 'all' ? 'bg-slate-50' : 'bg-slate-50/50'}`}>
+      <SEO 
+        title="Explore Odoo Modules | Manomay Global Solutions" 
+        description="Browse the comprehensive suite of Odoo modules. Find the perfect apps to power your sales, finance, inventory, and operations." 
+      />
       {/* Background Glows */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
         <motion.div 

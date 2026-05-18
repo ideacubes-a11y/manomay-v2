@@ -17,6 +17,7 @@ import {
   Clock
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from "../components/SEO";
 
 const CRMHelpDesk = () => {
   const challenges = [
@@ -85,6 +86,10 @@ const CRMHelpDesk = () => {
 
   return (
     <div className="min-h-screen bg-white selection:bg-brand/20">
+      <SEO 
+        title="CRM & Helpdesk Solutions | Manomay Global Solutions" 
+        description="Drive customer retention and streamline support operations with our unified CRM and Helpdesk implementations." 
+      />
       {/* Creative Hero Section */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden bg-[#240b45] text-white">
         {/* Animated Background Elements */}

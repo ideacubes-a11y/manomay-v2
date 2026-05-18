@@ -16,6 +16,7 @@ import {
   Users
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const features = [
   {
@@ -76,6 +77,10 @@ const targetSegments = [
 export default function WhyManomay() {
   return (
     <div className="bg-white">
+      <SEO 
+        title="Why Choose Manomay | Expertise & Value" 
+        description="Discover why businesses trust Manomay Global Solutions for their ERP implementation, technical expertise, and continuous value creation." 
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 bg-brand/5"></div>
